@@ -1,33 +1,62 @@
-# bbc5nuxt
+# Built By The Cruzat `v5.86`
+### Senior UI Architect & Front-End Engineering Portfolio
+**[builtby.thecruzat.com](https://builtby.thecruzat.com)**
 
-This is the build for my portfolio, [Built By The Cruzat](https://builtby.thecruzat.com), now in its fifth incarnation. This is an older [Nuxt](https://nuxtjs.org) build, v2.15.7, that I rehabbed in 2025 as a stopgap towards an updated build coming next year.
+---
 
-## Goals
+## ⚡ The Project
+This repository represents the 2026 modernization of my professional portfolio. Originally a legacy rehab, **v5.86** has been fully re-engineered onto **Nuxt 3.9** and **Vue 3**. It serves as a flagship demonstration of enterprise-grade front-end architecture, balancing high-fidelity design with bleeding-edge performance.
 
-Even though I was building on a dusty platform, I still wanted to make substantial functional as well as aesthetic improvements:
+## 🛠 Modernized Stack (2026 Revision)
+* **Core:** Nuxt 3.9+ (Vue 3 Composition API)
+* **Build Tool:** Vite with `vite-plugin-css-injected-by-js` for optimized asset delivery
+* **Styling:** SCSS with modern variable scoping and Tailwind CSS integration
+* **Icons:** FontAwesome 7.x (SVG Core)
+* **Fonts:** Optimized delivery via `@nuxtjs/google-fonts`
+* **Logic:** Node.js `vm` for secure, build-time data orchestration
 
-- Centralize asset urls into globalized const set
-- Update image files to modern webp format
-- Add non obtrusive parallax elements to keep nav & resume links persistent
-- Leverage relevant site content to create dynamic Resume page
-- Print CSS to insure resume printout lands at two pages
+## 🎯 Architectural Highlights
+The 2026 migration from Nuxt 2 to Nuxt 3 allowed for several significant "Senior-level" improvements:
 
-## Setup
+* **Hybrid Rendering:** Leveraging **SSR** for SEO-critical content while utilizing **ClientOnly** components for interactive elements like cookie consent.
+* **Dynamic Build-Time Injection:** A sophisticated `nuxt.config.ts` implementation using `node:vm` to fetch, sanitize, and inject remote data into the public runtime config at build time.
+* **State-Aware Navigation:** Improved hydration logic that coordinates between asynchronous section loading and client-side anchor scrolling to ensure pixel-perfect landing on hash links.
+* **Consent-First Analytics:** A robust GTM implementation integrated directly into the app head, respecting `localStorage` privacy choices before execution.
+* **Print-Engine Optimization:** Dedicated CSS layers designed specifically to ensure the dynamic Resume page renders perfectly for physical print and PDF generation.
 
-The usual for Nuxt:
+## 🚀 Development
 
+### Installation
 ```bash
 # install dependencies
 $ yarn install
-
-# serve with hot reload at localhost:3000
-$ yarn dev
-
-# build for production and launch server
-$ yarn build
-$ yarn start
-
-# generate static project
-$ yarn generate
 ```
 
+### Local Workflow
+```bash
+# launch dev server via nuxi
+$ yarn dev
+```
+
+### Build & Deployment
+```bash
+# production build
+$ yarn build
+
+# generate static project (SSG)
+$ yarn generate
+
+# preview production build
+$ yarn start
+```
+
+---
+
+## 📋 Engineering Standards
+* **Performance:** Audited via Lighthouse for Core Web Vitals compliance.
+* **Accessibility:** Semantic HTML structures and ARIA-aware interactive components.
+* **Maintainability:** Modular SCSS and component-driven architecture for a "design-to-code" workflow.
+
+> **"Automate the 'How' so I can obsess over the 'Beautiful'."**
+
+---
