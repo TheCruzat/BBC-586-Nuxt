@@ -15,111 +15,110 @@
 const credits = [
   {
     company: "Dan Cruzat",
-    position: "Senior Web / UI / CSS Consultant",
-    time: "Evergreen",
-    tech: "WordPress, CraftCMS, React, Vue, Next, Nuxt, Tailwind, SCSS",
+    position: "Senior UI & CSS Consultant",
+    time: "Est 2006",
+    tech: "WordPress, React, Vue, Next, Nuxt, Tailwind, SCSS",
     deets: [
-      "Developing \"Ursula\" WP + Tailwind starter theme",
-      "Leveraging AI to speed up development",
-      "Management, maintenance, upgrades + testing",
-      "Hunting minor details in styles & performance",
-    ],
-    noprint: true
+      "Developing 'Ursula' WP + Tailwind starter theme",
+      "Leveraging AI to accelerate development cycles",
+      "Full-cycle maintenance, upgrades & automated testing",
+      "Auditing styles & performance for micro-optimizations"
+    ]
   },
   {
     company: "Procter & Gamble",
     position: "Front End Developer",
     time: "4/2025 - 8/2025",
-    tech: "BigCommerce, Shopify, WordPress, Block Systems, SCSS, ACF",
+    tech: "BigCommerce, Shopify, Vue, React, WordPress",
     deets: [
-      "Team mentor & oversight for PHP + CSS",
-      "Tagging in Big Commerce for enterprise analytics",
-      "Features, maintenance and upgrades for WordPress",
-      "Full org reviews for web issues across ecosystem"
+      "Technical mentorship for PHP & CSS standards",
+      "Enterprise analytics tagging via BigCommerce",
+      "WP feature development & core upgrades",
+      "React/Vue component architecture"
     ]
   },
   {
     company: "The Beauty Shop",
     position: "Senior WordPress Engineer",
     time: "10/2024 - 8/2025",
-    tech: "WordPress, WooCommerce, Elementor, Gutenberg / Native Blocks, SCSS, GIT, WPEngine, WordPress.org, GitHub, ACF",
+    tech: "WP, Woo, Gutenberg, SCSS, WPEngine, ACF",
     deets: [
-      "Maintenance & upgrades for retainer clients",
-      "New feature development for inherited sites",
-      "CSS optimization & refactoring",
-      "Bespoke block dev in Gutenberg & Elementor"
+      "Retainer-based maintenance & feature scaling",
+      "Modernizing & refactoring inherited legacy code",
+      "CSS performance & asset optimization",
+      "Bespoke Gutenberg & Elementor block development"
     ]
   },
   {
     company: "Centric Park",
     position: "Senior Engineer / UX Strategist",
     time: "1/2024 - 9/2024",
-    tech: "WordPress, React, Tailwind, SCSS, GIT, WPEngine, WordPress VIP, GitHub, Bitbucket, ACF",
+    tech: "WordPress, React, Vue, Tailwind, WP VIP",
     deets: [
-      "Repo owner, code reviews + mentorship",
-      "Block-based theme development in WordPress",
-      "New layout and component development in React",
-      "Performance, Optimization, Accessibility + QA"
+      "Repo ownership, code reviews & mentorship",
+      "Block-based theme architecture",
+      "Cross-framework UI component development",
+      "Optimization for performance & accessibility"
     ]
   },
   {
     company: "Unisyn Voting Systems",
-    position: "Senior Interactive Engineer / UX Strategist",
+    position: "Senior Interactive Engineer",
     time: "8/2023 - 4/2024",
-    tech: "React, Tailwind, SCSS, GIT, GitLab, NPM",
+    tech: "React, Tailwind, SCSS, Git, NPM",
     deets: [
-      "CSS Lead, directed team members on standards",
-      "Built UI layers for current & future products",
-      "Coordinated UX reqs with software engineers",
-      "Troubleshooting + triaging user flows"
+      "CSS Lead; established enterprise style standards",
+      "Engineered UI layers for core product suite",
+      "Bridged UX requirements with software engineering",
+      "Triage & resolution of complex user flows"
     ]
   },
   {
     company: "StudioLabs",
-    position: "Lead Developer / WordPress Specialist",
+    position: "Lead Developer / WP Specialist",
     time: "11/2021 - 3/2022",
-    tech: "WordPress, SCSS, GIT, WP Engine, Bitbucket, ACF",
+    tech: "WordPress, SCSS, WP Engine, ACF",
     deets: [
-      "Update inherited themes with house standards",
-      "New features & client requests",
-      "Problem-solve & patch legacy issues in themes",
-      "Team Support / QA Support / Remote Coordination"
+      "Standardizing legacy themes to house specs",
+      "Rapid feature prototyping & deployment",
+      "Patching critical issues in legacy environments",
+      "Cross-functional team & QA coordination"
     ]
   },
   {
     company: "Daylight Studio",
-    position: "Senior Interactive Engineer / UX Strategist",
+    position: "Senior Interactive Engineer",
     time: "10/2021 - 8/2023",
-    tech: "WordPress, Craft, Tailwind, SCSS, GIT, Pantheon, GitLab, Bitbucket, ACF",
+    tech: "WordPress, Craft, Tailwind, SCSS, Pantheon",
     deets: [
-      "New feature production, testing, maintenance",
-      "Managing multiple site instances through Pantheon",
-      "Partner with 3rd party agencies on production",
-      "Team Coordination / DevOps / QA Support"
+      "End-to-end feature production & maintenance",
+      "Multi-instance management via Pantheon",
+      "Technical liaison for 3rd party agencies",
+      "DevOps support & team coordination"
     ]
   },
   {
     company: "Emerge Interactive",
-    position: "Lead Developer, Theme / UI Developer",
+    position: "Lead UI / Theme Developer",
     time: "2/2021 - 8/2022",
-    tech: "HTML, WordPress, SCSS, Docker, ACF",
+    tech: "WordPress, SCSS, Docker, ACF",
     deets: [
-      "Project lead, repo ownership + code reviews",
-      "Layout dev, system customizations, responsive frames",
-      "Team Support & UX Reviews",
-      "QA / bugfixing / browser testing",
+      "Project lead, repo ownership & code reviews",
+      "Custom layout systems & responsive frameworks",
+      "UX reviews & design-to-code fidelity",
+      "Cross-browser testing & UI bugfixing"
     ]
   },
   {
     company: "ShirtSpace",
     position: "Senior Web Developer",
     time: "1/2021 - 5/2021",
-    tech: "Slim, SCSS, JS/ES6, JQuery, Lighthouse",
+    tech: "Slim, SCSS, ES6, Lighthouse",
     deets: [
-      "Audit site for core vitals optimization",
-      "Custom UI enhancements using forward-facing ES6",
-      "UX strategy, userflow & engagement",
-      "QA / bugfixing / browser testing (incl IE legacy)",
+      "Core Web Vitals audit & speed optimization",
+      "Interactive enhancements via modern ES6",
+      "UX strategy & engagement optimization",
+      "Legacy browser support & bugfixing"
     ],
     noprint: true
   },
@@ -127,66 +126,67 @@ const credits = [
     company: "BASIC",
     position: "UI / Front End Developer",
     time: "3/2020 - 9/2020",
-    tech: "React (Next, Gatsby), StorybookJS, SCSS",
+    tech: "Next, Gatsby, StorybookJS, SCSS",
     deets: [
-      "Layout & interactive for YUM! Brands delivery app",
-      "Layout & interactive for Riot Games merch store",
-      "Team development, peer reviewed + approved",
-      "QA / bugfixing / team support for UI/CSS gremlins"
+      "UI for YUM! Brands delivery application",
+      "Merch store development for Riot Games",
+      "Collaborative peer-reviewed development",
+      "Resolving complex CSS/UI regressions"
     ],
     noprint: true
   },
   {
     company: "creative FEW",
-    position: "Front End Developer, Support Developer",
+    position: "Front End / Support Developer",
     time: "8/2017 - 9/2020",
-    tech: "React (Next, Gatsby), Angular, WordPress, ACF, HTML, PHP, SCSS, Gulp, Docker",
+    tech: "React, Angular, WordPress, PHP, Gulp",
     deets: [
-      "Team development, shared repos + code reviews",
-      "Full stack dev in WordPress",
-      "Layouts & components for React + Angular",
-      "QA / bugfixing / CSS oversight"
-    ]
+      "Shared repo development & code reviews",
+      "Full-stack WordPress theme development",
+      "React & Angular component architecture",
+      "QA support & CSS oversight"
+    ],
+    noprint: true
   },
   {
     company: "Industrial Commercial Electric",
-    position: "Lead Developer, UX Support",
+    position: "Lead Developer / UX Support",
     time: "9/2018 - 3/2019",
-    tech: "WordPress full stack, PHP, ACF, SCSS, JQuery, Gulp",
+    tech: "WordPress, PHP, ACF, SCSS, Gulp",
     deets: [
-      "Custom responsive theme dev w/ 7 layouts",
-      "Custom employee portal dev incl login logic",
-      "Custom timecard reporting system",
-      "QA / bugfixing / browser testing"
+      "Custom responsive theme architecture",
+      "Employee portal with secure login logic",
+      "Custom internal reporting systems",
+      "QA & cross-browser validation"
     ],
     noprint: true
   },
   {
     company: "Modern Adventure",
-    position: "WordPress Specialist, Team Support",
+    position: "WordPress Specialist",
     time: "5/2018 - 1/2019",
-    tech: "Trellis, Vagrant, SASS, JQuery, PHP, CMB2",
+    tech: "Trellis, SASS, PHP, CMB2",
     deets: [
-      "Paired w/ inhouse dev to meet org needs",
-      "Client portal minisite layout templates",
-      "Built blog/magazine layout templates",
-      "Bugfixes and UI assistance"
+      "In-house developer pairing & support",
+      "Client portal & minisite templates",
+      "Editorial blog & magazine layouts",
+      "UI troubleshooting & bug resolution"
     ],
     noprint: true
   },
   {
     company: "+Citizen (now EY)",
-    position: "Front End Developer, CSS Specialist, QA Testing",
+    position: "Front End / CSS Specialist",
     time: "6/2015 - 6/2017",
     tech: "AngularJS, SCSS",
     deets: [
-      "Team development for XFinity customer portal",
-      "Layout / interactive / component development",
-      "CSS Lead, code reviews + approvals",
-      "QA Tester / UI problemsolver"
+      "XFinity customer portal development",
+      "Interactive component architecture",
+      "CSS Lead: code reviews & approvals",
+      "UI problem solving & QA testing"
     ],
     noprint: true
-  },/**/
-]
+  }
+];
 
 export default credits;
