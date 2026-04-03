@@ -13,8 +13,10 @@
             <a v-for="link in resumeLinks" :key="link.href" :class="link.class" :href="link.href" :aria-label="link.ariaLabel" :title="link.title" target="_blank" v-html="link.label" />
           </span>
 
+          <QR class="qr" />
+
           <span>
-            <a v-for="link in resumeNav" :key="link.href" :href="link.href" :aria-label="link.ariaLabel" :title="link.title" target="_blank" v-html="link.label" />
+            <a v-for="link in resumeNav" :class="{'no-print': link.noPrint}" :key="link.href" :href="link.href" :aria-label="link.ariaLabel" :title="link.title" target="_blank" v-html="link.label" />
           </span>
 
         </nav>
@@ -84,7 +86,6 @@
 import { types } from "@/components/LogoTC";
 import { skillsIntro, skillsSub } from "@/content/skills.js";
 import { contactEmail, portURL, codeURL, liURL, rootURL, resumeFile, portVersion } from "@/content/meta";
-
 const yr = new Date().getFullYear();
 
 // Set page title
@@ -141,4 +142,18 @@ const resumeNav = [
 <style lang="scss">
 @use "@/styles/global.scss" as g;
 @use "@/styles/resume" as r;
+
+
+.qr {
+  position: absolute;
+  top: 10px;
+  left: calc(50% - 60px);
+  // transform: transitionX(-60px)!important;
+  width: 120px!important;
+  height: 120px!important;
+  // @media not print {
+    display: none!important;
+  // }
+}
+
 </style>

@@ -294,12 +294,8 @@
 
 #app.resume {
   .expo-block {
-    padding: 0.5rem 0;
+    padding: 1.25rem 0;
     line-height: 1.2;
-
-    @include v.mFlip() {
-      padding: 0.7rem 0;
-    }
 
     @include v.mFlip(72rem) {
       padding: 1.75rem 0 1.25rem;
@@ -309,14 +305,18 @@
     @media screen {
       line-height: 1.4;
     }
+    @media print {
+      padding: 0.5rem 0;
+    }
 
     h3 {
       margin: 0 0 0.4rem;
-        font-size: var(--titleFontSize);
+        font-size: 1.5rem;
       color: var(--hot);
 
       @include v.mFlip() {
 
+        font-size: var(--titleFontSize);
         @media screen {
           margin-bottom: 0.5rem;
         }
@@ -337,13 +337,11 @@
       }
     }
     p {
-      font-size: 70%;
       @include v.mFlip() {
         font-size: 90%;
-        @media screen {
-          margin-bottom: 1rem;
-        }
+        margin-bottom: 1rem;
       }
+
 
     }
 
@@ -351,16 +349,12 @@
       display: block;
       margin: 6px 0 0;
       padding: 0;
-      font-size: 70%;
+      font-size: var(--bodyFontSizeBaseline);
       list-style: circle;
       text-align: left;
 
       @include v.mFlip(64rem) {
         columns: 2;
-      }
-
-      @include v.mFlip() {
-        font-size: var(--bodyFontSizeBaseline);
       }
 
       @media print {
@@ -372,6 +366,7 @@
         margin-left: 14px;
         padding-right: 30px;
         margin-bottom: 4px;
+        display: inline-block;
 
         @media screen {
           @include v.mFlip() {

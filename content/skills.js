@@ -20,7 +20,7 @@ export const skillsToPayTheBills = [
 
 	{
 		label: "standards",
-		list: "Responsive Development, Testing, Performance Optimization, Accessibility / WCAG, Tracking & Consent",
+		list: "Responsive Development, Testing, Performance Optimization, A11y / WCAG, Tracking & Consent",
 	},
 
 	{
