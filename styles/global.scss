@@ -1,0 +1,265 @@
+@use 'vars' as v;
+
+html, body {
+  margin: 0; padding: 0;
+  font-size: 16px;
+  font-display: swap;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: var(--bodyFontSize);
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: left;
+  color: v.$bod;
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#app {
+}
+
+section {
+  padding-block: 2rem;
+  @include v.mFlip() {
+    padding-bottom: 6vh;
+  }
+
+}
+
+section, .standard-page {
+  a {
+    color: var(--con);
+    background: var(--cream);
+    transition: background 0.35s ease-in, color 0.35s ease-in;
+    border-bottom: 1px dotted var(--hot);
+
+    &:hover {
+      color: #fff;
+      background: var(--hot);
+      transition: background 0.15s ease-out, color 0.15s ease-out;
+    }
+  }
+  .btn {
+    display: inline-block;
+    background: transparent; // var(--paper);
+    color: var(--hot);
+    text-transform: uppercase;
+    padding: 0.85rem 2.4rem 0.75rem;
+    font-weight: 900;
+    font-size: 1.125rem;
+    border: 2px solid var(--con);
+    transition: background 0.35s ease-in, color 0.35 ease-in;
+    border-radius: var(--radius); // 0.5rem;
+    line-height: 1;
+
+    &.blank {
+      // background: transparent;
+      border-color: transparent;
+
+      &:hover {
+        // background: var(--hot);
+      }
+    }
+
+    &:hover {
+      transition: background 0.15s ease-out, color 0.15 ease-out;
+      background: var(--hot);
+      color: #fff;
+      border-color: var(--hot);
+
+    }
+  }
+}
+
+section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  position: relative;
+  clip-path: inset(0);
+  padding-bottom: 3rem;
+
+  &.row {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  &.link-row {
+    a {
+      // padding: 0.125rem 1.25rem;
+      // border: 1px dashed var(--hot);
+      // border-radius: 16px;
+
+      i {
+        display: inline-block;
+        margin: 0;
+        width: 20px;
+        text-align: center;
+        font-size: 66.6666%;
+      }
+
+      #app.resume & {
+        margin-bottom: 1rem;
+      }
+    }
+    a:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+
+  a {
+    color: var(--con);
+    background: var(--cream);
+    transition: background 0.35s ease-in, color 0.35s ease-in;
+    border-bottom: 1px dotted var(--hot);
+
+    &:hover {
+      color: #fff;
+      background: var(--hot);
+      transition: background 0.15s ease-out, color 0.15s ease-out;
+    }
+  }
+
+  h2 {
+    font-family: var(--title);
+    text-transform: lowercase;
+    font-size: 3rem;
+    margin: 0 0 1vh;
+    width: 100%;
+    color: var(--con);
+      line-height: 1;
+
+    @include v.mFlip() {
+      font-size: 5vw;
+    }
+  }
+
+  h3 {
+    font-family: var(--title);
+    color: var(--con);
+    margin: 2rem 0;
+    font-size: 2rem;
+    @include v.mFlip() {
+      font-size: 3vw;
+    }
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid var(--lyt);
+
+  }
+
+  p {
+    margin: 0;
+
+    &:not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .title-spacer {
+    max-width: var(--container-width);
+    height: clamp(15rem, 12vw, 30rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    // background: red;
+    padding-inline: 32px;
+      @include v.mFlipUnder() {
+        padding-inline: var(--gutter);
+      }
+
+    &.shorty {
+      @include v.mFlipUnder() {
+        height: 7.7rem;
+        scroll-margin-top: 7.7rem;
+      }
+    }
+  }
+
+  .flat {
+    padding: 8px var(--gutter);
+    max-width: var(--container-width);
+    width: 100%;
+    line-height: 1.6;
+    // font-size: 1.4rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 3;
+
+    @include v.mFlip() {
+      padding: 16px 32px;
+    }
+
+    @include v.mFlip(80rem) {
+      // max-width: 64rem;
+    }
+
+    &:before {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      display: block;
+      content: "";
+      opacity: 0.4;
+      z-index: -1;
+    }
+
+    &:after {
+      filter: blur(5px);
+      -webkit-filter: blur(5px);
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      display: block;
+      content: "";
+      z-index: -2;
+    }
+
+    + .flat {
+      padding-top: 0;
+    }
+  }
+}
+
+.container {
+  padding: var(--gutter);
+}
+
+.font-small {
+  font-size: 85%;
+}
+.print-hide {
+  @media print {
+    display: none;
+  }
+}
+.small-bump {
+  margin-bottom: 1rem;
+}
+
+.beacon {
+  position: absolute;
+  left: 0;
+  bottom: 15rem;
+
+  @include v.mFlipUnder() {
+    // top: -48px;
+  }
+}
+
+  .legal-content li:not(:last-child) {
+    margin-bottom: 1rem;
+  }

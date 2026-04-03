@@ -1,0 +1,419 @@
+@use 'vars' as v;
+
+@media screen {
+
+  .know-rack {
+    text-align: left;
+    @include v.mFlip() {
+      display: grid;
+      grid-template-columns: 200px auto;
+
+      #app.resume & {
+        grid-template-columns: 130px auto;
+      }
+    }
+    @include v.mFlipUnder() {
+      strong {
+        display: block;
+      }
+    }
+  }
+}
+
+@media print {
+  .know-rack {
+    display: grid;
+    grid-template-columns: 90px auto;
+    font-size: 0.75rem;
+  }
+}
+
+
+#app.resume {
+
+  // it's gotta print yo
+  @page: 5.5in 8.5in;
+
+  text-align: left;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 4rem;
+  text-align: justify;
+  font-size: 1rem;
+
+  @include v.mFlip() {
+    font-size: 1.2rem;
+    // max-width: 56rem;
+    // margin-inline: auto;
+  }
+
+  @media screen {
+    max-width: var(--container-width);
+    margin-inline: auto;
+  }
+
+  .mo {
+    @media(min-width: 36rem) {
+      display: none;
+
+    }
+    border-top: 2px dotted var(--dim);
+    svg {
+      max-width: 300px;
+      margin: var(--gutter) auto 0;
+      fill: #d9e1ea;
+    }
+  }
+
+  header, section {
+    max-width: 64rem;
+    margin-left: auto;
+    margin-right: auto;
+
+    h1, h2, h3 {
+      font-weight: 100;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-family: var(--title);
+      color: var(--hot);
+      margin: 0;
+      line-height: 1;
+
+      @include v.mFlip() {
+        font-size: 6vw;
+      }
+    }
+
+    h2 {
+      text-align: left;
+      font-size: 1.2rem;
+      padding-left: 0;
+      margin-bottom: .2rem;
+      color: var(--con);
+      line-height: 1.4;
+
+      @include v.mFlip(48rem) {
+        @media screen {
+          font-size: 1.6rem;
+        }
+      }
+      @include v.mFlip(72rem) {
+        font-size: 1.75rem;
+        margin-bottom: 0.5rem;
+      }
+
+      &.dim {
+        color: #ccc;
+      }
+    }
+
+    p, nav {
+      margin: 0;
+    }
+    nav {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      background: unset;
+      position: unset;
+      width: unset;
+      width: 100%;
+      font-size: var(--bodyFontSizeBaseline);
+
+      @include v.mFlip() {
+        flex-direction: row;
+        font-size: var(--bodyFontSizeBaseline);
+      }
+      @media print {
+        flex-direction: row;
+      }
+
+      a {
+        margin-right: unset;
+        padding: unset;
+
+        &:not(:last-child):after {
+          display: inline-block;
+          color: var(--lyt);
+          padding: 0 0.4rem;
+          content: "/";
+        }
+      }
+
+      span:not(:last-child) {
+        @media screen {
+          a:not(:last-child):after {
+            content: ":";
+          }
+        }
+        @media print {
+          a:not(:last-child):after {
+            content: "";
+          }
+        }
+        @include v.mFlipUnder() {
+          @media screen {
+            display: block;
+            margin-bottom: 0.75rem;
+          }
+        }
+      }
+
+      span + span a {
+        color: var(--hot);
+
+        &:hover {
+          color: var(--bod);
+        }
+      }
+    }
+  }
+
+  header {
+    border-bottom: 2px dotted var(--dim);
+    padding: var(--gutter) 0;
+
+    @include v.mFlip(80rem) {
+      padding-top: calc(var(--gutter)*2);
+      padding-bottom: calc(var(--gutter)*1.5);
+      margin-bottom: calc(var(--gutter)*1.5);
+    }
+
+    @media print {
+      padding-bottom: 0.5rem;
+    }
+
+    color: #ccc;
+
+    a {
+      color: var(--bod);
+      &:hover {
+        transition: color 0.2s ease-in-out;
+        color: v.$dim;
+      }
+    }
+
+    >div {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      @include v.mFlipUnder(48rem) {
+        @media screen {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+
+      + div {
+        margin-top: calc(var(--gutter)/1.5);
+      }
+    }
+
+    svg {
+      display: inline-block;
+      height: auto;
+      width: 200px;
+
+      @include v.mFlip() {
+        width: 25vw;
+        max-width: 35%;
+      }
+      @include v.mFlipUnder(48rem) {
+        @media screen {
+          display: none;
+        }
+      }
+
+      g path {
+        fill: var(--lyt);
+      }
+    }
+
+    p + p > a, nav > a {
+      color: v.$hot;
+    }
+  }
+
+  section {
+    min-height: 0;
+    align-items: flex-start;
+    margin-top: 1rem;
+    line-height: 1.5;
+    padding-block: 0;
+
+    @include v.mFlip() {
+      line-height: 1.6;
+    }
+
+    &.break {
+      break-before: always;
+    }
+
+    + section {
+      margin-top: 1.5rem;
+
+      @include v.mFlip() {
+        margin-top: 2.4rem;
+      }
+    }
+
+    &.center {
+      &, h2 {
+        text-align: center;
+      }
+    }
+
+    p, nav {
+
+      &.small {
+        font-size: 90%;
+      }
+    }
+    p + p, nav {
+      margin-top: 0.6rem;
+    }
+  }
+}
+
+@media print {
+  p, nav {
+    font-size: 0.9rem;
+  }
+
+  .no-print {
+    display: none;
+  }
+}
+
+#app.resume {
+  .expo-block {
+    padding: 0.5rem 0;
+    line-height: 1.2;
+
+    @include v.mFlip() {
+      padding: 0.7rem 0;
+    }
+
+    @include v.mFlip(72rem) {
+      padding: 1.75rem 0 1.25rem;
+      font-size: 1.2rem;
+    }
+
+    @media screen {
+      line-height: 1.4;
+    }
+
+    h3 {
+      margin: 0 0 0.4rem;
+        font-size: var(--titleFontSize);
+      color: var(--hot);
+
+      @include v.mFlip() {
+
+        @media screen {
+          margin-bottom: 0.5rem;
+        }
+
+      }
+
+      @include v.mFlip(80rem) {
+        font-size: 2rem;
+      }
+
+      @media print {
+        font-size: 1rem;
+      }
+
+      span {
+        color: #aaa;
+        font-weight: 100;
+      }
+    }
+    p {
+      font-size: 70%;
+      @include v.mFlip() {
+        font-size: 90%;
+        @media screen {
+          margin-bottom: 1rem;
+        }
+      }
+
+    }
+
+    ul {
+      display: block;
+      margin: 6px 0 0;
+      padding: 0;
+      font-size: 70%;
+      list-style: circle;
+      text-align: left;
+
+      @include v.mFlip(64rem) {
+        columns: 2;
+      }
+
+      @include v.mFlip() {
+        font-size: var(--bodyFontSizeBaseline);
+      }
+
+      @media print {
+        columns: 2;
+        font-size: 70%;
+      }
+
+      li {
+        margin-left: 14px;
+        padding-right: 30px;
+        margin-bottom: 4px;
+
+        @media screen {
+          @include v.mFlip() {
+            margin-bottom: 0.75rem;
+          }
+        }
+      }
+    }
+
+    + .expo-block {
+      border-top: 1px dashed #ccc;
+
+      &:last-child {
+        border-bottom: 1px dashed #ccc;
+        padding-bottom: 2rem;
+      }
+    }
+  }
+
+  @media print {
+    padding-bottom: 0;
+  }
+}
+
+.resume-footer {
+  @media screen {
+    display: block;
+  }
+}
+
+@media (print) {
+  h1, h2, h3 {
+    font-size: 12pt;
+  }
+  section p.trivia {
+    font-size: 2pt!important;
+  }
+
+}
+
+@media (screen) {
+  .no-screen {
+    display: none;
+  }
+}

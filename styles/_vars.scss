@@ -1,0 +1,92 @@
+@mixin mFlip($q: 64rem) {
+  @media (min-width: $q) {
+    @content;
+  }
+}
+@mixin mFlipUnder($q: 64rem) {
+  @media (max-width: $q) {
+    @content;
+  }
+}
+@mixin mFlipBetween($q, $r) {
+  @media (min-width: $q) and (max-width: $r) {
+    @content;
+  }
+}
+
+.tablet-up {
+  @include mFlipUnder(48rem) {
+    display: none;
+  }
+}
+
+.desktop-up {
+  @include mFlipUnder() {
+    display: none;
+  }
+}
+
+.title {
+  font-family: 'Khand', cursive;
+}
+
+.subtitle {
+  font-family: 'Khand', cursive;
+}
+
+$bod:   #182825;
+$hot:   #9000B3;
+$con:   #016FB9;
+$conlyt: #EBF7FE;
+$dim:   #70877F;
+$lyt:   #C1CAD6;
+$lyter: #DAE0E7;
+$paper: #f0f0f0;
+$cream: #FAF3DD;
+
+:root {
+  --bod: #{$bod};
+  --hot: #{$hot};
+  --dim: #{$dim};
+  --con: #{$con};
+  --conlyte: #{$conlyt};
+  --paper: #{$paper};
+  --cream: #{$cream};
+  --lyt: #{$lyt};
+  --lyter: #{$lyter};
+
+  --container-width: 36rem;
+
+  --gutter: 20px;
+  --radius: 2rem; // 6px;
+
+  --title: 'Khand', cursive;
+  --subtitle: 'Khand', cursive;
+
+  --bodyFontSizeBaseline: 1rem;
+  --bodyFontSize: var(--bodyFontSizeBaseline);
+
+  --titleFontSize: 1.2rem;
+
+
+  --headerBGPos: 90% 50%;
+
+  @include mFlip(40rem) {
+    --headerBGPos: 60% 50%;
+    --bodyFontSize: 1.125rem;
+    --titleFontSize: 1.5rem;
+  }
+  @include mFlip() {
+    --headerBGPos: 50% 50%;
+    --container-width: 56rem;
+    --bodyFontSize: 1.2rem;
+  }
+  @include mFlip(80rem) {
+    --bodyFontSize: 1.4rem;
+    --container-width: 64rem;
+    --bodyFontSizeBaseline: 1.1rem;
+  }
+  @include mFlip(96rem) {
+    --container-width: 80rem;
+  }
+}
