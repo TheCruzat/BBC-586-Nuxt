@@ -13,10 +13,8 @@
   </div>
 </template>
 
-<script>
-	export default {
-		name: "PageFrame"
-	}
+<script setup>
+//
 </script>
 
 <style scoped lang="scss">
@@ -27,17 +25,16 @@
   	@include v.mFlip() {
   		padding-top: 18vw;
   	}
-
   }
 
   .standard-page {
-    // padding: 10rem var(--gutter) 5rem;
     background: #fff; // var(--paper);
     min-height: 100vh;
 
     .standard-content {
       max-width: 40rem;
       margin: 2rem auto 4rem;
+      padding-inline: var(--gutter);
       line-height: 1.6;
       position: relative;
       z-index: 1;
