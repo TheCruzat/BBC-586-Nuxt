@@ -3,7 +3,10 @@
     <div v-if="showBanner" class="consent-banner">
       <p>
         <span>I'm into slinging code, not selling data. </span>
-        <span>I use basic analytics to see where you're coming from and what you're clicking on. </span>
+        <span
+          >I use basic analytics to see where you're coming from and what you're
+          clicking on.
+        </span>
         <span>Is that okay with you?</span>
       </p>
       <div class="actions">
@@ -18,20 +21,20 @@
 const showBanner = ref(false);
 
 onMounted(() => {
-  if (!localStorage.getItem('consent_choice')) {
+  if (!localStorage.getItem("consent_choice")) {
     showBanner.value = true;
   }
 });
 
 const accept = () => {
-  localStorage.setItem('consent_choice', 'granted');
+  localStorage.setItem("consent_choice", "granted");
   showBanner.value = false;
   // Trigger GTM event if needed
-  window.dataLayer?.push({'event': 'consent_granted'});
+  window.dataLayer?.push({ event: "consent_granted" });
 };
 
 const decline = () => {
-  localStorage.setItem('consent_choice', 'denied');
+  localStorage.setItem("consent_choice", "denied");
   showBanner.value = false;
 };
 </script>
@@ -50,14 +53,16 @@ const decline = () => {
   width: 400px;
   // height: 160px;
   // font-size: 0.85rem;
-  border-radius: calc(var(--radius)/2.5);
+  border-radius: calc(var(--radius) / 2.5);
   display: flex;
   align-items: center;
   flex-direction: column;
-    text-align: left;
+  text-align: left;
 
   // Mobile: Bottom Center
-  bottom: 4rem; left: 50%; right: auto;
+  bottom: 4rem;
+  left: 50%;
+  right: auto;
   translate: -50% 0;
 
   @include v.mFlip() {
@@ -70,17 +75,17 @@ const decline = () => {
 
   p {
     margin-top: 0;
-      span {
-        width: 100%;
-        display: block;
-        line-height: 1.4;
-        margin: 0 0 0.5rem;
+    span {
+      width: 100%;
+      display: block;
+      line-height: 1.4;
+      margin: 0 0 0.5rem;
 
-        @include v.mFlip() {
-          margin: 0 0 1rem;
-          font-size: 1.125rem;
-        }
+      @include v.mFlip() {
+        margin: 0 0 1rem;
+        font-size: 1.125rem;
       }
+    }
   }
 
   // Tablet+: Bottom Left
@@ -107,9 +112,15 @@ const decline = () => {
     font-size: var(--bodyFontSizeBaseline);
     font-weight: 600;
 
-    &.minimal { background: none; border-color: transparent; color: var(--bod); text-decoration: underline; }
+    &.minimal {
+      background: none;
+      border-color: transparent;
+      color: var(--bod);
+      text-decoration: underline;
+    }
 
-    &:hover, &:hover.minimal {
+    &:hover,
+    &:hover.minimal {
       background: var(--hot);
       color: #fff;
       text-decoration: none;

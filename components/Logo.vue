@@ -1,10 +1,10 @@
 <template>
-
-    <svg :type="type" xmlns="http://www.w3.org/2000/svg"
-         viewBox="0 0 900 157">
-      <path
-            fill="black" stroke="none" stroke-width="1"
-            d="M 437.00,74.00
+  <svg :type="type" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 157">
+    <path
+      fill="black"
+      stroke="none"
+      stroke-width="1"
+      d="M 437.00,74.00
              C 430.97,67.27 424.39,55.23 420.25,47.00
                418.06,42.67 414.56,34.30 410.90,31.51
                405.83,27.66 400.47,31.19 396.00,34.22
@@ -2648,105 +2648,100 @@
              M 296.00,153.00
              C 296.00,153.00 296.00,154.00 296.00,154.00
                296.00,154.00 295.00,153.00 295.00,153.00
-               295.00,153.00 296.00,153.00 296.00,153.00 Z" />
-    </svg>
-
+               295.00,153.00 296.00,153.00 296.00,153.00 Z"
+    />
+  </svg>
 </template>
 
 <script>
-
 export const types = {
   header: "header",
   footer: "footer",
   social: "social",
-  nav: "nav"
-}
+  nav: "nav",
+};
 
 export default {
-  name: 'Logo',
+  name: "Logo",
   props: {
-    type: types
-  }
-}
+    type: types,
+  },
+};
 </script>
 
 <style lang="scss">
+@use "@/styles/global.scss" as g;
+@use "@/styles/vars" as v;
 
-  @use "@/styles/global.scss" as g;
-  @use "@/styles/vars" as v;
+svg {
+  &[type="header"] path {
+    fill: #fff;
+    stroke: transparent; // var(--hot);
 
-  svg {
-
-    &[type="header"] path {
-      fill: #fff;
-      stroke: transparent; // var(--hot);
-
-      @include v.mFlip(48rem) {
-        stroke: var(--hot);
-        // fill: var(--hot);
-      }
+    @include v.mFlip(48rem) {
+      stroke: var(--hot);
+      // fill: var(--hot);
     }
-    &[type="nav"] {
+  }
+  &[type="nav"] {
+    display: block;
+    position: relative;
+    z-index: 2;
+    path {
+      fill: var(--bod);
+      // stroke: #fff;
+    }
+  }
+  &[type="nav-bg"] {
+    // @include v.mFlipUnder() {
+    display: none;
+    // }
+    z-index: 1;
+    position: absolute;
+    top: 2rem;
+    left: 0;
+    @include v.mFlip() {
       display: block;
-      position: relative;
-      z-index: 2;
-      path {
-        fill: var(--bod);
-        // stroke: #fff;
-      }
+      // fill: #FFF;
+      left: 32px;
+      top: 0;
     }
-    &[type="nav-bg"] {
-        // @include v.mFlipUnder() {
-          display: none;
-        // }
-          z-index: 1;
-          position: absolute;
-          top: 2rem;
-          left: 0;
-        @include v.mFlip() {
-          display: block;
-          // fill: #FFF;
-          left: 32px;
-          top: 0;
-        }
-      path {
-        fill: var(--bod);
-        stroke: #fff;
-        @include v.mFlip() {
-          // fill: #FFF;
-          stroke-width: 1.125rem;
-        }
-      }
-    }
-    &[type="footer"] path {
-      fill: var(--paper);
-      stroke: var(--con);
-    }
-
-    &[type="social"] {
-      width: 1138px;
-      display: block;
-      margin-bottom: 1.5rem;
-
-      path {
-        fill: #fff;
-        stroke: var(--hot);
-        stroke-width: 1px;
-
-      }
-    }
-
-    &[type="loader"] {
-      // width: 1138px;
-      display: block;
-      margin-bottom: 1.5rem;
-
-      path {
-        fill: #fff;
-        stroke: var(--hot);
-        stroke-width: 1px;
-
+    path {
+      fill: var(--bod);
+      stroke: #fff;
+      @include v.mFlip() {
+        // fill: #FFF;
+        stroke-width: 1.125rem;
       }
     }
   }
+  &[type="footer"] path {
+    fill: var(--paper);
+    stroke: var(--con);
+  }
+
+  &[type="social"] {
+    width: 1138px;
+    display: block;
+    margin-bottom: 1.5rem;
+
+    path {
+      fill: #fff;
+      stroke: var(--hot);
+      stroke-width: 1px;
+    }
+  }
+
+  &[type="loader"] {
+    // width: 1138px;
+    display: block;
+    margin-bottom: 1.5rem;
+
+    path {
+      fill: #fff;
+      stroke: var(--hot);
+      stroke-width: 1px;
+    }
+  }
+}
 </style>

@@ -1,18 +1,21 @@
 <template>
   <div class="testimonials" v-if="displayQuotes.length > 0">
     <div class="testimonial-container">
-
       <transition name="fade" mode="out-in">
-        <div
-          :key="currentIndex"
-          class="testimonial-slide"
-        >
+        <div :key="currentIndex" class="testimonial-slide">
           <em v-html="displayQuotes[currentIndex].quote"></em>
           <p>
-            <a :href="displayQuotes[currentIndex].link" target="_blank" :title="'learn more about ' + displayQuotes[currentIndex].name">
-              <strong v-html="displayQuotes[currentIndex].name" />
-            </a><br>
-            <span v-html="displayQuotes[currentIndex].role" class="testimonial-sub" />
+            <a
+              :href="displayQuotes[currentIndex].link"
+              target="_blank"
+              :title="'learn more about ' + displayQuotes[currentIndex].name"
+            >
+              <strong v-html="displayQuotes[currentIndex].name" /> </a
+            ><br />
+            <span
+              v-html="displayQuotes[currentIndex].role"
+              class="testimonial-sub"
+            />
           </p>
         </div>
       </transition>
@@ -38,38 +41,38 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed } from "vue";
 import { Testimonials as MasterList } from "@/content/Testimonials";
 
 const props = defineProps({
   // NEW: Accept an array of quote objects directly from parent
   quotes: {
     type: Array,
-    default: () => []
+    default: () => [],
   },
   // Specific IDs filter (overrides the provided quotes if needed)
   ids: {
     type: Array,
-    default: () => []
+    default: () => [],
   },
   // Limit for the current instance
   limit: {
     type: Number,
-    default: 0
-  }
+    default: 0,
+  },
 });
 
 const currentIndex = ref(0);
 
 const displayQuotes = computed(() => {
   // 1. Determine the source pool (Passed Prop vs Master List)
-  let pool = props.quotes.length > 0 ? props.quotes : MasterList;
+  const pool = props.quotes.length > 0 ? props.quotes : MasterList;
 
   let list = [];
 
   // 2. Filter by ID if requested
   if (props.ids.length > 0) {
-    list = pool.filter(q => props.ids.includes(q.id));
+    list = pool.filter((q) => props.ids.includes(q.id));
   } else {
     list = [...pool];
   }
@@ -88,12 +91,12 @@ const displayQuotes = computed(() => {
 @use "@/styles/vars" as v; //
 
 .testimonials {
-	background: var(--conlyte); // #D7EFFE; // #A9B6C6; // var(--paper);
-	border-block: 2px solid #fff;
-	margin-bottom: 3rem;
-	width: 100%;
-	padding-top: 1rem;
-	overflow: hidden;
+  background: var(--conlyte); // #D7EFFE; // #A9B6C6; // var(--paper);
+  border-block: 2px solid #fff;
+  margin-bottom: 3rem;
+  width: 100%;
+  padding-top: 1rem;
+  overflow: hidden;
 }
 
 .testimonial-container {
@@ -107,8 +110,8 @@ const displayQuotes = computed(() => {
   position: relative;
 
   @include v.mFlip() {
-  	padding: 2rem 32px;
-  	max-width: 44rem; // 64rem;
+    padding: 2rem 32px;
+    max-width: 44rem; // 64rem;
   }
 
   .testimonial-slide {
@@ -116,7 +119,6 @@ const displayQuotes = computed(() => {
     position: relative;
     z-index: 1;
     // min-height: 250px;
-
 
     em {
       display: block;
@@ -126,35 +128,34 @@ const displayQuotes = computed(() => {
       line-height: 1.8;
 
       @include v.mFlip() {
-      	// font-size: 1rem;
+        // font-size: 1rem;
       }
 
       + p {
-      	line-height: 1.2;
-      	font-size: 1.125rem;
+        line-height: 1.2;
+        font-size: 1.125rem;
 
-      	a {
-      		background: unset;
-      		border: none;
+        a {
+          background: unset;
+          border: none;
 
-      		&:hover {
-      			background: var(--con);
-      			padding-inline: 0.25rem;
-      		}
-      	}
+          &:hover {
+            background: var(--con);
+            padding-inline: 0.25rem;
+          }
+        }
       }
     }
     p {
-	    @include v.mFlip() {
-	    	padding-left: calc(50% + 0.5rem);
-	    }
-	}
+      @include v.mFlip() {
+        padding-left: calc(50% + 0.5rem);
+      }
+    }
 
     .testimonial-sub {
-
-	    //@include v.mFlip() {
-	      font-size: 75%; //
-	  //}
+      //@include v.mFlip() {
+      font-size: 75%; //
+      //}
     }
   }
 
@@ -163,10 +164,10 @@ const displayQuotes = computed(() => {
     position: relative;
     z-index: 1;
     @include v.mFlip() {
-    	position: absolute;
-    	bottom: 30px;
-    	right: calc(50% + 0.5rem);
-    	margin: 0;
+      position: absolute;
+      bottom: 30px;
+      right: calc(50% + 0.5rem);
+      margin: 0;
     }
     button {
       background: none;
@@ -183,58 +184,61 @@ const displayQuotes = computed(() => {
       opacity: 0.25;
 
       &.active {
-      	opacity: 1;
+        opacity: 1;
       }
     }
   }
 
   .quote-marks {
-  	position: absolute;
-  	top: 0; left: 0; right: 0; bottom: 0;
-  	// background: blue;
-  	z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // background: blue;
+    z-index: 0;
 
-  	strong {
-  		position: absolute;
-  		top: 0; // 12.5%;
-  		left: -1.25rem;
-  		font-family: serif;
-  		font-size: 2rem;
-  		color: var(--con);
-  		opacity: 0.3;
+    strong {
+      position: absolute;
+      top: 0; // 12.5%;
+      left: -1.25rem;
+      font-family: serif;
+      font-size: 2rem;
+      color: var(--con);
+      opacity: 0.3;
 
-  		+ strong {
-  			top: unset;
-  			left: unset;
-  			right: -1.25rem;
-  			bottom: 9rem;
-  		}
+      + strong {
+        top: unset;
+        left: unset;
+        right: -1.25rem;
+        bottom: 9rem;
+      }
 
-  		@include v.mFlip() {
-  			top: 0.5rem;
-  			left: -4rem;
-  			font-size: 8rem;
-  			line-height: 1;
+      @include v.mFlip() {
+        top: 0.5rem;
+        left: -4rem;
+        font-size: 8rem;
+        line-height: 1;
 
-  			+ strong {
-	  			right: 3rem;
-	  			bottom: 0rem;
-	  			font-size: 5rem;
-  			}
-  		}
+        + strong {
+          right: 3rem;
+          bottom: 0rem;
+          font-size: 5rem;
+        }
+      }
 
-  		@include v.mFlipUnder() {
-  			&:first-child {
-  				display: none;
-  			}
-  			&:last-child {
-  				top: unset;
-  				bottom: 2rem;
-  				font-size: 5rem;
-  				right: 1rem;
-  			}
-  		}
-  	}
+      @include v.mFlipUnder() {
+        &:first-child {
+          display: none;
+        }
+        &:last-child {
+          top: unset;
+          bottom: 2rem;
+          font-size: 5rem;
+          right: 1rem;
+        }
+      }
+    }
   }
 }
 

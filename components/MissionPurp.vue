@@ -8,55 +8,55 @@
       <Summary />
       <Goodies />
     </div>
-      <Brackets name="hello" />
-
+    <Brackets name="hello" />
   </section>
 </template>
 
 <script>
 // import {types as BracketTypes} from "@/components/Brackets"
 export default {
-  name: 'MissionPurp',
+  name: "MissionPurp",
   props: {
-    msg: String
+    msg: {
+      type: String,
+      default: "",
+    },
   },
   // data:function() {
   //  BracketTypes: BracketTypes
   // }
-}
+};
 </script>
 
 <style scoped lang="scss">
+@use "@/styles/global.scss" as g;
+@use "@/styles/vars" as v;
 
-  @use "@/styles/global.scss" as g;
-  @use "@/styles/vars" as v;
+section {
+  // margin-top: 28vw;
+  // scroll-margin-top: -6vh;
 
-  section {
-    // margin-top: 28vw;
-    // scroll-margin-top: -6vh;
+  &.mission-purpose {
+    // padding-block: 5rem;
 
-    &.mission-purpose {
-      // padding-block: 5rem;
+    &:before {
+      display: block;
+      content: "";
+      margin-bottom: 30vh;
+    }
 
-      &:before {
-        display: block;
-        content: "";
-        margin-bottom: 30vh;
-      }
+    clip-path: inset(0);
 
-      clip-path: inset(0);
+    .flat {
+      min-height: calc(100vh - 14vw);
+    }
 
-      .flat {
-        min-height: calc(100vh - 14vw);
-      }
+    // scroll-margin-top: 5vh;
 
-      // scroll-margin-top: 5vh;
-
-
-      @include v.mFlip() {
-        // padding-block: 12vw;
-        // scroll-margin-top: calc(5vw - 5rem);
-      }
+    @include v.mFlip() {
+      // padding-block: 12vw;
+      // scroll-margin-top: calc(5vw - 5rem);
     }
   }
+}
 </style>
