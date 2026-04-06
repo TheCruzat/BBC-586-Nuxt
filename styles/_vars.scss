@@ -27,22 +27,22 @@
 }
 
 .title {
-  font-family: 'Khand', cursive;
+  font-family: "Khand", cursive;
 }
 
 .subtitle {
-  font-family: 'Khand', cursive;
+  font-family: "Khand", cursive;
 }
 
-$bod:   #182825;
-$hot:   #9000B3;
-$con:   #016FB9;
-$conlyt: #EBF7FE;
-$dim:   #70877F;
-$lyt:   #C1CAD6;
-$lyter: #DAE0E7;
+$bod: #182825;
+$hot: #9000b3;
+$con: #016fb9;
+$conlyt: #ebf7fe;
+$dim: #70877f;
+$lyt: #c1cad6;
+$lyter: #dae0e7;
 $paper: #f0f0f0;
-$cream: #FAF3DD;
+$cream: #faf3dd;
 
 :root {
   --bod: #{$bod};
@@ -60,14 +60,13 @@ $cream: #FAF3DD;
   --gutter: 20px;
   --radius: 2rem; // 6px;
 
-  --title: 'Khand', cursive;
-  --subtitle: 'Khand', cursive;
+  --title: "Khand", cursive;
+  --subtitle: "Khand", cursive;
 
   --bodyFontSizeBaseline: 1rem;
   --bodyFontSize: var(--bodyFontSizeBaseline);
 
   --titleFontSize: 1.2rem;
-
 
   --headerBGPos: 90% 50%;
 

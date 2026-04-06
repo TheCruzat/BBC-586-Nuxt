@@ -1,7 +1,6 @@
-@use 'vars' as v;
+@use "vars" as v;
 
 @media screen {
-
   .know-rack {
     text-align: left;
     @include v.mFlip() {
@@ -28,9 +27,7 @@
   }
 }
 
-
 #app.resume {
-
   // it's gotta print yo
   @page: 5.5in 8.5in;
 
@@ -53,9 +50,8 @@
   }
 
   .mo {
-    @media(min-width: 36rem) {
+    @media (min-width: 36rem) {
       display: none;
-
     }
     border-top: 2px dotted var(--dim);
     svg {
@@ -65,12 +61,15 @@
     }
   }
 
-  header, section {
+  header,
+  section {
     max-width: 64rem;
     margin-left: auto;
     margin-right: auto;
 
-    h1, h2, h3 {
+    h1,
+    h2,
+    h3 {
       font-weight: 100;
     }
 
@@ -90,7 +89,7 @@
       text-align: left;
       font-size: 1.2rem;
       padding-left: 0;
-      margin-bottom: .2rem;
+      margin-bottom: 0.2rem;
       color: var(--con);
       line-height: 1.4;
 
@@ -109,7 +108,8 @@
       }
     }
 
-    p, nav {
+    p,
+    nav {
       margin: 0;
     }
     nav {
@@ -179,9 +179,9 @@
     padding: var(--gutter) 0;
 
     @include v.mFlip(80rem) {
-      padding-top: calc(var(--gutter)*2);
-      padding-bottom: calc(var(--gutter)*1.5);
-      margin-bottom: calc(var(--gutter)*1.5);
+      padding-top: calc(var(--gutter) * 2);
+      padding-bottom: calc(var(--gutter) * 1.5);
+      margin-bottom: calc(var(--gutter) * 1.5);
     }
 
     @media print {
@@ -198,7 +198,7 @@
       }
     }
 
-    >div {
+    > div {
       display: flex;
       width: 100%;
       justify-content: space-between;
@@ -212,7 +212,7 @@
       }
 
       + div {
-        margin-top: calc(var(--gutter)/1.5);
+        margin-top: calc(var(--gutter) / 1.5);
       }
     }
 
@@ -236,7 +236,8 @@
       }
     }
 
-    p + p > a, nav > a {
+    p + p > a,
+    nav > a {
       color: v.$hot;
     }
   }
@@ -265,25 +266,28 @@
     }
 
     &.center {
-      &, h2 {
+      &,
+      h2 {
         text-align: center;
       }
     }
 
-    p, nav {
-
+    p,
+    nav {
       &.small {
         font-size: 90%;
       }
     }
-    p + p, nav {
+    p + p,
+    nav {
       margin-top: 0.6rem;
     }
   }
 }
 
 @media print {
-  p, nav {
+  p,
+  nav {
     font-size: 0.9rem;
   }
 
@@ -311,16 +315,14 @@
 
     h3 {
       margin: 0 0 0.4rem;
-        font-size: 1.5rem;
+      font-size: 1.5rem;
       color: var(--hot);
 
       @include v.mFlip() {
-
         font-size: var(--titleFontSize);
         @media screen {
           margin-bottom: 0.5rem;
         }
-
       }
 
       @include v.mFlip(80rem) {
@@ -341,8 +343,6 @@
         font-size: 90%;
         margin-bottom: 1rem;
       }
-
-
     }
 
     ul {
@@ -398,13 +398,14 @@
 }
 
 @media (print) {
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     font-size: 12pt;
   }
   section p.trivia {
-    font-size: 2pt!important;
+    font-size: 2pt !important;
   }
-
 }
 
 @media (screen) {

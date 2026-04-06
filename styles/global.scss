@@ -1,7 +1,9 @@
-@use 'vars' as v;
+@use "vars" as v;
 
-html, body {
-  margin: 0; padding: 0;
+html,
+body {
+  margin: 0;
+  padding: 0;
   font-size: 16px;
   font-display: swap;
   scroll-behavior: smooth;
@@ -32,20 +34,24 @@ section {
   @include v.mFlip() {
     padding-bottom: 6vh;
   }
-
 }
 
-section, .standard-page {
+section,
+.standard-page {
   a {
     color: var(--con);
     background: var(--cream);
-    transition: background 0.35s ease-in, color 0.35s ease-in;
+    transition:
+      background 0.35s ease-in,
+      color 0.35s ease-in;
     border-bottom: 1px dotted var(--hot);
 
     &:hover {
       color: #fff;
       background: var(--hot);
-      transition: background 0.15s ease-out, color 0.15s ease-out;
+      transition:
+        background 0.15s ease-out,
+        color 0.15s ease-out;
     }
   }
   .btn {
@@ -57,7 +63,9 @@ section, .standard-page {
     font-weight: 900;
     font-size: 1.125rem;
     border: 2px solid var(--con);
-    transition: background 0.35s ease-in, color 0.35 ease-in;
+    transition:
+      background 0.35s ease-in,
+      color 0.35 ease-in;
     border-radius: var(--radius); // 0.5rem;
     line-height: 1;
 
@@ -71,11 +79,12 @@ section, .standard-page {
     }
 
     &:hover {
-      transition: background 0.15s ease-out, color 0.15 ease-out;
+      transition:
+        background 0.15s ease-out,
+        color 0.15 ease-out;
       background: var(--hot);
       color: #fff;
       border-color: var(--hot);
-
     }
   }
 }
@@ -122,13 +131,17 @@ section {
   a {
     color: var(--con);
     background: var(--cream);
-    transition: background 0.35s ease-in, color 0.35s ease-in;
+    transition:
+      background 0.35s ease-in,
+      color 0.35s ease-in;
     border-bottom: 1px dotted var(--hot);
 
     &:hover {
       color: #fff;
       background: var(--hot);
-      transition: background 0.15s ease-out, color 0.15s ease-out;
+      transition:
+        background 0.15s ease-out,
+        color 0.15s ease-out;
     }
   }
 
@@ -139,7 +152,7 @@ section {
     margin: 0 0 1vh;
     width: 100%;
     color: var(--con);
-      line-height: 1;
+    line-height: 1;
 
     @include v.mFlip() {
       font-size: 5vw;
@@ -159,7 +172,6 @@ section {
   hr {
     border: none;
     border-top: 1px solid var(--lyt);
-
   }
 
   p {
@@ -179,9 +191,9 @@ section {
     width: 100%;
     // background: red;
     padding-inline: 32px;
-      @include v.mFlipUnder() {
-        padding-inline: var(--gutter);
-      }
+    @include v.mFlipUnder() {
+      padding-inline: var(--gutter);
+    }
 
     &.shorty {
       @include v.mFlipUnder() {
@@ -211,7 +223,10 @@ section {
 
     &:before {
       position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       display: block;
       content: "";
       opacity: 0.4;
@@ -222,7 +237,10 @@ section {
       filter: blur(5px);
       -webkit-filter: blur(5px);
       position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       display: block;
       content: "";
       z-index: -2;
@@ -260,6 +278,6 @@ section {
   }
 }
 
-  .legal-content li:not(:last-child) {
-    margin-bottom: 1rem;
-  }
+.legal-content li:not(:last-child) {
+  margin-bottom: 1rem;
+}
