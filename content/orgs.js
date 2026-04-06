@@ -28,5 +28,5 @@ export const orgs = [
   "StudioLabs",
   "Vitamin T",
   "Webtrends",
-  "Yum!"
+  "Yum!",
 ];

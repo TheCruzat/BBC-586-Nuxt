@@ -1,9 +1,10 @@
-import { rootURL, blogURL } from '@/content/meta.js'
+import { rootURL, blogURL } from "@/content/meta.js";
 
 export const BuildSets = [
   {
     header: "front end development",
-    brief: "I build front end ui\'s and interfaces for a variety of systems and CMS\'s.<span class=\"desktop-up\"><br></span> I can sweet talk CSS wherever it can be found.",
+    brief:
+      "I build front end ui's and interfaces for a variety of systems and CMS's.<span class=\"desktop-up\"><br></span> I can sweet talk CSS wherever it can be found.",
 
     feature: {
       title: "The Seed: Renaissance FED",
@@ -11,7 +12,7 @@ export const BuildSets = [
       tasks: "UX, Full Stack Engineer",
       desc: "A downloadable demo to run locally, all of my best standards and practices for component-based Front End Development. Build in Astro, demo components in React, Vue and Svelte.",
       url: "//builtby.thecruzat.com/the-seed.zip",
-      year: "2026"
+      year: "2026",
     },
 
     links: [
@@ -26,9 +27,9 @@ export const BuildSets = [
           {
             name: "Christine Ellsworth",
             role: "PM, UX & Design",
-            link: "https://ells.work"
-          }
-        ]
+            link: "https://ells.work",
+          },
+        ],
       },
       {
         title: "TrustEngine Mortgage Coach",
@@ -38,56 +39,54 @@ export const BuildSets = [
         year: "2024",
         studio: {
           name: "Centric Park (now GraVoc)",
-          link: "//gravoc.com"
+          link: "//gravoc.com",
         },
         team: [
           {
             name: "Alicja Colon",
             role: "Project Manager",
-            link: "//www.linkedin.com/in/alicjacolon"
+            link: "//www.linkedin.com/in/alicjacolon",
           },
           {
             name: "Erik Bettencourt",
             role: "Senior UX Designer",
-            link: "//www.linkedin.com/in/erikbettencourt"
+            link: "//www.linkedin.com/in/erikbettencourt",
           },
           {
             name: "Eggert Ragnarsson",
             role: "Senior UI Designer",
-            link: "//www.linkedin.com/in/eggertr"
-          }
-        ]
-
+            link: "//www.linkedin.com/in/eggertr",
+          },
+        ],
       },
       {
-          title: "Unisyn Voting Systems",
-          tech: "React, SCSS, Styled Components",
-          tasks: "UX, Senior Front End Engineer, CSS Specialist",
-          desc: "I built a component library and several layouts for Unisyn\'s product line, based on designs from the <a href='//www.mile7.com' target='_blank'>Mile 7</a> agency. I worked on two applications; the first to aggregate election data across several views and metrics, the second app handled information for admin profiles. The result was a fully portable library that has been since leveraged for further products.",
-          year: "2024",
-          team: [
-            {
-              name: "Pam Conrad",
-              role: "Creative Director @ Mile7",
-              link: "//linkedin.com/in/pamconrad/"
-            },
-            {
-              name: "Christine Ellsworth",
-              role: "Design Lead @ Mile7",
-              link: "//ells.work"
-            },
-            {
-              name: "Stephanie Walmsley",
-              role: "Project Manager @ Unisyn",
-              link: "//www.linkedin.com/in/stephanie-walmsley-8aa4ab16"
-            },
-            {
-              name: "Bashar Daseh",
-              role: "Senior Back End Engineer @ Unisyn",
-              link: "//www.linkedin.com/in/bashar-daseh-hamed"
-            }
-          ]
-
+        title: "Unisyn Voting Systems",
+        tech: "React, SCSS, Styled Components",
+        tasks: "UX, Senior Front End Engineer, CSS Specialist",
+        desc: "I built a component library and several layouts for Unisyn's product line, based on designs from the <a href='//www.mile7.com' target='_blank'>Mile 7</a> agency. I worked on two applications; the first to aggregate election data across several views and metrics, the second app handled information for admin profiles. The result was a fully portable library that has been since leveraged for further products.",
+        year: "2024",
+        team: [
+          {
+            name: "Pam Conrad",
+            role: "Creative Director @ Mile7",
+            link: "//linkedin.com/in/pamconrad/",
+          },
+          {
+            name: "Christine Ellsworth",
+            role: "Design Lead @ Mile7",
+            link: "//ells.work",
+          },
+          {
+            name: "Stephanie Walmsley",
+            role: "Project Manager @ Unisyn",
+            link: "//www.linkedin.com/in/stephanie-walmsley-8aa4ab16",
+          },
+          {
+            name: "Bashar Daseh",
+            role: "Senior Back End Engineer @ Unisyn",
+            link: "//www.linkedin.com/in/bashar-daseh-hamed",
+          },
+        ],
       },
       {
         title: "Rogue Waste",
@@ -98,20 +97,20 @@ export const BuildSets = [
         year: "2023",
         studio: {
           name: "Daylight Studio",
-          link: "//thedaylightstudio.com"
+          link: "//thedaylightstudio.com",
         },
         team: [
           {
             name: "Ali Lloyd",
             role: "Project Manager",
-            link: "https://www.linkedin.com/in/alilloyd/"
+            link: "https://www.linkedin.com/in/alilloyd/",
           },
           {
             name: "Lauren Sell",
             role: "Designer",
-            link: "https://www.linkedin.com/in/lauren-sell/"
-          }
-        ]
+            link: "https://www.linkedin.com/in/lauren-sell/",
+          },
+        ],
       },
 
       {
@@ -123,10 +122,10 @@ export const BuildSets = [
         year: "2020",
         studio: {
           name: "BASIC",
-          link: "//www.basicagency.com"
+          link: "//www.basicagency.com",
         },
       },
-                  {
+      {
         title: "KFC Food Ordering App",
         tech: "React, Next.js, SCSS, GIT CI/CD",
         tasks: "UI Engineer, Front End Developer",
@@ -134,7 +133,7 @@ export const BuildSets = [
         year: "2020",
         studio: {
           name: "BASIC",
-          link: "//www.basicagency.com"
+          link: "//www.basicagency.com",
         },
       },
       {
@@ -145,50 +144,50 @@ export const BuildSets = [
         year: "2016-2017",
         studio: {
           name: "+Citizen (now EY Studio)",
-          link: "//www.studio.ey.com"
+          link: "//www.studio.ey.com",
         },
         team: [
           {
             name: "Kate Gordon-Bloomfield",
             role: "Project Manager",
-            link: "//www.linkedin.com/in/kategb"
+            link: "//www.linkedin.com/in/kategb",
           },
           {
             name: "Michael Wills",
             role: "Lead Developer",
-            link: "//www.linkedin.com/in/michaelcwills"
+            link: "//www.linkedin.com/in/michaelcwills",
           },
           {
             name: "Cole Reed",
             role: "Developer",
-            link: "//www.linkedin.com/in/colereed"
+            link: "//www.linkedin.com/in/colereed",
           },
           {
             name: "Steven Irby",
             role: "Developer",
-            link: "//www.linkedin.com/in/stevenirby1"
+            link: "//www.linkedin.com/in/stevenirby1",
           },
           {
             name: "Gregor Holzmann",
             role: "Developer",
-            link: "//www.linkedin.com/in/gregor-holzmann-616934116"
-          }
-        ]
+            link: "//www.linkedin.com/in/gregor-holzmann-616934116",
+          },
+        ],
       },
-    ]
+    ],
   },
   {
     header: "personal projects",
     brief: "Some of my best work is my most personal.",
     links: [
-    //      {
-    //        title: "",
-    //        tech: "",
-    //        tasks: "",
-    //        desc: "",
-    //        url: "",
-    //        year: "",
-    //      },
+      //      {
+      //        title: "",
+      //        tech: "",
+      //        tasks: "",
+      //        desc: "",
+      //        url: "",
+      //        year: "",
+      //      },
       {
         title: "More About Me",
         tech: "React/Next.js, API, Tailwind, ES6",
@@ -216,11 +215,12 @@ export const BuildSets = [
         year: "since 2015",
         repo: "",
       },
-    ]
+    ],
   },
   {
     header: "wordpress ftw",
-    brief: "Bespoke block themes, performance optimization, and <span class=\"tablet-up\"><br></span> custom plugin architecture for the world\'s most popular CMS.",
+    brief:
+      'Bespoke block themes, performance optimization, and <span class="tablet-up"><br></span> custom plugin architecture for the world\'s most popular CMS.',
     links: [
       //      {
       //        title: "",
@@ -243,7 +243,7 @@ export const BuildSets = [
       //      },
       {
         title: "GoTango",
-        tech: "WordPress (JS), ACF, Tailwind, ES6, \"Ursula\", Non-profit",
+        tech: 'WordPress (JS), ACF, Tailwind, ES6, "Ursula", Non-profit',
         tasks: "Project Manager, UX, Designer, Full Stack Engineer",
         desc: "I built a custom WordPress site for a MN non-profit, block theme, fourth live site to leverage my Ursula starter. Multiple Zeffy integrations to collect visitor donations, over a dozen custom dashboard Block Editor integrations to allow pages to be more dynamic and malleable. I shipped a lean, light site that looks as good in the browser as their students do on the dancefloor.",
         url: "//tango.dance",
@@ -254,7 +254,7 @@ export const BuildSets = [
             role: "UX, Designer, Copywriter",
             link: "//miriamziven.com",
           },
-        ]
+        ],
       },
       // {
       //   title: "Faber & Trause",
@@ -278,7 +278,7 @@ export const BuildSets = [
       // },
       {
         title: "Cole Parker Randall Foundation",
-        tech: "WordPress (JS), ACF, Tailwind, ES6, \"Ursula\", Non-profit",
+        tech: 'WordPress (JS), ACF, Tailwind, ES6, "Ursula", Non-profit',
         tasks: "UX, Full Stack Engineer",
         desc: "I built a custom WordPress site for an OR non-profit, block theme, third live site to leverage my Ursula starter. A mix of ACF and Gutenberg powered blocks, priority was on clean and intuitive dashboards for the user in editing content. Custom built Events functionality leveraged existing database content from Events Calendar plugin. The result is a clean, responsive site for a worthy cause.",
         url: "//smilesforsma.org",
@@ -287,9 +287,9 @@ export const BuildSets = [
           {
             name: "Christine Ellsworth",
             role: "PM, UX & Design",
-            link: "//ells.work"
-          }
-        ]
+            link: "//ells.work",
+          },
+        ],
       },
       {
         title: "Clackamass Soil And Water Conservation District",
@@ -300,35 +300,35 @@ export const BuildSets = [
         year: "2025",
         studio: {
           name: "The Beauty Shop",
-          link: "//www.thebeauty-shop.com"
+          link: "//www.thebeauty-shop.com",
         },
         team: [
           {
             name: "Liz Neilson",
             role: "Creative Director",
-            link: "//www.linkedin.com/in/liz-neilson-94568910"
+            link: "//www.linkedin.com/in/liz-neilson-94568910",
           },
           {
             name: "Kristin Howe",
             role: "Project Manager",
-            link: "//www.linkedin.com/in/kristin-howe-1628245b"
-          }
-        ]
+            link: "//www.linkedin.com/in/kristin-howe-1628245b",
+          },
+        ],
       },
       {
         title: "Miriam Ziven",
-        tech: "WordPress (JS), ACF, Tailwind, ES6, \"Ursula\"",
+        tech: 'WordPress (JS), ACF, Tailwind, ES6, "Ursula"',
         tasks: "Project Manager, UX, Full Stack Engineer",
         desc: "I built a custom WordPress site for a MN freelance project manager, block theme, first live build to leverage my Ursula Tailwind starter. Custom blocks, widgets and patterns implemented in React and HTML templates. We launched a lightweight, efficient site that provided the client a modern and malleable platform for her professional presentation.",
         url: "//miriamziven.com",
         year: "2025",
         team: [
           {
-              name: "Miriam Ziven",
-              role: "UX, Copywriter",
-              link: "//miriamziven.com",
-          }
-        ]
+            name: "Miriam Ziven",
+            role: "UX, Copywriter",
+            link: "//miriamziven.com",
+          },
+        ],
       },
       {
         title: "BeLearning Center",
@@ -341,9 +341,9 @@ export const BuildSets = [
           {
             name: "Christine Ellsworth",
             role: "UX & Design",
-            link: "//ells.work"
-          }
-        ]
+            link: "//ells.work",
+          },
+        ],
       },
       {
         title: "MIT School of Humanities, Arts and Social Sciences",
@@ -354,20 +354,20 @@ export const BuildSets = [
         year: "2024",
         studio: {
           name: "Centric Park (now GraVoc)",
-          link: "//www.gravoc.com"
+          link: "//www.gravoc.com",
         },
         team: [
           {
             name: "Alicja Colon",
             role: "Project Manager",
-            link: "//www.linkedin.com/in/alicjacolon"
+            link: "//www.linkedin.com/in/alicjacolon",
           },
           {
             name: "Jeff McAllister",
             role: "UX & Design",
-            link: "//www.linkedin.com/in/jeffmcallister"
-          }
-        ]
+            link: "//www.linkedin.com/in/jeffmcallister",
+          },
+        ],
       },
       {
         title: "MIT Institutional Research",
@@ -378,20 +378,20 @@ export const BuildSets = [
         year: "2024",
         studio: {
           name: "Centric Park (now GraVoc)",
-          link: "//www.gravoc.com"
+          link: "//www.gravoc.com",
         },
         team: [
           {
             name: "Alicja Colon",
             role: "Project Manager",
-            link: "//www.linkedin.com/in/alicjacolon"
+            link: "//www.linkedin.com/in/alicjacolon",
           },
           {
             name: "Jeff McAllister",
             role: "UX & Design",
-            link: "//www.linkedin.com/in/jeffmcallister"
-          }
-        ]
+            link: "//www.linkedin.com/in/jeffmcallister",
+          },
+        ],
       },
       {
         title: "D&O Garbage & Recycling",
@@ -402,20 +402,20 @@ export const BuildSets = [
         year: "2023",
         studio: {
           name: "Daylight Studio",
-          link: "//thedaylightstudio.com"
+          link: "//thedaylightstudio.com",
         },
         team: [
           {
             name: "Ali Lloyd",
             role: "Project Manager",
-            link: "https://www.linkedin.com/in/alilloyd/"
+            link: "https://www.linkedin.com/in/alilloyd/",
           },
           {
             name: "Alexander Ali",
             role: "UX, Designer",
-            link: "//www.linkedin.com/in/the-alexander-ali/"
-          }
-        ]
+            link: "//www.linkedin.com/in/the-alexander-ali/",
+          },
+        ],
       },
       {
         title: "Miriam Lea Dance",
@@ -428,9 +428,9 @@ export const BuildSets = [
           {
             name: "Miriam Ziven",
             role: "Copywriter, UX",
-            link: "//miriamziven.com"
-          }
-        ]
+            link: "//miriamziven.com",
+          },
+        ],
       },
       {
         title: "Industrial Commercial Electric",
@@ -443,9 +443,9 @@ export const BuildSets = [
           {
             name: "Christine Ellsworth",
             role: "PM, UX & Design",
-            link: "//ells.work"
-          }
-        ]
+            link: "//ells.work",
+          },
+        ],
       },
       {
         title: "Modern Adventure Magazine",
@@ -458,14 +458,14 @@ export const BuildSets = [
           {
             name: "Sara Schumacher",
             role: "PM, Designer",
-            link: "//www.linkedin.com/in/saraschumacherdesign/"
+            link: "//www.linkedin.com/in/saraschumacherdesign/",
           },
           {
             name: "Sam Templeman",
             role: "Back End Engineer, Ecosystem Lead",
-            link: "//www.linkedin.com/in/samtempleman"
+            link: "//www.linkedin.com/in/samtempleman",
           },
-        ]
+        ],
       },
       {
         title: "Lisa the Doula",
@@ -478,13 +478,13 @@ export const BuildSets = [
           {
             name: "Christine Ellsworth",
             role: "UX & Design",
-            link: "//ells.work"
+            link: "//ells.work",
           },
           {
             name: "Lisa Shelley de Brauw",
             role: "Copywriter",
-          }
-        ]
+          },
+        ],
       },
       {
         title: "Synergy Wellness",
@@ -497,10 +497,10 @@ export const BuildSets = [
           {
             name: "Christine Ellsworth",
             role: "UX & Design",
-            link: "//ells.work"
-          }
-        ]
+            link: "//ells.work",
+          },
+        ],
       },
-    ]
+    ],
   },
 ];

@@ -1,4 +1,12 @@
-import { codeURL, blogURL, rootURL, contactEmail, liURL, ghURL, cpURL } from "@/content/meta.js"
+import {
+  codeURL,
+  blogURL,
+  rootURL,
+  contactEmail,
+  liURL,
+  ghURL,
+  cpURL,
+} from "@/content/meta.js";
 
 export const GoodiesLinks = [
   {
@@ -23,7 +31,7 @@ export const GoodiesLinks = [
   {
     title: "Email Dan Cruzat",
     label: "email",
-    url: "mailto:"+contactEmail,
+    url: "mailto:" + contactEmail,
     icon: "fas-paper-plane",
     mega: true,
   },

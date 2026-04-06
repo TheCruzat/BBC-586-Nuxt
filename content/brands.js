@@ -34,5 +34,5 @@ export const brands = [
   "Tide",
   "TrustEngine",
   "The Union Wine Company",
-  "VTech"
+  "VTech",
 ];

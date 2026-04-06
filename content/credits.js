@@ -1,4 +1,4 @@
-  /*
+/*
   {
     company: "",
     position: "",
@@ -22,8 +22,8 @@ const credits = [
       "Developing 'Ursula' WP + Tailwind starter theme",
       "Leveraging AI to accelerate development cycles",
       "Full-cycle maintenance, upgrades & automated testing",
-      "Auditing styles & performance for micro-optimizations"
-    ]
+      "Auditing styles & performance for micro-optimizations",
+    ],
   },
   {
     company: "Procter & Gamble",
@@ -34,8 +34,8 @@ const credits = [
       "Technical mentorship for PHP & CSS standards",
       "Enterprise analytics tagging via BigCommerce",
       "WP feature development & core upgrades",
-      "React/Vue component architecture"
-    ]
+      "React/Vue component architecture",
+    ],
   },
   {
     company: "The Beauty Shop",
@@ -46,8 +46,8 @@ const credits = [
       "Retainer-based maintenance & feature scaling",
       "Modernizing & refactoring inherited legacy code",
       "CSS performance & asset optimization",
-      "Bespoke Gutenberg & Elementor block development"
-    ]
+      "Bespoke Gutenberg & Elementor block development",
+    ],
   },
   {
     company: "Centric Park",
@@ -58,8 +58,8 @@ const credits = [
       "Repo ownership, code reviews & mentorship",
       "Block-based theme architecture",
       "Cross-framework UI component development",
-      "Optimization for performance & accessibility"
-    ]
+      "Optimization for performance & accessibility",
+    ],
   },
   {
     company: "Unisyn Voting Systems",
@@ -70,8 +70,8 @@ const credits = [
       "CSS Lead; established enterprise style standards",
       "Engineered UI layers for core product suite",
       "Bridged UX requirements with software engineering",
-      "Triage & resolution of complex user flows"
-    ]
+      "Triage & resolution of complex user flows",
+    ],
   },
   {
     company: "StudioLabs",
@@ -82,8 +82,8 @@ const credits = [
       "Standardizing legacy themes to house specs",
       "Rapid feature prototyping & deployment",
       "Patching critical issues in legacy environments",
-      "Cross-functional team & QA coordination"
-    ]
+      "Cross-functional team & QA coordination",
+    ],
   },
   {
     company: "Daylight Studio",
@@ -94,8 +94,8 @@ const credits = [
       "End-to-end feature production & maintenance",
       "Multi-instance management via Pantheon",
       "Technical liaison for 3rd party agencies",
-      "DevOps support & team coordination"
-    ]
+      "DevOps support & team coordination",
+    ],
   },
   {
     company: "Emerge Interactive",
@@ -106,8 +106,8 @@ const credits = [
       "Project lead, repo ownership & code reviews",
       "Custom layout systems & responsive frameworks",
       "UX reviews & design-to-code fidelity",
-      "Cross-browser testing & UI bugfixing"
-    ]
+      "Cross-browser testing & UI bugfixing",
+    ],
   },
   {
     company: "ShirtSpace",
@@ -118,9 +118,9 @@ const credits = [
       "Core Web Vitals audit & speed optimization",
       "Interactive enhancements via modern ES6",
       "UX strategy & engagement optimization",
-      "Legacy browser support & bugfixing"
+      "Legacy browser support & bugfixing",
     ],
-    noprint: true
+    noprint: true,
   },
   {
     company: "BASIC",
@@ -131,9 +131,9 @@ const credits = [
       "UI for YUM! Brands delivery application",
       "Merch store development for Riot Games",
       "Collaborative peer-reviewed development",
-      "Resolving complex CSS/UI regressions"
+      "Resolving complex CSS/UI regressions",
     ],
-    noprint: true
+    noprint: true,
   },
   {
     company: "creative FEW",
@@ -144,9 +144,9 @@ const credits = [
       "Shared repo development & code reviews",
       "Full-stack WordPress theme development",
       "React & Angular component architecture",
-      "QA support & CSS oversight"
+      "QA support & CSS oversight",
     ],
-    noprint: true
+    noprint: true,
   },
   {
     company: "Industrial Commercial Electric",
@@ -157,9 +157,9 @@ const credits = [
       "Custom responsive theme architecture",
       "Employee portal with secure login logic",
       "Custom internal reporting systems",
-      "QA & cross-browser validation"
+      "QA & cross-browser validation",
     ],
-    noprint: true
+    noprint: true,
   },
   {
     company: "Modern Adventure",
@@ -170,9 +170,9 @@ const credits = [
       "In-house developer pairing & support",
       "Client portal & minisite templates",
       "Editorial blog & magazine layouts",
-      "UI troubleshooting & bug resolution"
+      "UI troubleshooting & bug resolution",
     ],
-    noprint: true
+    noprint: true,
   },
   {
     company: "+Citizen (now EY)",
@@ -183,10 +183,10 @@ const credits = [
       "XFinity customer portal development",
       "Interactive component architecture",
       "CSS Lead: code reviews & approvals",
-      "UI problem solving & QA testing"
+      "UI problem solving & QA testing",
     ],
-    noprint: true
-  }
+    noprint: true,
+  },
 ];
 
 export default credits;
