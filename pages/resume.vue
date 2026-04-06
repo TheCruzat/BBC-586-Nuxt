@@ -88,6 +88,9 @@ import { skillsIntro, skillsSub } from "@/content/skills.js";
 import { contactEmail, portURL, codeURL, liURL, rootURL, resumeFile, portVersion } from "@/content/meta";
 const yr = new Date().getFullYear();
 
+// hide email
+const showEmail = true;
+
 // Set page title
 useHead({
   title: 'Resume of Dan Cruzat : Front End Developer / UI Engineer'
@@ -99,7 +102,8 @@ const resumeLinks = [
     label: contactEmail,
     href: "mailto:" + contactEmail + "?subject='I came across your resume...'",
     ariaLabel: "email Dan Cruzat",
-    title: "send Dan Cruzat an email"
+    title: "send Dan Cruzat an email",
+    // class: "no-print"
   },
   {
     label: "download resume",
@@ -114,7 +118,7 @@ const resumeLinks = [
 const resumeNav = [
   {
     label: "portfolio",
-    href: "/",
+    href: portURL,
     ariaLabel: "Dan Cruzat's Portfolio",
     title: "see the portfolio of Dan Cruzat"
   },

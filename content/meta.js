@@ -1,6 +1,4 @@
 export const
-  resumeFile = '/Dan-Cruzat-resume-0326.pdf',
-  resumeURL = '/resume',
   rootURL = 'https://thecruzat.com',
   portURL = 'https://builtby.thecruzat.com',
   codeURL = 'https://thecruzat.com/code-samples',
@@ -8,6 +6,8 @@ export const
   liURL = 'https://www.linkedin.com/in/dancruzat/',
   ghURL = 'https://github.com/thecruzat',
   cpURL = 'https://codepen.io/DanCruzat',
+  resumeFile = '/Dan-Cruzat-resume-0426.pdf',
+  resumeURL = portURL + '/resume',
   contactEmail = 'thecruzat@gmail.com',
   portVersion = '5.86';
 
