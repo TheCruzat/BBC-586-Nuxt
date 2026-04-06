@@ -1,8 +1,6 @@
 <template>
   <div id="app" class="social">
-
     <div class="social-container">
-
       <div class="social-logo-wrap">
         <Logo :type="types.social" />
       </div>
@@ -10,27 +8,24 @@
       <div class="social-descriptor">
         <p>builtby the cruzat {{ pv }}</p>
       </div>
-
     </div>
-
   </div>
 </template>
 
 <script setup>
-import { types } from "@/components/Logo"
+import { types } from "@/components/Logo";
 import { portVersion } from "@/content/meta";
 
 const pv = portVersion;
 // Set page title
 useHead({
-  title: 'Social Image'
-})
+  title: "Social Image",
+});
 </script>
 
 <style scoped lang="scss">
-
-  @use "@/styles/global.scss" as g;
-  @use "@/styles/vars" as v;
+@use "@/styles/global.scss" as g;
+@use "@/styles/vars" as v;
 
 .social {
   width: 100vw;

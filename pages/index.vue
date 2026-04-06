@@ -16,12 +16,17 @@
       <HeaderHome />
 
       <main id="app">
-        <div style="position: relative;">
-          <div style="position: relative;">
-            <Nav />
+        <div class="relative">
+          <div class="relative">
+            <Navigation />
             <MissionPurp />
             <AI />
-            <Split id="experience" msg="experience" :img="img[1]" :priority="true" />
+            <Split
+              id="experience"
+              msg="experience"
+              :img="img[1]"
+              :priority="true"
+            />
             <SkillsExp />
             <Split id="work" msg="notable projects" :img="img[2]" />
             <Builds @loaded="onSectionLoaded('work')" />
@@ -42,15 +47,15 @@
 </template>
 
 <script setup>
-import { ref, onMounted, nextTick } from 'vue';
-import { ImageSets } from "@/content/SplitIMG"
+import { ref, onMounted, nextTick } from "vue";
+import { ImageSets } from "@/content/SplitIMG";
 
 const img = ref(ImageSets);
 const showLoader = ref(false);
 
 const loadedSections = ref({
   work: false,
-  blog: false
+  blog: false,
 });
 
 const onSectionLoaded = (section) => {
@@ -71,12 +76,12 @@ const handleScrollAfterLoad = async () => {
       const el = document.querySelector(currentRoute.hash);
       if (el) {
         // Use a small delay to allow layout to fully settle
-        await new Promise(resolve => setTimeout(resolve, 50));
+        await new Promise((resolve) => setTimeout(resolve, 50));
 
         const top = el.getBoundingClientRect().top + window.pageYOffset;
         window.scrollTo({
-          top: top,
-          behavior: 'instant'
+          top,
+          behavior: "instant",
         });
       }
     }
@@ -96,7 +101,7 @@ onMounted(() => {
   // This ensures page isn't hidden if sections load slowly
   const loaderTimeout = setTimeout(() => {
     showLoader.value = false;
-  }, 2000);
+  }, 500);
 
   // Cleanup
   onBeforeUnmount(() => {
@@ -106,7 +111,11 @@ onMounted(() => {
 </script>
 
 <style scoped lang="scss">
-@use "@/styles/global.scss" as *;
+@use "@/styles/global.scss" as g;
+
+.relative {
+  position: relative;
+}
 
 .fade-leave-active {
   transition: opacity 0.5s ease;
