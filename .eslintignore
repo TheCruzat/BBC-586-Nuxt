@@ -1,0 +1,16 @@
+node_modules
+dist
+.nuxt
+.next
+build
+coverage
+*.min.js
+*.generated.ts
+*.generated.js
+public/
+.env
+.env.local
+.env.*.local
+.vscode
+.idea
+.nuxt.config.old.js

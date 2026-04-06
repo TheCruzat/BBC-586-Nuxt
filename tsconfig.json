@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "#app": ["./node_modules/nuxt/dist/app/index.mjs"],
+      "#build": ["./.nuxt"],
+      "~": ["."],
+      "@": ["."]
+    },
+    "types": ["node", "vitest/globals"]
+  },
+  "include": [
+    "nuxt.config.ts",
+    "app.vue",
+    "error.vue",
+    "pages/**/*.vue",
+    "components/**/*.vue",
+    "plugins/**/*.ts",
+    "content/**/*.ts",
+    "composables/**/*.ts",
+    "utils/**/*.ts",
+    "middleware/**/*.ts",
+    ".nuxt/nuxt.d.ts"
+  ],
+  "exclude": ["node_modules", "dist", ".nuxt", "coverage"]
+}
