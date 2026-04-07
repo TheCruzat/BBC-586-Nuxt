@@ -1,15 +1,17 @@
 <template>
   <div class="site-wrapper">
     <!-- Loader overlay: only visible during client-side hydration on first visit -->
-    <Transition name="fade">
-      <div v-if="showLoader" class="loader">
-        <div class="loader-content">
-          <Logo type="loader" />
-          <h3>built by the cruzat v5.86</h3>
-          <p>loading...</p>
+    <ClientOnly>
+      <Transition name="fade">
+        <div v-if="showLoader" class="loader">
+          <div class="loader-content">
+            <Logo type="loader" />
+            <h3>built by the cruzat v5.86</h3>
+            <p>loading...</p>
+          </div>
         </div>
-      </div>
-    </Transition>
+      </Transition>
+    </ClientOnly>
 
     <!-- Main content: always visible (SSR-friendly) -->
     <div class="main-content">
@@ -47,66 +49,18 @@
 </template>
 
 <script setup>
-import { ref, onMounted, nextTick } from "vue";
+import { onMounted } from "vue";
 import { ImageSets } from "@/content/SplitIMG";
 
 const img = ref(ImageSets);
-const showLoader = ref(false);
-
-const loadedSections = ref({
-  work: false,
-  blog: false,
-});
-
-const onSectionLoaded = (section) => {
-  loadedSections.value[section] = true;
-  handleScrollAfterLoad();
-};
-
-const handleScrollAfterLoad = async () => {
-  // Only execute on the client-side after hydration
-  if (process.client) {
-    // Wait for DOM to settle before checking hash and scrolling
-    await nextTick();
-
-    const { $router } = useNuxtApp();
-    const currentRoute = $router.currentRoute.value;
-
-    if (currentRoute.hash) {
-      const el = document.querySelector(currentRoute.hash);
-      if (el) {
-        // Use a small delay to allow layout to fully settle
-        await new Promise((resolve) => setTimeout(resolve, 50));
-
-        const top = el.getBoundingClientRect().top + window.pageYOffset;
-        window.scrollTo({
-          top,
-          behavior: "instant",
-        });
-      }
-    }
-
-    // Hide loader after scroll is complete
-    showLoader.value = false;
-  }
-};
+const showLoader = ref(true);
 
 onMounted(() => {
-  // On client-side mount, show the loader briefly for UX
-  if (process.client) {
-    showLoader.value = true;
-  }
-
-  // Fallback: hide loader after a reasonable timeout
-  // This ensures page isn't hidden if sections load slowly
-  const loaderTimeout = setTimeout(() => {
+  // As soon as the client takes over, start the fade out.
+  // This is much faster than waiting for specific section loads.
+  setTimeout(() => {
     showLoader.value = false;
-  }, 500);
-
-  // Cleanup
-  onBeforeUnmount(() => {
-    clearTimeout(loaderTimeout);
-  });
+  }, 300); // 300ms is the "sweet spot" for a quick brand flash
 });
 </script>
 

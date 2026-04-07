@@ -1,13 +1,19 @@
 <template>
   <div class="flat">
-    <component :is="headerTag" v-if="header"> {{ header }} </component>
+    <template v-if="header">
+      <component :is="headerTag || 'h3'">{{ header }}</component>
+    </template>
+
     <div v-if="content" :class="containerClass">
-      <component :is="contentTag"> {content} </component>
+      <component :is="contentTag || 'div'">{{ content }}</component>
     </div>
-    <component v-if="!content" :is="contentTag">
-      <slot />
-    </component>
-    <slot v-if="!contentTag" />
+
+    <template v-else>
+      <component v-if="contentTag" :is="contentTag" :class="containerClass">
+        <slot />
+      </component>
+      <slot v-else />
+    </template>
   </div>
 </template>
 
@@ -34,7 +40,7 @@ export default {
     },
     contentTag: {
       type: String,
-      default: "",
+      default: "div",
     },
   },
 };

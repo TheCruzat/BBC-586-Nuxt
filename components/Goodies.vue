@@ -9,7 +9,7 @@
       target="_blank"
       :class="{ sub: ndx > topRow }"
     >
-      <font-awesome-icon :icon="[link.icon.slice(0, 3), link.icon.slice(4)]" />
+      <ClientOnly><font-awesome-icon :icon="[link.icon.slice(0, 3), link.icon.slice(4)]" /></ClientOnly>
       <span class="label" v-html="link.label"></span>
     </a>
   </div>

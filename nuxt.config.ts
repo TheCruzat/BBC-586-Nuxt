@@ -177,6 +177,9 @@ export default defineNuxtConfig({
             }
           }
         }
+        if (!nuxt.options.runtimeConfig.public.theNames) {
+          nuxt.options.runtimeConfig.public.theNames = [];
+        }
       } catch (e) {
         console.error("Build-time fetch failed:", e);
       }

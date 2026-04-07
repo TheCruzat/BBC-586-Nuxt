@@ -27,9 +27,10 @@
   }
 }
 
+// it's gotta print yo
+@page { size: 5.5in 8.5in; }
+
 #app.resume {
-  // it's gotta print yo
-  @page: 5.5in 8.5in;
 
   text-align: left;
   padding-left: 1rem;

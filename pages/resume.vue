@@ -86,7 +86,7 @@
         class="btn"
         aria-label="return to main page"
         title="return to Dan Cruzat's portfolio"
-        ><font-awesome-icon :icon="['fas', 'chevron-left']" /> back to main</a
+        ><ClientOnly><font-awesome-icon :icon="['fas', 'chevron-left']" /></ClientOnly> back to main</a
       >
       <a
         :href="resumeFile"
@@ -94,16 +94,16 @@
         target="_blank"
         aria-label="download resume pdf"
         title="download Dan Cruzat's resume as a pdf"
-        >download pdf <font-awesome-icon :icon="['fas', 'chevron-down']"
-      /></a>
+        >download pdf <ClientOnly><font-awesome-icon :icon="['fas', 'chevron-down']"
+      /></ClientOnly></a>
       <a
         :href="liURL"
         class="btn"
         target="_blank"
         aria-label="Dan Cruzat on LinkedIn"
         title="connect with Dan Cruzat on LinkedIn"
-        >history @ linkedin <font-awesome-icon :icon="['fas', 'chevron-right']"
-      /></a>
+        >history @ linkedin <ClientOnly><font-awesome-icon :icon="['fas', 'chevron-right']"
+      /></ClientOnly></a>
     </section>
 
     <section class="resume-footer no-print">
