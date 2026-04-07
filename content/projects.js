@@ -285,7 +285,7 @@ export const BuildSets = [
         tech: "WordPress (JS), Kubio, ES6",
         tasks: "Project Manager, UX, Design, Tech Lead",
         desc: "I engineered a makeover and rehab on an existing WordPress site for an OR family law firm. running the Kubio theme. Delivering additions via plugin kept the client in the system they knew.",
-        url: "//ft-familylaw.com",
+        url: "//ftfamilylaw.com",
         year: "2026",
         team: [
           {
