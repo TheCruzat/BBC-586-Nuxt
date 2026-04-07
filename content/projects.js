@@ -9,9 +9,9 @@ export const BuildSets = [
     feature: {
       title: "The Seed: Renaissance FED",
       tech: "Astro, Tailwind, React, Vue, Svelte, Vitest, WP-API",
-      tasks: "UX, Full Stack Engineer",
+      tasks: "UX, Design, Full Stack Engineer",
       desc: "A downloadable demo to run locally, all of my best standards and practices for component-based Front End Development. Build in Astro, demo components in React, Vue and Svelte.",
-      url: "//builtby.thecruzat.com/the-seed.zip",
+      url: "//github.com/TheCruzat/TheSeed",
       year: "2026",
     },
 
@@ -179,6 +179,14 @@ export const BuildSets = [
   {
     header: "personal projects",
     brief: "Some of my best work is my most personal.",
+    feature: {
+      title: "Built By The Cruzat v5.86",
+      tech: "Nuxt, Vue, SCSS,",
+      tasks: "UX, Design, Full Stack Engineer",
+      desc: "The source code for this portfolio site, available to explore and test.",
+      url: "//github.com/TheCruzat/BBC-586-Nuxt",
+      year: "2026",
+    },
     links: [
       //      {
       //        title: "",
@@ -195,7 +203,7 @@ export const BuildSets = [
         desc: "My homepage is intended to be the personal side of the professional, to give a bit of background about me and my upbringing in Evanston, IL. A Villain's origin story! I chose Next.js as a solid React based platform, allowing flexibility for site and page structure while digesting content from various API sources, enabling SSR, and clean SEO.",
         url: rootURL,
         year: "since 2013",
-        repo: "",
+        repo: "//github.com/TheCruzat/TheCruzat25",
       },
       {
         title: "ARX by P1RK5",
@@ -204,7 +212,7 @@ export const BuildSets = [
         desc: "In 2020 I completed the ARX album under my P1RK5 moniker (pronounced 'perks'), four suites of music that each describing different stages of life, with the challenge of only using the equipment and techniques available at that time. This Nuxt.js site was built to function as liner notes for the album, with stories, lyrics and equipment info. It's an SPA with an embedded player for the album, matrix-based navigation allows the user to move along the main axis (the year) or a sub axis (lyrics, stories, gear).",
         url: "//arx.p1rk5.com",
         year: "2020",
-        repo: "",
+        repo: "//github.com/TheCruzat/P1RK5-ARX",
       },
       {
         title: "Coffee with the Cruzat",
@@ -213,7 +221,7 @@ export const BuildSets = [
         desc: "In 2015, I launched a blog to cover code tutorials, thoughts around web development, and horror stories from the life of a career freelancer. In 2025, I used my Ursula Tailwind Starter to create a new, modern theme to breathe new life into my old blog. This involved careful surgical transfer of deep functionality from the original PHP templates to modern HTML templates with PHP patterns. The legacy content was preserved while allowing new articles to be published with modern layout methods.",
         url: blogURL,
         year: "since 2015",
-        repo: "",
+        repo: "//github.com/TheCruzat/CWTC3",
       },
     ],
   },
@@ -221,6 +229,22 @@ export const BuildSets = [
     header: "wordpress ftw",
     brief:
       'Bespoke block themes, performance optimization, and <span class="tablet-up"><br></span> custom plugin architecture for the world\'s most popular CMS.',
+    feature: {
+      title: "GoTango",
+      tech: 'WordPress (JS), ACF, Tailwind, ES6, "Ursula", Non-profit',
+      tasks: "Project Manager, UX, Designer, Full Stack Engineer",
+      desc: "I built a custom WordPress site for a MN non-profit, block theme, fourth live site to leverage my Ursula starter. Multiple Zeffy integrations to collect visitor donations, over a dozen custom dashboard Block Editor integrations to allow pages to be more dynamic and malleable. I shipped a lean, light site that looks as good in the browser as their students do on the dancefloor.",
+      url: "//tango.dance",
+      year: "2026",
+      repo: "//github.com/TheCruzat/GoTango",
+      team: [
+        {
+          name: "Miriam Ziven",
+          role: "UX, Designer, Copywriter",
+          link: "//miriamziven.com",
+        },
+      ],
+    },
     links: [
       //      {
       //        title: "",
@@ -241,41 +265,41 @@ export const BuildSets = [
       //          }
       //        ]
       //      },
-      {
-        title: "GoTango",
-        tech: 'WordPress (JS), ACF, Tailwind, ES6, "Ursula", Non-profit',
-        tasks: "Project Manager, UX, Designer, Full Stack Engineer",
-        desc: "I built a custom WordPress site for a MN non-profit, block theme, fourth live site to leverage my Ursula starter. Multiple Zeffy integrations to collect visitor donations, over a dozen custom dashboard Block Editor integrations to allow pages to be more dynamic and malleable. I shipped a lean, light site that looks as good in the browser as their students do on the dancefloor.",
-        url: "//tango.dance",
-        year: "2026",
-        team: [
-          {
-            name: "Miriam Ziven",
-            role: "UX, Designer, Copywriter",
-            link: "//miriamziven.com",
-          },
-        ],
-      },
       // {
-      //   title: "Faber & Trause",
-      //   tech: "WordPress (JS), Kubio, ES6",
-      //   tasks: "Project Manager, UX, Design, Tech Lead",
-      //   desc: "I engineered a makeover and rehab on an existing WordPress site for an OR family law firm. running the Kubio theme. Delivering additions via plugin kept the client in the system they knew.",
-      //   url: "//ft-familylaw.com",
+      //   title: "GoTango",
+      //   tech: 'WordPress (JS), ACF, Tailwind, ES6, "Ursula", Non-profit',
+      //   tasks: "Project Manager, UX, Designer, Full Stack Engineer",
+      //   desc: "I built a custom WordPress site for a MN non-profit, block theme, fourth live site to leverage my Ursula starter. Multiple Zeffy integrations to collect visitor donations, over a dozen custom dashboard Block Editor integrations to allow pages to be more dynamic and malleable. I shipped a lean, light site that looks as good in the browser as their students do on the dancefloor.",
+      //   url: "//tango.dance",
       //   year: "2026",
       //   team: [
       //     {
-      //       name: "KD Henderson",
-      //       role: "Identity & Branding, Copywriter",
-      //       link: "#",
+      //       name: "Miriam Ziven",
+      //       role: "UX, Designer, Copywriter",
+      //       link: "//miriamziven.com",
       //     },
-      //     {
-      //       name: "Julia Dudley",
-      //       role: "Editor & Copy",
-      //       link: "#",
-      //     }
-      //   ]
+      //   ],
       // },
+      {
+        title: "Faber & Trause",
+        tech: "WordPress (JS), Kubio, ES6",
+        tasks: "Project Manager, UX, Design, Tech Lead",
+        desc: "I engineered a makeover and rehab on an existing WordPress site for an OR family law firm. running the Kubio theme. Delivering additions via plugin kept the client in the system they knew.",
+        url: "//ft-familylaw.com",
+        year: "2026",
+        team: [
+          {
+            name: "KD Henderson",
+            role: "Identity & Branding, Copywriter",
+            link: "//www.linkedin.com/in/kdhenderson",
+          },
+          {
+            name: "Julia Dudley",
+            role: "Editor & Copy",
+            link: "//www.linkedin.com/in/juliakdudley",
+          },
+        ],
+      },
       {
         title: "Cole Parker Randall Foundation",
         tech: 'WordPress (JS), ACF, Tailwind, ES6, "Ursula", Non-profit',
@@ -283,6 +307,7 @@ export const BuildSets = [
         desc: "I built a custom WordPress site for an OR non-profit, block theme, third live site to leverage my Ursula starter. A mix of ACF and Gutenberg powered blocks, priority was on clean and intuitive dashboards for the user in editing content. Custom built Events functionality leveraged existing database content from Events Calendar plugin. The result is a clean, responsive site for a worthy cause.",
         url: "//smilesforsma.org",
         year: "2025",
+        repo: "//github.com/TheCruzat/CPRF-v1",
         team: [
           {
             name: "Christine Ellsworth",
@@ -322,6 +347,7 @@ export const BuildSets = [
         desc: "I built a custom WordPress site for a MN freelance project manager, block theme, first live build to leverage my Ursula Tailwind starter. Custom blocks, widgets and patterns implemented in React and HTML templates. We launched a lightweight, efficient site that provided the client a modern and malleable platform for her professional presentation.",
         url: "//miriamziven.com",
         year: "2025",
+        repo: "//github.com/TheCruzat/MZO",
         team: [
           {
             name: "Miriam Ziven",
@@ -352,6 +378,7 @@ export const BuildSets = [
         desc: "I built a custom WordPress site for MIT, meeting their rigorous requirements for brand alignment and accessibility. Over 25 ACF powered blocks were developed and utilized for the required layouts and interactions. A Vue.js interface was built to digest several API's into a single Events listing. We delivered a robust brochure experience that allowed users to explore the MIT SHASS.",
         url: "//shass.mit.edu",
         year: "2024",
+        repo: "//github.com/TheCruzat/mit-shass",
         studio: {
           name: "Centric Park (now GraVoc)",
           link: "//www.gravoc.com",
@@ -376,6 +403,7 @@ export const BuildSets = [
         desc: "I built a custom WordPress archive for MIT, meeting their rigorous requirements for brand alignment and accessibility. Over 20 ACF powered blocks were developed and utilizied for the required layouts and interactions. Several data sources were imported and aggregated, I leveraged Relevanssi for intuitive search. We delivered a simple, streamlined experience allowing users to explore tens of thousands of documents.",
         url: "//ir.mit.edu",
         year: "2024",
+        repo: "//github.com/TheCruzat/mit-ir",
         studio: {
           name: "Centric Park (now GraVoc)",
           link: "//www.gravoc.com",
