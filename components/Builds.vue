@@ -13,6 +13,11 @@
         <WildSet>
           <WildCard v-for="link in set.links" :key="link.title" v-bind="link" />
         </WildSet>
+        <WildCard
+          class="featured is-open"
+          v-if="set.finale"
+          v-bind="set.finale"
+        />
         <!-- <hr> -->
       </div>
 

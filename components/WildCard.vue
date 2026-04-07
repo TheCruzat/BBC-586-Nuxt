@@ -25,6 +25,14 @@
     <div class="pc-drawer">
       <hr />
       <p class="pc-desc" v-html="desc"></p>
+      <a
+        class="view-source"
+        v-if="repo"
+        :href="repo"
+        target="_blank"
+        :aria-label="`see the code for ` + title"
+        >View Source</a
+      >
       <hr v-if="studio || team" />
 
       <p v-if="studio" class="pc-studio">
@@ -79,13 +87,17 @@ export default {
       type: String,
       default: "",
     },
-    tech: {
+    repo: {
       type: String,
       default: "",
     },
     team: {
       type: Array,
       default: () => [],
+    },
+    tech: {
+      type: String,
+      default: "",
     },
   },
   data() {
@@ -214,6 +226,13 @@ export default {
         left: calc(50% - 7px);
       }
     }
+  }
+
+  .view-source {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    font-size: 90%;
   }
 
   .pc {

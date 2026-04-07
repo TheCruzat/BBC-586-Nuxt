@@ -16,6 +16,7 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest --coverage",
+    "validate": "npm run lint && npm run type-check & npm run test",
     "prepare": "husky install"
   },
   "dependencies": {

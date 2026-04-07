@@ -39,7 +39,7 @@ defineProps({
   },
   alt: {
     type: String,
-    default: 'Hero image',
+    default: "Hero image",
   },
   priority: {
     type: Boolean,
