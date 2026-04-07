@@ -1,6 +1,6 @@
 <template>
   <div class="flat">
-    <component :is="headerTag" v-if="header"> {{header}} </component>
+    <component :is="headerTag" v-if="header"> {{ header }} </component>
     <div v-if="content" :class="containerClass">
       <component :is="contentTag"> {content} </component>
     </div>
