@@ -28,10 +28,11 @@
 }
 
 // it's gotta print yo
-@page { size: 8.5in 11in; }
+@page {
+  size: 8.5in 11in;
+}
 
 #app.resume {
-
   text-align: left;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -133,7 +134,8 @@
         flex-direction: row;
       }
 
-      a, span {
+      a,
+      span {
         margin-right: unset;
         padding: unset;
 
@@ -147,7 +149,6 @@
       span {
         display: inline-block;
         color: var(--dim);
-        font-size: 0.9rem;
       }
 
       span:not(:last-child) {

@@ -54,25 +54,17 @@ section.resume-bug {
   padding-bottom: $rbpad;
   border-bottom: 0.5rem solid var(--lyt);
 
-  @include v.mFlip() {
-    // margin-top: 67px;
-  }
-
   .floater {
     display: inline-flex;
     align-items: center;
     justify-content: flex-start;
     text-align: left;
-    padding: 0; // 0.25rem 0.25rem 0;
+    padding: 0;
     background: var(--lyt);
     position: relative;
 
     border-radius: 2rem 2rem 0 0;
     overflow: hidden;
-
-    @include v.mFlip() {
-      // padding: 0.75rem 0 0;
-    }
 
     h3 {
       margin: 0;
@@ -85,7 +77,7 @@ section.resume-bug {
       display: grid;
       width: 100%;
       max-width: 440px;
-      gap: 0; // var(--gutter);
+      gap: 0;
       grid-template-columns: repeat(2, 1fr);
 
       @include v.mFlip(480px) {
@@ -94,12 +86,11 @@ section.resume-bug {
     }
 
     li:nth-child(1) a {
-      border-radius: 0 0 0 0; // var(--radius);
+      border-radius: 0 0 0 0;
       padding-left: calc(var(--gutter) * 1.5);
     }
 
     li:nth-child(2) a {
-      // border-radius: 0 var(--radius) var(--radius) 0; // var(--radius);
       padding-right: calc(var(--gutter) * 1.5);
     }
 

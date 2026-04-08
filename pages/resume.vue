@@ -10,28 +10,31 @@
       <div>
         <nav aria-label="page navigation">
           <div>
-            <a
-              v-if="!paperPrint"
-              v-for="link in resumeLinks"
-              :key="link.href"
-              :class="link.class"
-              :href="link.href"
-              :aria-label="link.ariaLabel"
-              :title="link.title"
-              target="_blank"
-              v-html="link.label"
-            />
+            <template v-if="!paperPrint">
+              <a
+                v-for="link in resumeLinks"
+                :key="link.href"
+                :class="link.class"
+                :href="link.href"
+                :aria-label="link.ariaLabel"
+                :title="link.title"
+                target="_blank"
+                v-html="link.label"
+              />
+            </template>
+            <template v-if="paperPrint">
             <span
-              v-if="paperPrint"
               v-for="label in paperLabels"
               :key="label"
               v-html="label"
             />
+            </template>
           </div>
 
           <div>
+            <template v-if="!paperPrint">
             <a
-              v-if="!paperPrint"
+
               v-for="link in resumeNav"
               :class="{ 'no-print': link.noPrint }"
               :key="link.href"
@@ -41,6 +44,7 @@
               target="_blank"
               v-html="link.label"
             />
+            </template>
           </div>
         </nav>
       </div>
@@ -94,7 +98,10 @@
         class="btn"
         aria-label="return to main page"
         title="return to Dan Cruzat's portfolio"
-        ><ClientOnly><font-awesome-icon :icon="['fas', 'chevron-left']" /></ClientOnly> back to main</a
+        ><ClientOnly
+          ><font-awesome-icon :icon="['fas', 'chevron-left']"
+        /></ClientOnly>
+        back to main</a
       >
       <a
         :href="resumeFile"
@@ -102,16 +109,20 @@
         target="_blank"
         aria-label="download resume pdf"
         title="download Dan Cruzat's resume as a pdf"
-        >download pdf <ClientOnly><font-awesome-icon :icon="['fas', 'chevron-down']"
-      /></ClientOnly></a>
+        >download pdf
+        <ClientOnly
+          ><font-awesome-icon :icon="['fas', 'chevron-down']" /></ClientOnly
+      ></a>
       <a
         :href="liURL"
         class="btn"
         target="_blank"
         aria-label="Dan Cruzat on LinkedIn"
         title="connect with Dan Cruzat on LinkedIn"
-        >history @ linkedin <ClientOnly><font-awesome-icon :icon="['fas', 'chevron-right']"
-      /></ClientOnly></a>
+        >history @ linkedin
+        <ClientOnly
+          ><font-awesome-icon :icon="['fas', 'chevron-right']" /></ClientOnly
+      ></a>
     </section>
 
     <section class="resume-footer no-print">
@@ -132,7 +143,7 @@
 </template>
 
 <script setup>
-import { useRoute } from 'vue-router';
+import { useRoute } from "vue-router";
 import { types } from "@/components/LogoTC";
 import { skillsIntro, skillsSub } from "@/content/skills.js";
 import {
@@ -147,7 +158,7 @@ import {
 const yr = new Date().getFullYear();
 
 const route = useRoute();
-const paperPrint = computed(() => route.query.paper === 'true');
+const paperPrint = computed(() => route.query.paper === "true");
 
 // Set page title
 useHead({
@@ -169,16 +180,15 @@ const resumeLinks = [
     ariaLabel: "open resume in new tab",
     title: "download the resume PDF",
     class: "no-print",
-  }
-
+  },
 ];
 
 // Paper Print Labels
 const paperLabels = [
-  'thecruzat@gmail.com',
-  'builtby.thecruzat.com',
-  'linkedin.com/in/dancruzat'
-]
+  "thecruzat@gmail.com",
+  "builtby.thecruzat.com",
+  "linkedin.com/in/dancruzat",
+];
 
 // Resume navigation
 const resumeNav = [
