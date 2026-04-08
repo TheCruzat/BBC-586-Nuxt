@@ -1,14 +1,17 @@
 <template>
   <div id="app" class="resume">
     <header>
-      <div>
+      <div class="relative">
         <h1>Dan Cruzat</h1>
-        <LogoTC :type="types.header" />
+
+        <QR v-if="paperPrint" class="qr" />
+        <LogoTC v-if="!paperPrint" :type="types.header" />
       </div>
       <div>
         <nav aria-label="page navigation">
-          <span>
+          <div>
             <a
+              v-if="!paperPrint"
               v-for="link in resumeLinks"
               :key="link.href"
               :class="link.class"
@@ -18,12 +21,17 @@
               target="_blank"
               v-html="link.label"
             />
-          </span>
+            <span
+              v-if="paperPrint"
+              v-for="label in paperLabels"
+              :key="label"
+              v-html="label"
+            />
+          </div>
 
-          <QR class="qr" />
-
-          <span>
+          <div>
             <a
+              v-if="!paperPrint"
               v-for="link in resumeNav"
               :class="{ 'no-print': link.noPrint }"
               :key="link.href"
@@ -33,7 +41,7 @@
               target="_blank"
               v-html="link.label"
             />
-          </span>
+          </div>
         </nav>
       </div>
     </header>
@@ -124,6 +132,7 @@
 </template>
 
 <script setup>
+import { useRoute } from 'vue-router';
 import { types } from "@/components/LogoTC";
 import { skillsIntro, skillsSub } from "@/content/skills.js";
 import {
@@ -136,6 +145,9 @@ import {
   portVersion,
 } from "@/content/meta";
 const yr = new Date().getFullYear();
+
+const route = useRoute();
+const paperPrint = computed(() => route.query.paper === 'true');
 
 // Set page title
 useHead({
@@ -157,8 +169,16 @@ const resumeLinks = [
     ariaLabel: "open resume in new tab",
     title: "download the resume PDF",
     class: "no-print",
-  },
+  }
+
 ];
+
+// Paper Print Labels
+const paperLabels = [
+  'thecruzat@gmail.com',
+  'builtby.thecruzat.com',
+  'linkedin.com/in/dancruzat'
+]
 
 // Resume navigation
 const resumeNav = [
@@ -195,13 +215,20 @@ const resumeNav = [
 
 .qr {
   position: absolute;
-  top: 10px;
-  left: calc(50% - 60px);
+  top: -20px;
+  // left: calc(45% - 60px);
+  right: 0;
   // transform: transitionX(-60px)!important;
-  width: 120px !important;
-  height: 120px !important;
-  // @media not print {
-  display: none !important;
-  // }
+  width: 100px !important;
+  height: 100px !important;
+  // Hide on screen by default
+  @media screen {
+    // display: none !important;
+  }
+
+  // Ensure it shows during print
+  @media print {
+    // display: block !important;
+  }
 }
 </style>

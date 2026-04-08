@@ -28,7 +28,7 @@
 }
 
 // it's gotta print yo
-@page { size: 5.5in 8.5in; }
+@page { size: 8.5in 11in; }
 
 #app.resume {
 
@@ -121,7 +121,6 @@
       justify-content: space-between;
       align-items: center;
       background: unset;
-      position: unset;
       width: unset;
       width: 100%;
       font-size: var(--bodyFontSizeBaseline);
@@ -134,7 +133,7 @@
         flex-direction: row;
       }
 
-      a {
+      a, span {
         margin-right: unset;
         padding: unset;
 
@@ -144,6 +143,11 @@
           padding: 0 0.4rem;
           content: "/";
         }
+      }
+      span {
+        display: inline-block;
+        color: var(--dim);
+        font-size: 0.9rem;
       }
 
       span:not(:last-child) {
@@ -232,7 +236,7 @@
         }
       }
 
-      g path {
+      &:not(.qr) g path {
         fill: var(--lyt);
       }
     }
