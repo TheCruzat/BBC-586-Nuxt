@@ -226,19 +226,19 @@ const resumeNav = [
 .qr {
   position: absolute;
   top: -20px;
-  // left: calc(45% - 60px);
+
   right: 0;
-  // transform: transitionX(-60px)!important;
+
   width: 100px !important;
   height: 100px !important;
-  // Hide on screen by default
+
   @media screen {
-    // display: none !important;
+
   }
 
-  // Ensure it shows during print
+
   @media print {
-    // display: block !important;
+
   }
 }
 </style>

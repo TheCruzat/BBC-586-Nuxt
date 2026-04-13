@@ -42,8 +42,6 @@
 
   @include v.mFlip() {
     font-size: 1.2rem;
-    // max-width: 56rem;
-    // margin-inline: auto;
   }
 
   @media screen {
@@ -369,10 +367,16 @@
       }
 
       li {
-        margin-left: 14px;
+        margin-left: 0;
         padding-right: 30px;
         margin-bottom: 4px;
         display: inline-block;
+
+        &:before {
+          content: "· ";
+          display: inline-block;
+          margin-right: 0.5rem;
+        }
 
         @media screen {
           @include v.mFlip() {
