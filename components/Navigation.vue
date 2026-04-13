@@ -55,9 +55,8 @@ export default {
 }
 .spacer {
   height: 75vh;
-  background: var(--paper); // #fff;
+  background: var(--paper);
   padding-bottom: 1rem;
-  // border-top: 4px solid var(--con);
   position: relative;
   z-index: 4;
 }
@@ -67,14 +66,13 @@ nav {
   left: 0;
   right: 0;
   width: 100%;
-  background: #fff; // var(--cream);
+  background: #fff;
   z-index: 4;
   padding: 0;
   box-shadow: 0 0.5rem 0.5rem rgba(12, 12, 12, 0.05);
 
   @include v.mFlip() {
     padding: 0.125rem 0;
-    //border-bottom: 1px solid var(--lyt);
   }
 
   .wrap {
@@ -106,7 +104,6 @@ nav {
     @include v.mFlip() {
       padding-left: 32px;
       padding-right: 32px;
-      // gap: var(--gutter);
     }
 
     @include v.mFlip(80rem) {
@@ -121,10 +118,6 @@ nav {
     padding: 6px 8px;
     line-height: 1.25;
     font-weight: bold;
-
-    &:not(:last-child) {
-      // margin-right: 1rem;
-    }
 
     &.curr {
       background: #fff;
