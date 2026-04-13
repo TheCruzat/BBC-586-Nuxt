@@ -31,10 +31,6 @@ export default {
 
 .skills {
   width: 100%;
-  // border-bottom: 2px solid #ccc;
-  // display: block;
-  // margin-bottom: 1rem;
-  // padding-block: 1rem;
   @media print {
     padding-block: 1rem;
   }
@@ -43,6 +39,5 @@ export default {
 .know-finale {
   padding-top: 3rem;
   text-align: right;
-  // color: #878787; // var(--con);
 }
 </style>
