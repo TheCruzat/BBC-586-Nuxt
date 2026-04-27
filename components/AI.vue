@@ -10,7 +10,13 @@
           <li v-for="(item, i) in block.items" :key="i" v-html="item" />
         </ol>
       </template>
+
     </div>
+    <FinaleCTA
+      subject="I%20want%20to%20talk%20to%20you%20about%20your%20AI%20use"
+      link-title="ask me about how I use AI tools"
+      link-aria-label="email Dan Cruzat about his use of AI tools"
+    />
     <Brackets name="ai" />
   </section>
 </template>
@@ -25,5 +31,9 @@ import { ai } from "@/content/ai";
 
 section {
   background: var(--paper);
+
+  .flat {
+    padding-block: 0 3rem;
+  }
 }
 </style>
