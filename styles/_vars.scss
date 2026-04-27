@@ -82,10 +82,10 @@ $cream: #faf3dd;
   }
   @include mFlip(80rem) {
     --bodyFontSize: 1.4rem;
-    --container-width: 64rem;
+
     --bodyFontSizeBaseline: 1.1rem;
   }
   @include mFlip(96rem) {
-    --container-width: 80rem;
+
   }
 }

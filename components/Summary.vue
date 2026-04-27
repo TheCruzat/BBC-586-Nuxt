@@ -12,10 +12,6 @@ import { summary } from "@/content/summary.js";
 @use "@/styles/resume" as r;
 
 .summary {
-  @include v.mFlip(80rem) {
-    padding-right: 9rem;
-  }
-
   @media print {
     padding-right: 4rem;
   }
