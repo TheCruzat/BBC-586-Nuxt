@@ -1,14 +1,14 @@
 <template>
-  <div class="skills">
-    <p
+  <ul class="skills">
+    <li
       v-for="skill in skillsToPayTheBills"
       :key="skill.label"
       :class="skill.class || 'know-rack'"
     >
       <strong v-html="skill.label" />
       <span v-html="skill.list" />
-    </p>
-  </div>
+    </li>
+  </ul>
 </template>
 
 <script>

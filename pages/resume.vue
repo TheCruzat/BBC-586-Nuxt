@@ -50,94 +50,96 @@
       </div>
     </header>
 
-    <section>
-      <h2>summary</h2>
-      <Summary />
-    </section>
+    <main>
 
-    <section>
-      <h2>skills & experience</h2>
-      <p v-html="[skillsIntro, skillsSub].join(' ')" />
-      <hr />
-      <ResSkills />
-    </section>
+      <section>
+        <h2>summary</h2>
+        <Summary />
+      </section>
 
-    <section>
-      <h2>agencies & organizations</h2>
-      <ResOrgs />
-    </section>
+      <section>
+        <h2>skills & experience</h2>
+        <p v-html="[skillsIntro, skillsSub].join(' ')" />
+        <hr />
+        <ResSkills />
+      </section>
 
-    <section>
-      <h2>brands handled</h2>
-      <ResBrands />
-    </section>
+      <section>
+        <h2>agencies & organizations</h2>
+        <ResOrgs />
+      </section>
 
-    <section class="break">
-      <h2>projects & positions</h2>
-      <ResCredits />
-    </section>
+      <section>
+        <h2>brands handled</h2>
+        <ResBrands />
+      </section>
 
-    <section>
-      <h2>ancient history & trivia</h2>
-      <p class="trivia">
-        PDX since 06, Chicago expatriot<span class="no-screen"> : </span
-        ><br class="no-print" />lifelong Doctor Who fan<span class="no-screen">
-          : </span
-        ><br class="no-print" />sampler and strangler of sounds since 199?<span
-          class="no-print"
+      <section class="break">
+        <h2>projects & positions</h2>
+        <ResCredits />
+      </section>
+
+      <section class="no-print">
+        <h2>ancient history & trivia</h2>
+        <p class="trivia">
+          PDX since 06, Chicago expatriot<span class="no-screen"> : </span
+          ><br class="no-print" />lifelong Doctor Who fan<span class="no-screen">
+            : </span
+          ><br class="no-print" />sampler and strangler of sounds since 199?<span
+            class="no-print"
+          >
+            : <br class="no-print" />once pulled caper with Pete Wentz & Jody
+            Minnoch : <br class="no-print" />once cussed out by Dan Aykroyd</span
+          >
+        </p>
+      </section>
+
+      <section class="row link-row no-print">
+        <a
+          href="/"
+          class="btn"
+          aria-label="return to main page"
+          title="return to Dan Cruzat's portfolio"
+          ><ClientOnly
+            ><font-awesome-icon :icon="['fas', 'chevron-left']"
+          /></ClientOnly>
+          back to main</a
         >
-          : <br class="no-print" />once pulled caper with Pete Wentz & Jody
-          Minnoch : <br class="no-print" />once cussed out by Dan Aykroyd</span
-        >
-      </p>
-    </section>
+        <a
+          :href="resumeFile"
+          class="btn"
+          target="_blank"
+          aria-label="download resume pdf"
+          title="download Dan Cruzat's resume as a pdf"
+          >download pdf
+          <ClientOnly
+            ><font-awesome-icon :icon="['fas', 'chevron-down']" /></ClientOnly
+        ></a>
+        <a
+          :href="liURL"
+          class="btn"
+          target="_blank"
+          aria-label="Dan Cruzat on LinkedIn"
+          title="connect with Dan Cruzat on LinkedIn"
+          >history @ linkedin
+          <ClientOnly
+            ><font-awesome-icon :icon="['fas', 'chevron-right']" /></ClientOnly
+        ></a>
+      </section>
 
-    <section class="row link-row no-print">
-      <a
-        href="/"
-        class="btn"
-        aria-label="return to main page"
-        title="return to Dan Cruzat's portfolio"
-        ><ClientOnly
-          ><font-awesome-icon :icon="['fas', 'chevron-left']"
-        /></ClientOnly>
-        back to main</a
-      >
-      <a
-        :href="resumeFile"
-        class="btn"
-        target="_blank"
-        aria-label="download resume pdf"
-        title="download Dan Cruzat's resume as a pdf"
-        >download pdf
-        <ClientOnly
-          ><font-awesome-icon :icon="['fas', 'chevron-down']" /></ClientOnly
-      ></a>
-      <a
-        :href="liURL"
-        class="btn"
-        target="_blank"
-        aria-label="Dan Cruzat on LinkedIn"
-        title="connect with Dan Cruzat on LinkedIn"
-        >history @ linkedin
-        <ClientOnly
-          ><font-awesome-icon :icon="['fas', 'chevron-right']" /></ClientOnly
-      ></a>
-    </section>
+      <section class="resume-footer no-print">
+        <p>
+          <a href="/">Home</a> : <a href="/privacy">Privacy Policy</a> :
+          <a href="/terms">Terms of Use</a>
+        </p>
+        <p>Built by the Cruzat v{{ portVersion }}</p>
+        <p>&copy;Copyright 2008-{{ yr }} Dan Cruzat : All Rights Reserved</p>
+      </section>
 
-    <section class="resume-footer no-print">
-      <p>
-        <a href="/">Home</a> : <a href="/privacy">Privacy Policy</a> :
-        <a href="/terms">Terms of Use</a>
-      </p>
-      <p>Built by the Cruzat v{{ portVersion }}</p>
-      <p>&copy;Copyright 2008-{{ yr }} Dan Cruzat : All Rights Reserved</p>
-    </section>
-
-    <section class="mo">
-      <LogoTC />
-    </section>
-
+      <section class="mo">
+        <LogoTC />
+      </section>
+    </main>
     <CookieConsent />
   </div>
 </template>
