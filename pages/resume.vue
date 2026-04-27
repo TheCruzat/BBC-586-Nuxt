@@ -5,7 +5,7 @@
         <h1>Dan Cruzat</h1>
 
         <QR v-if="paperPrint" class="qr" />
-        <LogoTC v-if="!paperPrint" :type="types.header" />
+        <LogoTC aria-hidden="true" v-if="!paperPrint" :type="types.header" />
       </div>
       <div>
         <nav aria-label="page navigation">
@@ -136,7 +136,7 @@
         <p>&copy;Copyright 2008-{{ yr }} Dan Cruzat : All Rights Reserved</p>
       </section>
 
-      <section class="mo">
+      <section class="mo" aria-hidden="true">
         <LogoTC />
       </section>
     </main>
