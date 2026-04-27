@@ -1,8 +1,8 @@
 <template>
   <section>
     <ContentBlock>
-      <p v-html="skillsIntro" />
-      <p v-html="skillsSub" />
+      <p>{{ skillsIntro }}</p>
+      <p>{{ skillsSub }}</p>
     </ContentBlock>
 
     <ContentBlock

@@ -33,7 +33,7 @@
         priority="true"
         :img-style="{
           objectPosition: 'var(--headerBGPos)',
-          transform: `translateY(${parallaxOffset}px)`,
+          transform: 'translateY(' + parallaxOffset + 'px)',
           transition: isScrolling ? 'none' : 'transform 0.1s ease-out',
         }"
       />

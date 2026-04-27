@@ -137,7 +137,7 @@ export default {
   width: 100%;
   max-width: 470px;
   font-size: 0.825rem;
-  background: #fff; // var(--paper); // Using paper as base to allow hover 'swell' to white
+  background: #fff;
   padding: 1rem 1.25rem;
   border-radius: 0.5rem;
   border: 2px solid #fff;
@@ -212,7 +212,7 @@ export default {
     }
 
     .pc-drawer {
-      max-height: 1000px; // Open the drawer
+      max-height: 1000px;
       opacity: 1;
       transition:
         max-height 0.5s ease-out,

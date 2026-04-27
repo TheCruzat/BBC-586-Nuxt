@@ -58,7 +58,7 @@ onMounted(async () => {
 
   if (list && list.length > 0) {
     const randomIndex = Math.floor(Math.random() * list.length);
-    currentName.value = `Dan Cruzat aka ${list[randomIndex]}`;
+    currentName.value = "Dan Cruzat aka " + list[randomIndex];
   }
 });
 </script>

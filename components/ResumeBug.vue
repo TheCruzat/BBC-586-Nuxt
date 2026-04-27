@@ -101,10 +101,10 @@ section.resume-bug {
       flex-direction: row;
       width: 100%;
       justify-content: center;
-      background: transparent; // var(--paper);
-      border: 0px solid transparent; // var(--con);
+      background: transparent;
+      border: 0px solid transparent;
       color: var(--bod);
-      // border-radius: var(--radius) 0 0 var(--radius);
+
       font-size: 0.8rem;
       font-weight: 900;
       padding: 0.5rem 0.75rem;

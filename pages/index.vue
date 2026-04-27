@@ -1,19 +1,6 @@
 <template>
   <div class="site-wrapper">
-    <!-- Loader overlay: only visible during client-side hydration on first visit -->
-    <ClientOnly>
-      <Transition name="fade">
-        <div v-if="showLoader" class="loader">
-          <div class="loader-content">
-            <Logo type="loader" />
-            <h3>built by the cruzat v5.86</h3>
-            <p>loading...</p>
-          </div>
-        </div>
-      </Transition>
-    </ClientOnly>
 
-    <!-- Main content: always visible (SSR-friendly) -->
     <div class="main-content">
       <HeaderHome />
 

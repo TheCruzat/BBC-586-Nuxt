@@ -85,7 +85,7 @@ export default {
     async getAllData() {
       try {
         // Nuxt 3 $fetch is global
-        const data = await $fetch(`${this.rootie}?_embed&per_page=4`);
+        const data = await $fetch(this.rootie + "?_embed&per_page=4");
         this.posts = data;
       } catch (err) {
         console.error("Blog fetch error:", err.message);
@@ -95,7 +95,7 @@ export default {
       if (!html) return "";
       const plainText = html.replace(/<[^>]*>/g, "");
       const shortened = plainText.split(" ").slice(0, 32).join(" ");
-      return `<p>${shortened}...</p>`;
+      return "<p>" + shortened + "...</p>";
     },
   },
 };
