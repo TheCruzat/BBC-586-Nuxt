@@ -51,7 +51,7 @@
       </div>
       <div class="blog-link">
         <p>
-          <a class="btn" :href="blogURL" target="_blank" title="read more"
+          <a class="btn" :href="blogURL" target="_blank" title="read more at my blog" aria-label="visit Dan Cruzat's Blog (opens in new window)"
             >Visit My Blog</a
           >
         </p>

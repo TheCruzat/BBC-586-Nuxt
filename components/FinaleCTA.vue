@@ -4,9 +4,9 @@
     <div class="">
       <h3>have a question?</h3>
       <p>
-        <a :href="'mailto:' + contactEmail + '?subject=' + subject" class="btn"
-          >Ask Me Anything</a
-        >
+        <a :href="'mailto:' + contactEmail + '?subject=' + subject" :aria-label="linkAriaLabel" :title="linkTitle" class="btn">
+          Ask Me Anything
+        </a>
       </p>
     </div>
   </div>
@@ -18,6 +18,14 @@ export default {
   name: "FinaleCTA",
   props: {
     subject: {
+      type: String,
+      default: "",
+    },
+    linkTitle: {
+      type: String,
+      default: "",
+    },
+    linkAriaLabel: {
       type: String,
       default: "",
     },

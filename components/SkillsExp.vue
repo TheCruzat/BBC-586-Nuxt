@@ -39,6 +39,8 @@
 
     <FinaleCTA
       subject="I%20want%20to%20talk%20to%20you%20about%20your%20experience"
+      link-title="ask me about my experience"
+      link-aria-label="email Dan Cruzat about his experience"
     />
     <Brackets name="experience" />
   </section>

@@ -9,6 +9,7 @@
               :href="displayQuotes[currentIndex].link"
               target="_blank"
               :title="'learn more about ' + displayQuotes[currentIndex].name"
+              :aria-label="displayQuotes[currentIndex].ariaLabel"
             >
               <strong v-html="displayQuotes[currentIndex].name" /> </a
             ><br />

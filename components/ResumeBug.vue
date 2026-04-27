@@ -3,7 +3,7 @@
     <div class="floater">
       <ul>
         <li v-for="link in resumeLinks" :key="link.label">
-          <a :href="link.href" :target="link.new ? '_blank' : null">
+          <a :href="link.href" :aria-label="link.ariaLabel" :target="link.new ? '_blank' : null">
             <span v-html="link.label"></span>
           </a>
         </li>
@@ -20,11 +20,13 @@ const resumeLinks = [
   {
     href: resumeURL,
     label: resumeURLLabel,
+    ariaLabel: "Dan Cruzat's resume at live url",
     icon: "fa-map-o",
   },
   {
     href: resumeFile,
     label: resumeFileLabel,
+    ariaLabel: "Dan Cruzat's resume as downloadable PDF (opens in new window)",
     icon: "fa-floppy-o",
     new: true,
   },

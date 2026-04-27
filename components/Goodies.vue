@@ -5,11 +5,14 @@
       :key="link.title"
       :href="link.url"
       :title="link.title"
+      :aria-label="link.ariaLabel"
       :data-mega="link.mega"
       target="_blank"
       :class="{ sub: ndx > topRow }"
     >
-      <ClientOnly><font-awesome-icon :icon="[link.icon.slice(0, 3), link.icon.slice(4)]" /></ClientOnly>
+      <ClientOnly
+        ><font-awesome-icon :icon="[link.icon.slice(0, 3), link.icon.slice(4)]"
+      /></ClientOnly>
       <span class="label" v-html="link.label"></span>
     </a>
   </div>

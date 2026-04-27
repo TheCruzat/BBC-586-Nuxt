@@ -12,6 +12,7 @@ export const Testimonials = [
     role: "Chief Creative Officer",
     id: "jen-thomas",
     link: "//www.linkedin.com/in/jen-thomas-beauty-shop",
+    ariaLabel: "Chief Creative Officer Jen Thomas' LinkedIn profile (opens in new window)"
   },
   {
     quote:
@@ -20,6 +21,7 @@ export const Testimonials = [
     role: "Project Manager",
     id: "kristin-howe",
     link: "//www.linkedin.com/in/kristin-howe-1628245b",
+    ariaLabel: "Project Manager Kristin Howe's LinkedIn profile (opens in new window)"
   },
   {
     quote:
@@ -28,6 +30,7 @@ export const Testimonials = [
     role: "Creative & Interactive Director",
     id: "liz-neilson",
     link: "//www.linkedin.com/in/liz-neilson-94568910",
+    ariaLabel: "Creative & Interactive Director Liz Neilson's LinkedIn profile (opens in new window)"
   },
   {
     quote:
@@ -36,6 +39,7 @@ export const Testimonials = [
     role: "Project Manager",
     id: "alicja-colon",
     link: "//www.linkedin.com/in/alicjacolon",
+    ariaLabel: "Project Manager Alicja Colon's LinkedIn profile (opens in new window)"
   },
   {
     quote:
@@ -43,7 +47,8 @@ export const Testimonials = [
     name: "Christine Ellsworth",
     role: "Design & Strategy",
     id: "christine-ellsworth",
-    link: "//www.linkedin.com/in/christinee",
+    link: "//ells.work",
+    ariaLabel: "Senior Designer Christine Ellsworth's portfolio (opens in new window)"
   },
   {
     quote:
@@ -52,6 +57,7 @@ export const Testimonials = [
     role: "Colleague Developer",
     id: "david-frey",
     link: "//www.linkedin.com/in/davidfrey",
+    ariaLabel: "Developer David Frey's LinkedIn profile (opens in new window)"
   },
   {
     quote:
@@ -60,6 +66,7 @@ export const Testimonials = [
     role: "Team Lead / Sr Dev",
     id: "mark-fries",
     link: "//www.linkedin.com/in/mark-fries-6ab67b6",
+    ariaLabel: "Team Lead Mark Fries' LinkedIn profile (opens in new window)"
   },
   {
     quote:
@@ -68,6 +75,7 @@ export const Testimonials = [
     role: "Creative Director",
     id: "ben-fogarty",
     link: "//www.linkedin.com/in/benfogarty9",
+    ariaLabel: "Creative Director Ben Fogarty's LinkedIn profile (opens in new window)"
   },
   {
     quote:
@@ -76,6 +84,7 @@ export const Testimonials = [
     role: "VP Marketing",
     id: "jascha-kaykas-wolff",
     link: "//www.linkedin.com/in/kaykas",
+    ariaLabel: "Marketing Executive Jascha Kaykas-Wolff's LinkedIn profile (opens in new window)"
   },
   {
     quote:
@@ -84,6 +93,7 @@ export const Testimonials = [
     role: "Designer",
     id: "ryan-schroeder",
     link: "//www.linkedin.com/in/pdxschroeder",
+    ariaLabel: "Designer Ryan Schroeder's LinkedIn profile (opens in new window)"
   },
   // {
   // 	quote: "<p>Dan is a webdev wizard. He is the backbone of our organization's digital existence.</p>",
@@ -99,6 +109,7 @@ export const Testimonials = [
     role: "Marketing Manager",
     id: "robin-cangie",
     link: "//www.linkedin.com/in/robincangie",
+    ariaLabel: "Marketing Manager Robin Cangie's LinkedIn profile (opens in new window)"
   },
   {
     quote:
@@ -107,6 +118,7 @@ export const Testimonials = [
     role: "Colleague Developer",
     id: "marco-fusaro",
     link: "//www.linkedin.com/in/marcofusaro1",
+    ariaLabel: "Developer Marco Fusaro's LinkedIn profile (opens in new window)"
   },
   {
     quote:
@@ -115,5 +127,6 @@ export const Testimonials = [
     role: "Colleague Developer",
     id: "robin-balmer",
     link: "//www.linkedin.com/in/robinbalmer",
+    ariaLabel: "Developer Robin Balmer's LinkedIn profile (opens in new window)"
   },
 ];

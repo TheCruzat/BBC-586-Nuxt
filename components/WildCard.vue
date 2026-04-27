@@ -15,7 +15,7 @@
     </button>
     <hr />
     <p class="pc-link">
-      <a :href="url" :title="title" target="_blank" @click.stop>{{
+      <a :href="url" :title="title" :aria-label="ariaLabel" target="_blank" @click.stop>{{
         displayUrl
       }}</a>
     </p>
@@ -30,7 +30,7 @@
         v-if="repo"
         :href="repo"
         target="_blank"
-        :aria-label="`see the code for ` + title"
+        :aria-label="repoAriaLabel"
         >View Source</a
       >
       <hr v-if="studio || team" />
@@ -40,6 +40,7 @@
         <a
           :href="studio.link"
           :title="studio.name"
+          :aria-label="studio.ariaLabel"
           target="_blank"
           @click.stop
           >{{ studio.name }}</a
@@ -50,7 +51,7 @@
         <p>team:</p>
         <ul>
           <li v-for="t in team" :key="t.name">
-            <a :href="t.link" target="_blank" @click.stop>{{ t.name }}</a> :
+            <a :href="t.link" :aria-label="t.ariaLabel" target="_blank" @click.stop>{{ t.name }}</a> :
             {{ t.role }}
           </li>
         </ul>
@@ -64,6 +65,10 @@ export default {
   name: "WildCard",
   props: {
     title: {
+      type: String,
+      default: "",
+    },
+    ariaLabel: {
       type: String,
       default: "",
     },

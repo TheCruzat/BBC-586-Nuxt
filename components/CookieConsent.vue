@@ -10,8 +10,8 @@
         <span>Is that okay with you?</span>
       </p>
       <div class="actions">
-        <button class="btn" @click="accept">Yes that's okay</button>
-        <button class="btn minimal" @click="decline">No thank you</button>
+        <button aria-label="Yes I consent to analytics tracking" class="btn" @click="accept">Yes that's okay</button>
+        <button aria-label="No I do not consent to analytics tracking" class="btn minimal" @click="decline">No thank you</button>
       </div>
     </div>
   </transition>

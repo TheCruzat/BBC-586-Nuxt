@@ -31,7 +31,9 @@
     <FinaleCTA
       class="no-border"
       styler="dark"
-      subject="I%20want%20to%20talk%20about%20one%20of%20your%20builds"
+      subject="I%20want%20to%20talk%20about%20one%20of%20your%20projects"
+      link-title="ask me about one of my projects"
+      link-aria-label="email Dan Cruzat about his projects"
     />
     <Brackets name="work" />
   </section>
