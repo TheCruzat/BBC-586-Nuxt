@@ -225,6 +225,10 @@ const resumeNav = [
 @use "@/styles/global.scss" as g;
 @use "@/styles/resume" as r;
 
+#app.resume {
+  max-width: 80rem;
+}
+
 .qr {
   position: absolute;
   top: -20px;
