@@ -17,7 +17,7 @@ export const skillsToPayTheBills = [
 
   {
     label: "regulars",
-    list: "Node, Tailwind, Astro, React, Vue, WordPress, Next, Nuxt, Craft CMS, NVM, GIT, Valet, Local, Docker",
+    list: "Node, Astro, React, Vue, WordPress, Next, Nuxt, Tailwind, NVM, GIT, Valet, Local, Docker",
   },
 
   {
@@ -32,7 +32,7 @@ export const skillsToPayTheBills = [
 
   {
     label: "recently",
-    list: "Shopify, WooCommerce, BigCommerce, Handlebars (& Stencil), Notion, Jira, Trello",
+    list: "Shopify, WooCommerce, BigCommerce, Craft CMS, Handlebars (& Stencil), Notion, Jira, Trello",
   },
 
   {
