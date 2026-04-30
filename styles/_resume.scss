@@ -139,7 +139,8 @@
         padding: unset;
         padding-block: 0.5rem;
 
-        &:has(+ a):after {
+        + a:before,
+        + span:before {
           display: inline-block;
           color: var(--lyt);
           padding: 0 0.4rem;
