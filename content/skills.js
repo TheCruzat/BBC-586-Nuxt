@@ -12,17 +12,17 @@ export const skillsToPayTheBills = [
 
   {
     label: "languages",
-    list: "TS, JS, CSS, HTML, SCSS, PHP, ES6",
+    list: "TS, JS, CSS, HTML, SCSS, PHP, XML",
+  },
+
+  {
+    label: "disciplines",
+    list: "Responsive Development, Testing, Performance Optimization, A11y / WCAG",
   },
 
   {
     label: "regulars",
     list: "Node, Astro, React, Vue, WordPress, Next, Nuxt, Tailwind, NVM, GIT, Valet, Local, Docker",
-  },
-
-  {
-    label: "standards",
-    list: "Responsive Development, Testing, Performance Optimization, A11y / WCAG, Tracking & Consent",
   },
 
   {

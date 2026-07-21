@@ -35,4 +35,5 @@ export default {
 <style scoped lang="scss">
 @use "@/styles/global.scss" as *;
 @use "@/styles/resume" as *;
+
 </style>

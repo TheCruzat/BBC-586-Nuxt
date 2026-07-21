@@ -59,8 +59,8 @@
 
       <section>
         <h2>skills & experience</h2>
-        <p v-html="[skillsIntro, skillsSub].join(' ')" />
-        <hr />
+        <!-- <p v-html="[skillsIntro, skillsSub].join(' ')" />
+        <hr /> -->
         <ResSkills />
       </section>
 

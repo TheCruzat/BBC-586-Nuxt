@@ -17,35 +17,37 @@ const credits = [
     company: "Dan Cruzat",
     position: "Senior UI & CSS Consultant",
     time: "Est 2006",
-    tech: "WordPress, React, Vue, Next, Nuxt, Tailwind, SCSS",
+    tech: "WordPress, React, Vue, Next, Nuxt, Tailwind, SCSS, WCAG",
     deets: [
-      "Developing 'Ursula' WP + Tailwind starter theme",
+      "150+ completed projects for over two dozen agencies",
       "Leveraging AI to accelerate development cycles",
-      "Full-cycle maintenance, upgrades & automated testing",
-      "Auditing styles & performance for micro-optimizations",
+      "Fully WCAG 2.2 compliant ecosystem of personal sites",
+      "Full fluency in production life cycle, idea to product",
+      "Resident developer for non-profits OK You and GoTango",
+      "Accessibility focus towards CPWA certification in 2026",
     ],
   },
   {
     company: "Procter & Gamble",
     position: "Front End Developer",
     time: "4/2025 - 8/2025",
-    tech: "BigCommerce, Shopify, Vue, React, WordPress",
+    tech: "BigCommerce, Shopify, React, WordPress, WCAG",
     deets: [
       "Technical mentorship for PHP & CSS standards",
       "Enterprise analytics tagging via BigCommerce",
-      "WP feature development & core upgrades",
-      "React/Vue component architecture",
+      "WP feature and component development",
+      "Completed landing pages and microsites in Shopify",
     ],
   },
   {
     company: "The Beauty Shop",
     position: "Senior WordPress Engineer",
     time: "10/2024 - 8/2025",
-    tech: "WP, Woo, Gutenberg, SCSS, WPEngine, ACF",
+    tech: "WP, Woo, Gutenberg, Elementor, SCSS, WPEngine, ACF, WCAG",
     deets: [
       "Retainer-based maintenance & feature scaling",
       "Modernizing & refactoring inherited legacy code",
-      "CSS performance & asset optimization",
+      "Accessibility testing and remediation",
       "Bespoke Gutenberg & Elementor block development",
     ],
   },
@@ -53,12 +55,12 @@ const credits = [
     company: "Centric Park",
     position: "Senior Engineer / UX Strategist",
     time: "1/2024 - 9/2024",
-    tech: "WordPress, React, Vue, Tailwind, WP VIP",
+    tech: "WordPress, React, Vue, WP-VIP, WPEngine, ACF, WCAG",
     deets: [
       "Repo ownership, code reviews & mentorship",
       "Block-based theme architecture",
       "Cross-framework UI component development",
-      "Optimization for performance & accessibility",
+      "Performance optimization & Accessibility remediation",
     ],
   },
   {
@@ -84,6 +86,7 @@ const credits = [
       "Patching critical issues in legacy environments",
       "Cross-functional team & QA coordination",
     ],
+    noprint: true
   },
   {
     company: "Daylight Studio",
@@ -146,7 +149,6 @@ const credits = [
       "React & Angular component architecture",
       "QA support & CSS oversight",
     ],
-    noprint: true,
   },
   {
     company: "Industrial Commercial Electric",
@@ -183,9 +185,8 @@ const credits = [
       "XFinity customer portal development",
       "Interactive component architecture",
       "CSS Lead: code reviews & approvals",
-      "UI problem solving & QA testing",
-    ],
-    noprint: true,
+      "QA / Accessibility testing",
+    ]
   },
 ];
 
