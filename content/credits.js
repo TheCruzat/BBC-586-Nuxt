@@ -28,6 +28,30 @@ const credits = [
     ],
   },
   {
+    company: "Instrument",
+    position: "Senior Developer",
+    time: "5/2026 - Present",
+    tech: "React, Next, Tailwind, SCSS, GIT, ESLint, WCAG",
+    deets: [
+      "New feature development and testing",
+      "Issue remediation and QA support",
+      "Team development, code reviews and repo etiquette",
+      "Accessibility testing and A11y compliance",
+    ],
+  },
+  {
+    company: "OK You",
+    position: "Senior Developer / UX Lead",
+    time: "1/2026 - Present",
+    tech: "WordPress, Gutenberg, Elementor, SCSS, ES6, WCAG",
+    deets: [
+      "Legacy site update and refactoring",
+      "UX review and refinement",
+      "Accessibility testing and A11y compliance",
+      "Issue triage and remediation"
+    ]
+  },
+  {
     company: "Procter & Gamble",
     position: "Front End Developer",
     time: "4/2025 - 8/2025",
@@ -43,7 +67,7 @@ const credits = [
     company: "The Beauty Shop",
     position: "Senior WordPress Engineer",
     time: "10/2024 - 8/2025",
-    tech: "WP, Woo, Gutenberg, Elementor, SCSS, WPEngine, ACF, WCAG",
+    tech: "WP, WooCommerce, Gutenberg, Elementor, SCSS, WPEngine, ACF, WCAG",
     deets: [
       "Retainer-based maintenance & feature scaling",
       "Modernizing & refactoring inherited legacy code",
@@ -86,7 +110,6 @@ const credits = [
       "Patching critical issues in legacy environments",
       "Cross-functional team & QA coordination",
     ],
-    noprint: true
   },
   {
     company: "Daylight Studio",
@@ -123,7 +146,6 @@ const credits = [
       "UX strategy & engagement optimization",
       "Legacy browser support & bugfixing",
     ],
-    noprint: true,
   },
   {
     company: "BASIC",
@@ -136,7 +158,6 @@ const credits = [
       "Collaborative peer-reviewed development",
       "Resolving complex CSS/UI regressions",
     ],
-    noprint: true,
   },
   {
     company: "creative FEW",
@@ -161,7 +182,6 @@ const credits = [
       "Custom internal reporting systems",
       "QA & cross-browser validation",
     ],
-    noprint: true,
   },
   {
     company: "Modern Adventure",
@@ -174,7 +194,6 @@ const credits = [
       "Editorial blog & magazine layouts",
       "UI troubleshooting & bug resolution",
     ],
-    noprint: true,
   },
   {
     company: "+Citizen (now EY)",

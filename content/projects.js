@@ -7,16 +7,44 @@ export const BuildSets = [
       "I build front end ui's and interfaces for a variety of systems and CMS's.<span class=\"desktop-up\"><br></span> I can sweet talk CSS wherever it can be found.",
 
     feature: {
-      title: "The Seed: Renaissance FED",
-      ariaLabel: "the repo for The Seed downloadable project (opens in new window)",
-      tech: "Astro, Tailwind, React, Vue, Svelte, Vitest, WP-API",
-      tasks: "UX, Design, Full Stack Engineer",
-      desc: "A downloadable demo to run locally, all of my best standards and practices for component-based Front End Development. Build in Astro, demo components in React, Vue and Svelte.",
-      url: "//github.com/TheCruzat/TheSeed",
-      year: "2026",
+        title: "tortoise by ARTPOWER",
+        tech: "React, Next.js, Tailwind, GIT, ESLint, WCAG",
+        tasks: "Feature Engineer, Issue Remediation, A11y Compliance",
+        desc: "I joined a team at Instrument to work on tortoise, an app to assist working creatives with tracking finances and fiscal goals. Team development included code reviews, pair programming and documentation. I handled UI engineering within the established design system, as well as bug fixes and accessibility testing.",
+        url: "//tortoise.artpower.io",
+        year: "2026",
+        studio: {
+          name: "Instrument",
+          link: "//www.instrument.com"
+        },
+        /*team: [
+          {
+            name: "",
+            role: "",
+            link: ""
+          }
+        ]*/
     },
 
     links: [
+      {
+        title: "Little Collie",
+        ariaLabel: "the Little Collie live site(opens in new window)",
+        tech: "HTML, CSS",
+        tasks: "UX, Design, UI Engineer",
+        desc: "A styling glow-up for a colleague's landing page for personal branding. I was able to leverage her existing assets and materials to create a modern and accessible experience.",
+        url: "//littlecollie.com",
+        year: "2026",
+      },
+      {
+        title: "The Seed: Renaissance FED",
+        ariaLabel: "the repo for The Seed downloadable project (opens in new window)",
+        tech: "Astro, Tailwind, React, Vue, Svelte, Vitest, WP-API",
+        tasks: "UX, Design, Full Stack Engineer",
+        desc: "A downloadable demo to run locally, all of my best standards and practices for component-based Front End Development. Build in Astro, demo components in React, Vue and Svelte.",
+        url: "//github.com/TheCruzat/TheSeed",
+        year: "2026",        
+      },
       {
         title: "TrustEngine Mortgage Coach",
         tech: "React, SCSS, ES6, GIT CI/CD",
@@ -295,6 +323,14 @@ export const BuildSets = [
       //     },
       //   ],
       // },
+      {
+          title: "Blades by Suchat",
+          tech: 'WordPress (JS), ACF, Tailwind, ES6, "Ursula"',
+          tasks: "Project Manager, UX, Designer, Full Stack Engineer, Photographer",
+          desc: "I built a custom WordPress site for the estate of a prominent knife distributor, whose backstock is exclusively unique knives from master craftsman Suchat Jangtanong. The result is a fully optimized, responsive and accessible site that visually centers the product and allows an elegant browsing experience.",
+          url: "https://bladesbysuchat.com",
+          year: "2026",
+          },      
       {
         title: "GoTango",
         ariaLabel: "non-profit Go Tango website (opens in new window)",

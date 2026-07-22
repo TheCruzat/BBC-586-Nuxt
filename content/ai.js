@@ -1,16 +1,19 @@
 export const ai = [
   {
-    p: "Agentic smart tools have made the last two years the most transformational period for web development since the rise of the smartphone. <strong>This is the new baseline:</strong>",
+    p: "Agentic smart tools have made the last two years the most transformational period for web development since the dawn of the smartphone. <strong>Our new baseline:</strong>",
   },
   {
     list: "ordered",
     items: [
-      "<strong>Speed is not Certainty:</strong> Tools are faster, but they aren't infallible.",
-      "<strong>Business Essential:</strong> Agents are now as indispensable as the telephone or the internet.",
-      "<strong>Senior Oversight:</strong> Production-grade output still requires production-tested experience.",
+      "<strong>Speed is not Certainty:</strong> A faster workflow requires greater accuracy.",
+      "<strong>Business Essential:</strong> Agents have become as indispensable as the internet.",
+      "<strong>Senior Oversight:</strong> Output is meaningless without the insight of experience.",
     ],
   },
   {
-    p: "<strong>'Vibe Coding' is a misnomer.</strong> I use agents to automate the 'How' so I can obsess over the 'Beautiful': the performance, the accessibility, and the soul of the interface.",
+    p: "<strong>'Vibe Coding' is a clown car.</strong> I've seen and done amazing work using agentic tools, but what we get from The Machine still needs to be reviewed and refined.",
+  },
+  {
+    p: "An LLM can tell me how to hold a scalpel and talk me through a procedure, but that doesn't make me a surgeon.",
   },
 ];

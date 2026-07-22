@@ -2,7 +2,7 @@ export const skillsIntro =
   "I have worked in web design and development for over 20 years, building experiences for indie businesses to enterprise titans, ui layers for software companies, client sites and landing pages for agencies.";
 
 export const skillsSub =
-  "Full service & full stack for WordPress, UI chops & CSS specialization for React / Vue teams.";
+  "Bespoke full stack WordPress, UI / CSS / A11y specialization for Front End.";
 
 export const skillsToPayTheBills = [
   // {
@@ -17,7 +17,7 @@ export const skillsToPayTheBills = [
 
   {
     label: "disciplines",
-    list: "Responsive Development, Testing, Performance Optimization, A11y / WCAG",
+    list: "Adaptive Architecture, Testing & QA, Performance Optimization, A11y / WCAG",
   },
 
   {
@@ -27,12 +27,12 @@ export const skillsToPayTheBills = [
 
   {
     label: "teamwork",
-    list: "DevOps, Team Development & Dynamics, PM, Code Reviews, Dev Leadership & Mentoring",
+    list: "DevOps, Team Development & Dynamics, Code Reviews, Async Production, UX Guidance.",
   },
 
   {
     label: "recently",
-    list: "Shopify, WooCommerce, BigCommerce, Craft CMS, Handlebars (& Stencil), Notion, Jira, Trello",
+    list: "Jira, Squarespace, Shopify, WooCommerce, Statamic, Craft CMS, Notion, Trello",
   },
 
   {
@@ -47,7 +47,7 @@ export const skillsToPayTheBills = [
 
   {
     label: "extras",
-    list: "QA Testing and Support, Sound Design & Editing",
+    list: "Sound Design & Editing, Music Production",
   },
 
   {

@@ -1,5 +1,6 @@
 export const brands = [
   "Adidas",
+  "ARTPOWER",
   "AT&T",
   "Audi",
   "Autodesk",

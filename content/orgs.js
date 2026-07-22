@@ -15,6 +15,7 @@ export const orgs = [
   "Greystar",
   "Hanlon Brown",
   "ILTS",
+  "Instrument",
   "Mindjet",
   "MIT",
   "Monumental",
