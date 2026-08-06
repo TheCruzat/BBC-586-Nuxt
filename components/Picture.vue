@@ -86,9 +86,19 @@ picture {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    position: fixed;
+    // Absolute by default so 200–400% zoom / narrow reflow isn't fighting viewport-fixed art
+    position: absolute;
     top: 0;
     left: 0;
+  }
+}
+
+// Parallax “window” effect only when there’s room and motion is OK
+@media (prefers-reduced-motion: no-preference) {
+  @media (min-width: 64rem) and (min-height: 45rem) {
+    picture img {
+      position: fixed;
+    }
   }
 }
 </style>

@@ -62,11 +62,19 @@ h1 {
     margin-bottom: -0.8rem;
     width: 100%;
     max-width: unset;
-    position: fixed; // relative;
+    position: fixed;
     top: auto;
     right: auto;
     width: 100%;
     background: transparent;
+  }
+
+  // At high zoom / short viewports, keep the brand in document flow
+  @media (max-height: 40rem) {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    right: 0;
   }
 
   span {

@@ -109,6 +109,11 @@ nav {
   padding: 0;
   box-shadow: 0 0.5rem 0.5rem rgba(12, 12, 12, 0.05);
 
+  // Don’t consume the whole viewport when zoomed / short
+  @media (max-height: 30rem) {
+    position: relative;
+  }
+
   @include v.mFlip() {
     padding: 0.125rem 0;
   }

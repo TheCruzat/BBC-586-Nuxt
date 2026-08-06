@@ -138,6 +138,7 @@ header {
 
   @include v.mFlip(48rem) {
     height: 100vh;
+    height: 100svh;
     background-position: 40% 50%;
     border: none;
     border-top: 1rem solid var(--frame-color);

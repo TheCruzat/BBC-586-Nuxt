@@ -139,6 +139,14 @@ onBeforeUnmount(() => {
   left: 50%;
   right: auto;
   translate: -50% 0;
+  max-height: min(80vh, 28rem);
+  overflow: auto;
+
+  @media (max-height: 30rem) {
+    bottom: 0.5rem;
+    max-height: calc(100vh - 1rem);
+    width: min(400px, calc(100vw - 1rem));
+  }
 
   .actions {
     padding-top: 0.5rem;

@@ -35,6 +35,10 @@
   @include v.mFlipUnder(48rem) {
     display: none;
   }
+  // Hide decorative fixed chrome when zoomed / short viewport (1.4.10 reflow)
+  @media (max-height: 40rem) {
+    display: none;
+  }
   position: fixed;
   width: 48vw;
   height: 5vw;
@@ -42,6 +46,7 @@
   left: calc(50% - 24vw);
   top: 5vw;
   z-index: 6;
+  pointer-events: none;
 
   &:before,
   &:after {

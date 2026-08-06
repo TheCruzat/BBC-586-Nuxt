@@ -10,8 +10,8 @@
           target="_blank"
           rel="noopener noreferrer"
           class="blogcard"
-          :aria-label="postCardLabel(post)"
         >
+          <span class="visually-hidden">Opens in new window: </span>
           <div class="card-header">
             <p class="card-title" v-html="post.title.rendered"></p>
           </div>
@@ -20,6 +20,7 @@
             <div
               v-if="post._embedded && post._embedded['wp:featuredmedia']"
               class="card-thumb"
+              aria-hidden="true"
             >
               <img
                 width="150"
@@ -104,13 +105,6 @@ export default {
       const plainText = html.replace(/<[^>]*>/g, "");
       const shortened = plainText.split(" ").slice(0, 32).join(" ");
       return "<p>" + shortened + "...</p>";
-    },
-    postCardLabel(post) {
-      const title = (post?.title?.rendered || "Blog post").replace(
-        /<[^>]*>/g,
-        "",
-      );
-      return `${title} (opens in new window)`;
     },
   },
 };

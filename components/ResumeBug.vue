@@ -61,6 +61,11 @@ section.resume-bug {
   padding-bottom: $rbpad;
   border-bottom: 0.5rem solid var(--lyt);
 
+  @media (max-height: 30rem) {
+    position: static;
+    border-bottom: none;
+  }
+
   .floater {
     display: inline-flex;
     align-items: center;
