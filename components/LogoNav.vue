@@ -10,14 +10,8 @@
 </template>
 
 <script>
-import { types } from "@/components/Logo";
 export default {
   name: "LogoNav",
-  data: function () {
-    return {
-      types,
-    };
-  },
 };
 </script>
 

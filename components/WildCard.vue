@@ -24,8 +24,8 @@
       @click.stop="closeDrawer"
       aria-label="Close details"
     >
-      <span aria-hidden="true" />
-      <span aria-hidden="true" />
+      <span />
+      <span />
     </button>
     <hr />
     <p class="pc-link">
@@ -48,7 +48,6 @@
       role="region"
       :aria-labelledby="titleId"
       :inert="canToggle && !isOpen ? true : undefined"
-      :aria-hidden="canToggle && !isOpen ? true : undefined"
     >
       <hr aria-hidden="true" />
       <p class="pc-desc" v-html="desc"></p>

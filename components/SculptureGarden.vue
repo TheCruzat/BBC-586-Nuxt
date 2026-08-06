@@ -36,7 +36,7 @@
     display: none;
   }
   // Hide decorative fixed chrome when zoomed / short viewport (1.4.10 reflow)
-  @media (max-height: 40rem) {
+  @include v.shortViewport(40rem) {
     display: none;
   }
   position: fixed;

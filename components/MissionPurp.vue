@@ -13,18 +13,8 @@
 </template>
 
 <script>
-// import {types as BracketTypes} from "@/components/Brackets"
 export default {
   name: "MissionPurp",
-  props: {
-    msg: {
-      type: String,
-      default: "",
-    },
-  },
-  // data:function() {
-  //  BracketTypes: BracketTypes
-  // }
 };
 </script>
 

@@ -3,9 +3,9 @@
     <h1>
       <span>built by the cruzat v{{ pv }}</span>
 
-      <Logo :type="types.header" aria-hidden="true" focusable="false" />
+      <Logo :type="types.header" />
     </h1>
-    <SculptureGarden aria-hidden="true" />
+    <SculptureGarden />
   </div>
 </template>
 
@@ -70,7 +70,7 @@ h1 {
   }
 
   // At high zoom / short viewports, keep the brand in document flow
-  @media (max-height: 40rem) {
+  @include v.shortViewport(40rem) {
     position: absolute !important;
     top: 0;
     left: 0;

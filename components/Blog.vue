@@ -7,9 +7,8 @@
           v-for="post in limitedPosts"
           :key="post.id"
           :href="post.link"
-          target="_blank"
-          rel="noopener noreferrer"
           class="blogcard"
+          v-bind="externalLinkAttrs(post.link)"
         >
           <span class="visually-hidden">Opens in new window: </span>
           <div class="card-header">
@@ -20,7 +19,6 @@
             <div
               v-if="post._embedded && post._embedded['wp:featuredmedia']"
               class="card-thumb"
-              aria-hidden="true"
             >
               <img
                 width="150"
@@ -57,11 +55,11 @@
           <a
             class="btn"
             :href="blogURL"
-            target="_blank"
-            rel="noopener noreferrer"
+            v-bind="externalLinkAttrs(blogURL)"
             title="read more at my blog"
-            aria-label="visit Dan Cruzat's Blog (opens in new window)"
-            >Visit My Blog</a
+            >Visit My Blog<span class="visually-hidden">
+              (opens in new window)</span
+            ></a
           >
         </p>
       </div>
@@ -72,6 +70,7 @@
 
 <script>
 import { blogURL } from "@/content/meta";
+import { externalLinkAttrs } from "@/utils/externalLink";
 
 export default {
   name: "Blog",
@@ -80,6 +79,7 @@ export default {
       posts: [],
       blogURL,
       rootie: "https://coffeewith.thecruzat.com/wp-json/wp/v2/posts",
+      externalLinkAttrs,
     };
   },
   computed: {

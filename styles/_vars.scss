@@ -14,6 +14,13 @@
   }
 }
 
+/** Short viewport (high zoom / short window) — unstick chrome, etc. */
+@mixin shortViewport($q: 30rem) {
+  @media (max-height: $q) {
+    @content;
+  }
+}
+
 .tablet-up {
   @include mFlipUnder(48rem) {
     display: none;

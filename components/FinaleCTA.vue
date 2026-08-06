@@ -4,7 +4,11 @@
     <div class="">
       <h3>have a question?</h3>
       <p>
-        <a :href="'mailto:' + contactEmail + '?subject=' + subject" :aria-label="linkAriaLabel" :title="linkTitle" class="btn">
+        <a
+          :href="'mailto:' + contactEmail + '?subject=' + subject"
+          :title="linkTitle || undefined"
+          class="btn"
+        >
           Ask Me Anything
         </a>
       </p>

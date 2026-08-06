@@ -57,12 +57,6 @@ import { brands } from "@/content/brands.js";
 
 export default {
   name: "SkillsExp",
-  props: {
-    msg: {
-      type: String,
-      default: "",
-    },
-  },
 
   data() {
     return {

@@ -97,9 +97,9 @@ describe("WildCard Component", () => {
     expect(wrapper.find(".pc-close").exists()).toBe(true);
   });
 
-  it("marks closed drawer as inert and aria-hidden", () => {
+  it("marks closed drawer as inert", () => {
     const drawer = wrapper.find(".pc-drawer");
-    expect(drawer.attributes("aria-hidden")).toBe("true");
+    expect(drawer.attributes("aria-hidden")).toBeUndefined();
     expect(drawer.attributes("inert")).toBeDefined();
   });
 

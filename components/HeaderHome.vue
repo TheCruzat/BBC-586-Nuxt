@@ -1,7 +1,6 @@
 <template>
   <header
     aria-label="built by the Cruzat: the online portfolio of Dan Cruzat, front end engineer based in Portland Oregon"
-    @scroll="handleParallax"
   >
     <HeaderLogo />
 
@@ -29,7 +28,6 @@
     <div class="parallax-wrapper" ref="parallaxWrapper">
       <Picture
         :img="img[0]"
-        :no-lazy="true"
         :priority="true"
         alt="Dan Cruzat, senior front end engineer based in Portland, Oregon"
         :img-style="{
@@ -47,39 +45,30 @@ import { ImageSets } from "@/content/SplitIMG";
 
 export default {
   name: "HeaderHome",
-  props: {
-    msg: {
-      type: String,
-      default: "",
-    },
-  },
   data: function () {
     return {
       img: ImageSets,
       parallaxOffset: 0,
       isScrolling: false,
       scrollTimeout: null,
-      headerTop: 0,
-      windowHeight: 0,
+      prefersReducedMotion: false,
     };
   },
   mounted: function () {
-    this.windowHeight = window.innerHeight;
-    this.headerTop = this.$refs.parallaxWrapper?.offsetTop || 0;
+    this.prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
     window.addEventListener("scroll", this.handleScroll, { passive: true });
-    window.addEventListener("resize", this.handleResize);
   },
   beforeUnmount: function () {
     window.removeEventListener("scroll", this.handleScroll);
-    window.removeEventListener("resize", this.handleResize);
     if (this.scrollTimeout) {
       clearTimeout(this.scrollTimeout);
     }
   },
   methods: {
     handleScroll: function () {
-      // Check for reduced motion preference
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      if (this.prefersReducedMotion) {
         this.parallaxOffset = 0;
         return;
       }
@@ -93,8 +82,6 @@ export default {
 
       // Only apply parallax when header is in viewport
       if (scrollY < headerBottom) {
-        // Parallax effect: move background slower than scroll
-        // Adjust the multiplier (0.5) for more or less intense parallax
         this.parallaxOffset = scrollY * 0.53;
       }
 
@@ -103,10 +90,6 @@ export default {
       this.scrollTimeout = setTimeout(() => {
         this.isScrolling = false;
       }, 150);
-    },
-    handleResize: function () {
-      this.windowHeight = window.innerHeight;
-      this.headerTop = this.$refs.parallaxWrapper?.offsetTop || 0;
     },
   },
 };

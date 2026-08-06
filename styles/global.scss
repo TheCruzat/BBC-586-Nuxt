@@ -72,17 +72,6 @@ a {
   outline-offset: 3px;
 }
 
-button:focus-visible,
-a:focus-visible,
-[role="button"]:focus-visible,
-summary:focus-visible,
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible {
-  outline: 3px solid var(--hot);
-  outline-offset: 3px;
-}
-
 * {
   box-sizing: border-box;
 }

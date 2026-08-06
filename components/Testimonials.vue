@@ -35,17 +35,14 @@
 
       <div
         class="dots"
-        role="tablist"
-        aria-label="Testimonials"
+        role="group"
+        aria-label="Choose testimonial"
         v-if="displayQuotes.length > 1"
       >
         <button
           v-for="(quote, i) in displayQuotes"
           :key="quote.id || i"
           type="button"
-          role="tab"
-          :class="{ active: currentIndex === i }"
-          :aria-selected="currentIndex === i"
           :aria-current="currentIndex === i ? 'true' : undefined"
           :aria-label="
             'View testimonial ' +
@@ -221,7 +218,6 @@ const displayQuotes = computed(() => {
       color: #5a8fb0;
       opacity: 1;
 
-      &.active,
       &[aria-current="true"] {
         color: var(--con);
       }
@@ -289,12 +285,5 @@ const displayQuotes = computed(() => {
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .fade-enter-active,
-  .fade-leave-active {
-    transition: none;
-  }
 }
 </style>

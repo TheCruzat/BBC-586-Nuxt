@@ -7,8 +7,7 @@
       :title="link.title"
       :aria-label="link.ariaLabel"
       :data-mega="link.mega"
-      :target="isExternal(link.url) ? '_blank' : undefined"
-      :rel="isExternal(link.url) ? 'noopener noreferrer' : undefined"
+      v-bind="externalLinkAttrs(link.url)"
       :class="{ sub: ndx > topRow }"
     >
       <ClientOnly
@@ -21,6 +20,7 @@
 
 <script>
 import { GoodiesLinks as goodies } from "@/content/goodies.js";
+import { externalLinkAttrs } from "@/utils/externalLink";
 
 export const types = {
   header: "header",
@@ -40,13 +40,8 @@ export default {
     return {
       links: goodies,
       topRow: setRow(goodies),
+      externalLinkAttrs,
     };
-  },
-  methods: {
-    isExternal(url) {
-      if (!url) return false;
-      return /^(https?:)?\/\//i.test(url);
-    },
   },
 };
 </script>

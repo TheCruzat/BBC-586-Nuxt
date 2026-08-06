@@ -5,11 +5,13 @@
         <li v-for="link in resumeLinks" :key="link.label">
           <a
             :href="link.href"
-            :aria-label="link.ariaLabel"
             :target="link.new ? '_blank' : undefined"
             :rel="link.new ? 'noopener noreferrer' : undefined"
           >
-            <span v-html="link.label"></span>
+            <span>{{ link.label }}</span>
+            <span v-if="link.new" class="visually-hidden">
+              (opens in new window)</span
+            >
           </a>
         </li>
       </ul>
@@ -19,23 +21,19 @@
 
 <script>
 import { resumeFile, resumeURL } from "@/content/meta";
-const resumeFileLabel = "save resume";
-const resumeURLLabel = "see resume";
+
 const resumeLinks = [
   {
     href: resumeURL,
-    label: resumeURLLabel,
-    ariaLabel: "Dan Cruzat's resume at live url",
-    icon: "fa-map-o",
+    label: "see resume",
   },
   {
     href: resumeFile,
-    label: resumeFileLabel,
-    ariaLabel: "Dan Cruzat's resume as downloadable PDF (opens in new window)",
-    icon: "fa-floppy-o",
+    label: "save resume",
     new: true,
   },
 ];
+
 export default {
   name: "ResumeBug",
   data: function () {
@@ -61,7 +59,7 @@ section.resume-bug {
   padding-bottom: $rbpad;
   border-bottom: 0.5rem solid var(--lyt);
 
-  @media (max-height: 30rem) {
+  @include v.shortViewport {
     position: static;
     border-bottom: none;
   }
@@ -78,10 +76,6 @@ section.resume-bug {
     border-radius: 2rem 2rem 0 0;
     overflow: hidden;
 
-    h3 {
-      margin: 0;
-    }
-
     ul {
       margin: 0 auto;
       padding: 0;
@@ -91,14 +85,9 @@ section.resume-bug {
       max-width: 440px;
       gap: 0;
       grid-template-columns: repeat(2, 1fr);
-
-      @include v.mFlip(480px) {
-        //gap: var(--gutter);
-      }
     }
 
     li:nth-child(1) a {
-      border-radius: 0 0 0 0;
       padding-left: calc(var(--gutter) * 1.5);
     }
 
@@ -121,20 +110,10 @@ section.resume-bug {
       padding: 0.75rem 0.75rem;
       min-height: 44px;
 
-      .cloak {
-        display: inline-block;
-        width: 0px;
-        overflow: hidden;
-      }
-
       &:hover {
         background: var(--hot);
         border-color: var(--hot);
         color: #fff;
-
-        span.cloak {
-          max-width: 100px;
-        }
       }
 
       @include v.mFlip(480px) {
@@ -146,18 +125,6 @@ section.resume-bug {
       @include v.mFlip() {
         padding-left: 1rem;
         padding-right: 1rem;
-      }
-
-      i {
-        font-size: 1.25rem;
-        display: inline-block;
-        margin-right: 0.75rem;
-        text-align: center;
-
-        @include v.mFlip(480px) {
-          font-size: 1.5rem;
-          margin-right: 1rem;
-        }
       }
     }
   }

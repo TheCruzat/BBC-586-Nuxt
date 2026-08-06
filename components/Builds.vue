@@ -5,19 +5,14 @@
         <h3>{{ set.header }}</h3>
         <p class="intro-blurb" v-if="set.brief" v-html="set.brief"></p>
         <template v-if="set.feature">
-          <WildCard class="featured" featured v-bind="set.feature" />
+          <WildCard featured v-bind="set.feature" />
         </template>
         <hr v-if="set.feature" />
         <WildSet>
           <WildCard v-for="link in set.links" :key="link.title" v-bind="link" />
         </WildSet>
         <template v-if="set.finale">
-          <WildCard
-            class="featured"
-            featured
-            v-if="set.finale"
-            v-bind="set.finale"
-          />
+          <WildCard featured v-if="set.finale" v-bind="set.finale" />
         </template>
         <!-- <hr> -->
       </div>

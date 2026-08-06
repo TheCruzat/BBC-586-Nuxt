@@ -18,19 +18,12 @@
         <span>Is that okay with you?</span>
       </p>
       <div class="actions">
-        <button
-          ref="acceptBtn"
-          type="button"
-          aria-label="Yes I consent to analytics tracking"
-          class="btn"
-          @click="accept"
-        >
+        <button ref="acceptBtn" type="button" class="btn" @click="accept">
           Yes that's okay
         </button>
         <button
           ref="declineBtn"
           type="button"
-          aria-label="No I do not consent to analytics tracking"
           class="btn minimal"
           @click="decline"
         >
@@ -142,7 +135,7 @@ onBeforeUnmount(() => {
   max-height: min(80vh, 28rem);
   overflow: auto;
 
-  @media (max-height: 30rem) {
+  @include v.shortViewport {
     bottom: 0.5rem;
     max-height: calc(100vh - 1rem);
     width: min(400px, calc(100vw - 1rem));

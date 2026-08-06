@@ -51,10 +51,6 @@ const props = defineProps({
     type: Object,
     default: () => ({}),
   },
-  noLazy: {
-    type: Boolean,
-    default: false,
-  },
   /** When true (or when alt is empty), treat as decorative. */
   decorative: {
     type: Boolean,

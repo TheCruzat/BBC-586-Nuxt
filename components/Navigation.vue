@@ -1,6 +1,6 @@
 <template>
   <div class="spacer tablet-up" aria-hidden="true">
-    <Picture :img="image" decorative />
+    <Picture :img="image" />
   </div>
   <nav aria-label="Primary">
     <div class="wrap">
@@ -11,7 +11,6 @@
           :key="link[0]"
           :href="link[1]"
           :aria-current="currentHash === link[1] ? 'true' : undefined"
-          :class="{ curr: currentHash === link[1] }"
           >{{ link[0] }}</a
         >
       </div>
@@ -110,7 +109,7 @@ nav {
   box-shadow: 0 0.5rem 0.5rem rgba(12, 12, 12, 0.05);
 
   // Don’t consume the whole viewport when zoomed / short
-  @media (max-height: 30rem) {
+  @include v.shortViewport {
     position: relative;
   }
 
@@ -168,7 +167,6 @@ nav {
     font-weight: bold;
     border-radius: 0.35rem;
 
-    &.curr,
     &[aria-current="true"] {
       background: var(--conlyte);
       color: var(--con);
