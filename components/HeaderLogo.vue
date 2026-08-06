@@ -1,11 +1,11 @@
 <template>
   <div>
-    <h1 aria-hidden="true">
+    <h1>
       <span>built by the cruzat v{{ pv }}</span>
 
-      <Logo :type="types.header" />
+      <Logo :type="types.header" aria-hidden="true" focusable="false" />
     </h1>
-    <SculptureGarden />
+    <SculptureGarden aria-hidden="true" />
   </div>
 </template>
 

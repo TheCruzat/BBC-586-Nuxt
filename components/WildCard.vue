@@ -1,39 +1,68 @@
 <template>
   <div
     class="project-card"
-    :class="{ 'is-open': isOpen }"
-    @click="toggleDrawer"
+    :class="{ 'is-open': isOpen, featured: featured }"
+    @click="onCardClick"
   >
-    <p class="pc-title">{{ title }}</p>
     <button
+      v-if="canToggle"
+      type="button"
+      class="pc-title pc-title-toggle"
+      :id="titleId"
+      :aria-expanded="isOpen"
+      :aria-controls="drawerId"
+      @click.stop="toggleDrawer"
+    >
+      {{ title }}
+    </button>
+    <p v-else class="pc-title" :id="titleId">{{ title }}</p>
+
+    <button
+      v-if="canToggle && isOpen"
       class="pc-close"
+      type="button"
       @click.stop="closeDrawer"
       aria-label="Close details"
     >
-      <span />
-      <span />
+      <span aria-hidden="true" />
+      <span aria-hidden="true" />
     </button>
     <hr />
     <p class="pc-link">
-      <a :href="url" :title="title" :aria-label="ariaLabel" target="_blank" @click.stop>{{
-        displayUrl
-      }}</a>
+      <a
+        :href="url"
+        :title="title"
+        :aria-label="ariaLabel"
+        target="_blank"
+        rel="noopener noreferrer"
+        @click.stop
+        >{{ displayUrl }}</a
+      >
     </p>
     <p class="pc-tasks">{{ tasks }}</p>
     <p class="pc-year">{{ year }} : {{ tech }}</p>
 
-    <div class="pc-drawer">
-      <hr />
+    <div
+      class="pc-drawer"
+      :id="drawerId"
+      role="region"
+      :aria-labelledby="titleId"
+      :inert="canToggle && !isOpen ? true : undefined"
+      :aria-hidden="canToggle && !isOpen ? true : undefined"
+    >
+      <hr aria-hidden="true" />
       <p class="pc-desc" v-html="desc"></p>
       <a
         class="view-source"
         v-if="repo"
         :href="repo"
         target="_blank"
+        rel="noopener noreferrer"
         :aria-label="repoAriaLabel"
+        @click.stop
         >View Source</a
       >
-      <hr v-if="studio || team" />
+      <hr aria-hidden="true" v-if="studio || team.length > 0" />
 
       <p v-if="studio" class="pc-studio">
         for:
@@ -42,6 +71,7 @@
           :title="studio.name"
           :aria-label="studio.ariaLabel"
           target="_blank"
+          rel="noopener noreferrer"
           @click.stop
           >{{ studio.name }}</a
         >
@@ -51,8 +81,15 @@
         <p>team:</p>
         <ul>
           <li v-for="t in team" :key="t.name">
-            <a :href="t.link" :aria-label="t.ariaLabel" target="_blank" @click.stop>{{ t.name }}</a> :
-            {{ t.role }}
+            <a
+              :href="t.link"
+              :aria-label="t.ariaLabel"
+              target="_blank"
+              rel="noopener noreferrer"
+              @click.stop
+              >{{ t.name }}</a
+            >
+            : {{ t.role }}
           </li>
         </ul>
       </div>
@@ -61,6 +98,8 @@
 </template>
 
 <script>
+let wildCardUid = 0;
+
 export default {
   name: "WildCard",
   props: {
@@ -96,6 +135,10 @@ export default {
       type: String,
       default: "",
     },
+    repoAriaLabel: {
+      type: String,
+      default: "",
+    },
     team: {
       type: Array,
       default: () => [],
@@ -104,10 +147,16 @@ export default {
       type: String,
       default: "",
     },
+    featured: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
+    wildCardUid += 1;
     return {
-      isOpen: false,
+      isOpen: this.featured,
+      uid: wildCardUid,
     };
   },
   computed: {
@@ -115,12 +164,28 @@ export default {
       if (!this.url) return "";
       return this.url.replace(/^(https?:)?\/\//, "").replace(/\/$/, "");
     },
+    canToggle() {
+      return !this.featured;
+    },
+    drawerId() {
+      return `wildcard-drawer-${this.uid}`;
+    },
+    titleId() {
+      return `wildcard-title-${this.uid}`;
+    },
   },
   methods: {
+    onCardClick(event) {
+      if (!this.canToggle || this.isOpen) return;
+      if (event?.target?.closest?.("a, button")) return;
+      this.isOpen = true;
+    },
     toggleDrawer() {
-      if (!this.isOpen) this.isOpen = true;
+      if (!this.canToggle) return;
+      this.isOpen = !this.isOpen;
     },
     closeDrawer() {
+      if (!this.canToggle) return;
       this.isOpen = false;
     },
   },
@@ -160,6 +225,7 @@ export default {
     margin-bottom: 1.5rem;
     border: 2px solid #666 !important;
     margin-inline: auto;
+    cursor: default;
 
     p {
       font-size: var(--bodyFontSize);
@@ -178,7 +244,7 @@ export default {
   }
 
   // --- The "Swell" Effect (Hover) ---
-  &:hover {
+  &:hover:not(.featured) {
     --card-spacer: 0.75rem;
     background: #fff;
     border-color: var(--con);
@@ -220,7 +286,6 @@ export default {
     }
 
     .pc-close {
-      // display: block;
       width: 40px;
       height: 40px;
       top: 0;
@@ -247,7 +312,25 @@ export default {
       margin: 0;
       margin-bottom: var(--card-spacer);
       transition: all 0.35s ease-out;
+      text-align: left;
     }
+
+    &-title-toggle {
+      display: block;
+      width: 100%;
+      padding: 0;
+      border: none;
+      background: transparent;
+      color: inherit;
+      font: inherit;
+      cursor: pointer;
+      border-radius: 0.25rem;
+
+      &:hover {
+        color: var(--hot);
+      }
+    }
+
     &-link {
       font-size: var(--bodyFontSizeBaseline);
     }
@@ -276,11 +359,9 @@ export default {
     }
     &-close {
       position: absolute;
-      // top: 0.25rem;
       top: 20px;
       right: 20px;
       background: transparent;
-      // background: yellow;
       border: none;
       font-size: 1.25rem;
       color: var(--bod);
@@ -288,18 +369,18 @@ export default {
       padding: 0.25rem;
       z-index: 10;
       display: block;
-      width: 0px;
-      height: 0px;
+      width: 40px;
+      height: 40px;
       transition: all 0.2s ease-in-out;
 
       span {
         display: block;
         height: 2px;
-        width: 0;
+        width: 14px;
         background: var(--bod);
         position: absolute;
         top: calc(50% - 1px);
-        left: 50%; // calc(50% - 9px);
+        left: calc(50% - 7px);
         transition: all 0.1s ease-in-out;
 
         &:nth-child(1) {
@@ -312,6 +393,10 @@ export default {
 
       &:hover {
         color: var(--hot);
+
+        span {
+          background: var(--hot);
+        }
       }
     }
   }

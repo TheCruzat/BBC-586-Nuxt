@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from "vitest";
+import { describe, it, expect, beforeEach, vi } from "vitest";
 import { mount } from "@vue/test-utils";
 import WildCard from "~/components/WildCard.vue";
 
@@ -70,12 +70,58 @@ describe("WildCard Component", () => {
     expect(wrapper.find(".project-card").classes()).toContain("is-open");
   });
 
+  it("opens and closes drawer via title toggle button", async () => {
+    const titleBtn = wrapper.find(".pc-title-toggle");
+    expect(titleBtn.attributes("aria-expanded")).toBe("false");
+
+    await titleBtn.trigger("click");
+    expect(wrapper.find(".project-card").classes()).toContain("is-open");
+    expect(titleBtn.attributes("aria-expanded")).toBe("true");
+
+    await titleBtn.trigger("click");
+    expect(wrapper.find(".project-card").classes()).not.toContain("is-open");
+    expect(titleBtn.attributes("aria-expanded")).toBe("false");
+  });
+
   it("closes drawer when close button is clicked", async () => {
-    await wrapper.find(".project-card").trigger("click");
+    await wrapper.find(".pc-title-toggle").trigger("click");
     expect(wrapper.find(".project-card").classes()).toContain("is-open");
 
     await wrapper.find(".pc-close").trigger("click");
     expect(wrapper.find(".project-card").classes()).not.toContain("is-open");
+  });
+
+  it("only renders close button while open", async () => {
+    expect(wrapper.find(".pc-close").exists()).toBe(false);
+    await wrapper.find(".pc-title-toggle").trigger("click");
+    expect(wrapper.find(".pc-close").exists()).toBe(true);
+  });
+
+  it("marks closed drawer as inert and aria-hidden", () => {
+    const drawer = wrapper.find(".pc-drawer");
+    expect(drawer.attributes("aria-hidden")).toBe("true");
+    expect(drawer.attributes("inert")).toBeDefined();
+  });
+
+  it("wires aria-controls between title toggle and drawer", () => {
+    const titleBtn = wrapper.find(".pc-title-toggle");
+    const drawer = wrapper.find(".pc-drawer");
+    expect(titleBtn.attributes("aria-controls")).toBe(drawer.attributes("id"));
+  });
+
+  it("keeps featured cards open without a toggle control", () => {
+    wrapper = mount(WildCard, {
+      props: {
+        ...defaultProps,
+        featured: true,
+      },
+    });
+
+    expect(wrapper.find(".project-card").classes()).toContain("is-open");
+    expect(wrapper.find(".project-card").classes()).toContain("featured");
+    expect(wrapper.find(".pc-title-toggle").exists()).toBe(false);
+    expect(wrapper.find(".pc-close").exists()).toBe(false);
+    expect(wrapper.find(".pc-drawer").attributes("aria-hidden")).toBeUndefined();
   });
 
   it("displays description in drawer", () => {
@@ -97,7 +143,7 @@ describe("WildCard Component", () => {
       props: studioProps,
     });
 
-    await wrapper.find(".project-card").trigger("click");
+    await wrapper.find(".pc-title-toggle").trigger("click");
 
     const studioLink = wrapper.find(".pc-studio a");
     expect(studioLink.exists()).toBe(true);
@@ -142,7 +188,8 @@ describe("WildCard Component", () => {
     expect(cleanWrapper.find(".project-team").exists()).toBe(false);
   });
 
-  it("has correct aria-label on close button", () => {
+  it("has correct aria-label on close button", async () => {
+    await wrapper.find(".pc-title-toggle").trigger("click");
     const closeBtn = wrapper.find(".pc-close");
     expect(closeBtn.attributes("aria-label")).toBe("Close details");
   });

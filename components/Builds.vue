@@ -5,7 +5,7 @@
         <h3>{{ set.header }}</h3>
         <p class="intro-blurb" v-if="set.brief" v-html="set.brief"></p>
         <template v-if="set.feature">
-          <WildCard class="featured is-open" v-bind="set.feature" />
+          <WildCard class="featured" featured v-bind="set.feature" />
         </template>
         <hr v-if="set.feature" />
         <WildSet>
@@ -13,7 +13,8 @@
         </WildSet>
         <template v-if="set.finale">
           <WildCard
-            class="featured is-open"
+            class="featured"
+            featured
             v-if="set.finale"
             v-bind="set.finale"
           />

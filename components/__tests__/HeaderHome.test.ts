@@ -127,9 +127,17 @@ describe("HeaderHome Component", () => {
     removeSpy.mockRestore();
   });
 
-  it("has tiptop section with aria-hidden", () => {
+  it("exposes tiptop identity content to assistive tech", () => {
     const tiptop = wrapper.find(".tiptop");
-    expect(tiptop.attributes("aria-hidden")).toBe("true");
+    expect(tiptop.attributes("aria-hidden")).toBeUndefined();
+  });
+
+  it("hides decorative chrome from assistive tech", () => {
+    const corners = wrapper.findAll(".header-corner");
+    expect(corners.length).toBeGreaterThan(0);
+    corners.forEach((corner) => {
+      expect(corner.attributes("aria-hidden")).toBe("true");
+    });
   });
 
   it("displays name with correct styling class", () => {

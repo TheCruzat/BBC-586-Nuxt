@@ -5,7 +5,7 @@
     </div>
 
     <!-- Parallax wrapper with scale and movement effect -->
-    <Picture :img="img" :priority="priority" />
+    <Picture aria-hidden="true" :img="img" :priority="priority" />
   </section>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="brackets" :data-type="activeType.label">
+  <div aria-hidden="true" class="brackets" :data-type="activeType.label">
     <strong>{{ activeType.char }}</strong>
     <strong>{{ activeType.endChar || activeType.char }}</strong>
   </div>

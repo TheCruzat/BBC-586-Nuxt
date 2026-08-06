@@ -8,7 +8,7 @@
       </div>
       <div class="blur">
         <img class="cic" width="32" height="32" :src="cic" alt="" />
-        <LogoTC :type="LogoTypes.footer" />
+        <LogoTC aria-hidden="true" :type="LogoTypes.footer" />
         <h3>built by the cruzat v{{ pv }}</h3>
         <p class="">
           <span>copyright &copy;2008-{{ yr }}</span>

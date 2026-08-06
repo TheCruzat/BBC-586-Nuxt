@@ -5,7 +5,7 @@
   >
     <HeaderLogo />
 
-    <div aria-hidden="true" class="tiptop">
+    <div class="tiptop">
       <div class="subset">
         <p class="name">Dan Cruzat</p>
         <p><strong>Senior Front End Engineer + UI Architect</strong></p>
@@ -13,17 +13,17 @@
       </div>
     </div>
 
-    <span class="header-corner"></span>
-    <span class="header-corner"></span>
-    <span class="header-corner"></span>
-    <span class="header-corner"></span>
-    <span class="header-corner"></span>
-    <span class="header-corner"></span>
-    <span class="header-brace top-white"></span>
-    <span class="header-brace tl-white"></span>
-    <span class="header-brace tr-white"></span>
-    <span class="header-brace bottom-con"></span>
-    <span class="header-brace bottom-white"><span /><span /></span>
+    <span class="header-corner" aria-hidden="true"></span>
+    <span class="header-corner" aria-hidden="true"></span>
+    <span class="header-corner" aria-hidden="true"></span>
+    <span class="header-corner" aria-hidden="true"></span>
+    <span class="header-corner" aria-hidden="true"></span>
+    <span class="header-corner" aria-hidden="true"></span>
+    <span class="header-brace top-white" aria-hidden="true"></span>
+    <span class="header-brace tl-white" aria-hidden="true"></span>
+    <span class="header-brace tr-white" aria-hidden="true"></span>
+    <span class="header-brace bottom-con" aria-hidden="true"></span>
+    <span class="header-brace bottom-white" aria-hidden="true"><span /><span /></span>
 
     <!-- Parallax wrapper for image -->
     <div class="parallax-wrapper" ref="parallaxWrapper">
