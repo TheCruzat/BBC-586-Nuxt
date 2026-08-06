@@ -5,7 +5,6 @@
     aria-label="built by the Cruzat — jump to introduction"
   >
     <Logo type="nav" />
-    <Logo type="nav-bg" />
   </a>
 </template>
 

@@ -165,6 +165,7 @@ describe("WildCard Component", () => {
       team: [
         { name: "Alice", role: "Designer", link: "https://alice.com" },
         { name: "Bob", role: "Developer", link: "https://bob.com" },
+        { name: "Carol", role: "Copywriter" },
       ],
     };
     wrapper = mount(WildCard, {
@@ -175,9 +176,12 @@ describe("WildCard Component", () => {
     expect(teamList.exists()).toBe(true);
 
     const teamItems = wrapper.findAll(".project-team li");
-    expect(teamItems).toHaveLength(2);
+    expect(teamItems).toHaveLength(3);
     expect(teamItems[0].text()).toContain("Alice");
     expect(teamItems[0].text()).toContain("Designer");
+    expect(teamItems[0].find("a").attributes("href")).toBe("https://alice.com");
+    expect(teamItems[2].find("a").exists()).toBe(false);
+    expect(teamItems[2].find("span").text()).toBe("Carol");
   });
 
   it("does not show team section when team is empty", () => {

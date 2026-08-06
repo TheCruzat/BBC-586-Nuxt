@@ -81,6 +81,7 @@
         <ul>
           <li v-for="t in team" :key="t.name">
             <a
+              v-if="t.link"
               :href="t.link"
               :aria-label="t.ariaLabel"
               target="_blank"
@@ -88,6 +89,7 @@
               @click.stop
               >{{ t.name }}</a
             >
+            <span v-else>{{ t.name }}</span>
             : {{ t.role }}
           </li>
         </ul>

@@ -15,6 +15,21 @@ interface ContextWithNames {
 export default defineNuxtConfig({
   ssr: true,
 
+  // Imported images land in the Vite/Nuxt manifest as page assets; Nuxt then
+  // injects <link rel="prefetch" as="image"> for every one of them. That races
+  // the LCP hero and undoes lazy / IntersectionObserver deferral — strip them.
+  hooks: {
+    "build:manifest": (manifest) => {
+      for (const item of Object.values(manifest)) {
+        if (!item.assets) continue;
+        item.assets = item.assets.filter(
+          (asset: string) =>
+            !/\.(png|jpe?g|gif|svg|webp|avif)$/i.test(asset),
+        );
+      }
+    },
+  },
+
   app: {
     head: {
       charset: "utf-8",
