@@ -1,5 +1,5 @@
 <template>
-  <picture v-if="img">
+  <picture v-if="img" :aria-hidden="isDecorative ? 'true' : undefined">
     <source
       v-if="img.full?.webp"
       media="(min-width: 40rem)"
@@ -22,7 +22,7 @@
     <img
       v-if="img.full?.webp"
       :src="img.full.webp"
-      :alt="alt"
+      :alt="resolvedAlt"
       :loading="priority ? 'eager' : 'lazy'"
       :fetchpriority="priority ? 'high' : 'auto'"
       :decoding="priority ? 'sync' : 'async'"
@@ -32,14 +32,16 @@
 </template>
 
 <script setup>
-defineProps({
+import { computed } from "vue";
+
+const props = defineProps({
   img: {
     type: Object,
     required: true,
   },
   alt: {
     type: String,
-    default: "Hero image",
+    default: "",
   },
   priority: {
     type: Boolean,
@@ -53,7 +55,17 @@ defineProps({
     type: Boolean,
     default: false,
   },
+  /** When true (or when alt is empty), treat as decorative. */
+  decorative: {
+    type: Boolean,
+    default: false,
+  },
 });
+
+const isDecorative = computed(
+  () => props.decorative || props.alt.trim() === "",
+);
+const resolvedAlt = computed(() => (isDecorative.value ? "" : props.alt));
 </script>
 
 <style lang="scss" scoped>

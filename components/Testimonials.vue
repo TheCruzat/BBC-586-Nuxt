@@ -1,35 +1,62 @@
 <template>
   <div class="testimonials" v-if="displayQuotes.length > 0">
     <div class="testimonial-container">
-      <transition name="fade" mode="out-in">
-        <div :key="currentIndex" class="testimonial-slide">
-          <em v-html="displayQuotes[currentIndex].quote"></em>
-          <p>
-            <a
-              :href="displayQuotes[currentIndex].link"
-              target="_blank"
-              :title="'learn more about ' + displayQuotes[currentIndex].name"
-              :aria-label="displayQuotes[currentIndex].ariaLabel"
-            >
-              <strong v-html="displayQuotes[currentIndex].name" /> </a
-            ><br />
-            <span
-              v-html="displayQuotes[currentIndex].role"
-              class="testimonial-sub"
+      <div
+        class="testimonial-live"
+        aria-live="polite"
+        aria-atomic="true"
+      >
+        <transition name="fade" mode="out-in">
+          <blockquote :key="currentIndex" class="testimonial-slide">
+            <div
+              class="testimonial-quote"
+              v-html="displayQuotes[currentIndex].quote"
             />
-          </p>
-        </div>
-      </transition>
+            <footer>
+              <cite>
+                <a
+                  :href="displayQuotes[currentIndex].link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  :title="'learn more about ' + displayQuotes[currentIndex].name"
+                  :aria-label="displayQuotes[currentIndex].ariaLabel"
+                >
+                  <strong v-html="displayQuotes[currentIndex].name" />
+                </a>
+              </cite>
+              <span
+                v-html="displayQuotes[currentIndex].role"
+                class="testimonial-sub"
+              />
+            </footer>
+          </blockquote>
+        </transition>
+      </div>
 
-      <div class="dots" v-if="displayQuotes.length > 1">
+      <div
+        class="dots"
+        role="tablist"
+        aria-label="Testimonials"
+        v-if="displayQuotes.length > 1"
+      >
         <button
-          v-for="(_, i) in displayQuotes"
-          :key="i"
+          v-for="(quote, i) in displayQuotes"
+          :key="quote.id || i"
+          type="button"
+          role="tab"
           :class="{ active: currentIndex === i }"
+          :aria-selected="currentIndex === i"
+          :aria-current="currentIndex === i ? 'true' : undefined"
+          :aria-label="
+            'View testimonial ' +
+            (i + 1) +
+            ' of ' +
+            displayQuotes.length +
+            (quote.name ? ': ' + quote.name : '')
+          "
           @click="currentIndex = i"
-          :aria-label="'View testimonial ' + (i + 1)"
         >
-          &bull;
+          <span aria-hidden="true">&bull;</span>
         </button>
       </div>
 
@@ -102,13 +129,10 @@ const displayQuotes = computed(() => {
 
 .testimonial-container {
   padding: 1rem var(--gutter);
-  // text-align: center;
-  // max-width: 56rem;
   width: 100%;
   margin: 0 auto;
   position: relative;
   max-width: 36rem;
-  position: relative;
 
   @include v.mFlip() {
     padding: 2rem 32px;
@@ -116,47 +140,54 @@ const displayQuotes = computed(() => {
   }
 
   .testimonial-slide {
-    // font-size: 75%; //
     position: relative;
     z-index: 1;
-    // min-height: 250px;
+    margin: 0;
 
-    em {
+    .testimonial-quote {
       display: block;
-      margin-bottom: 1.75rem; //
+      margin-bottom: 1.75rem;
       font-style: italic;
       font-size: var(--bodyFontSizeBaseline);
       line-height: 1.8;
 
-      @include v.mFlip() {
-        // font-size: 1rem;
-      }
+      :deep(p) {
+        margin: 0;
 
-      + p {
-        line-height: 1.2;
-        font-size: 1.125rem;
-
-        a {
-          background: unset;
-          border: none;
-
-          &:hover {
-            background: var(--con);
-            padding-inline: 0.25rem;
-          }
+        &:not(:last-child) {
+          margin-bottom: 1rem;
         }
       }
     }
-    p {
+
+    footer {
+      margin: 0;
+      line-height: 1.2;
+      font-size: 1.125rem;
+      font-style: normal;
+
       @include v.mFlip() {
         padding-left: calc(50% + 0.5rem);
+      }
+
+      cite {
+        font-style: normal;
+      }
+
+      a {
+        background: unset;
+        border: none;
+
+        &:hover {
+          background: var(--con);
+          padding-inline: 0.25rem;
+        }
       }
     }
 
     .testimonial-sub {
-      //@include v.mFlip() {
-      font-size: 75%; //
-      //}
+      display: block;
+      font-size: 75%;
     }
   }
 
@@ -164,6 +195,9 @@ const displayQuotes = computed(() => {
     margin-top: 0rem;
     position: relative;
     z-index: 1;
+    display: flex;
+    gap: 0.25rem;
+
     @include v.mFlip() {
       position: absolute;
       bottom: 30px;
@@ -180,12 +214,16 @@ const displayQuotes = computed(() => {
       transition: color 0.3s ease;
       margin: 0;
       padding: 0;
-      width: 24px;
+      width: 28px;
+      height: 28px;
       text-align: center;
-      opacity: 0.25;
+      // Solid muted blue (~3:1+ on conlyte) instead of low-opacity --con
+      color: #5a8fb0;
+      opacity: 1;
 
-      &.active {
-        opacity: 1;
+      &.active,
+      &[aria-current="true"] {
+        color: var(--con);
       }
     }
   }
@@ -196,12 +234,12 @@ const displayQuotes = computed(() => {
     left: 0;
     right: 0;
     bottom: 0;
-    // background: blue;
     z-index: 0;
+    pointer-events: none;
 
     strong {
       position: absolute;
-      top: 0; // 12.5%;
+      top: 0;
       left: -1.25rem;
       font-family: serif;
       font-size: 2rem;
@@ -251,5 +289,12 @@ const displayQuotes = computed(() => {
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: none;
+  }
 }
 </style>

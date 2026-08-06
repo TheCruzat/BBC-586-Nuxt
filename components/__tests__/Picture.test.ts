@@ -70,14 +70,15 @@ describe("Picture Component", () => {
     expect(img.attributes("src")).toBe(mockImageObj.full.webp);
   });
 
-  it("uses default alt text when not provided", () => {
+  it("uses empty alt text by default for decorative images", () => {
     const wrapper = mount(Picture, {
       props: {
         img: mockImageObj,
       },
     });
     const img = wrapper.find("img");
-    expect(img.attributes("alt")).toBe("Hero image");
+    expect(img.attributes("alt")).toBe("");
+    expect(wrapper.find("picture").attributes("aria-hidden")).toBe("true");
   });
 
   it("uses custom alt text when provided", () => {
@@ -89,6 +90,19 @@ describe("Picture Component", () => {
     });
     const img = wrapper.find("img");
     expect(img.attributes("alt")).toBe("Custom hero");
+    expect(wrapper.find("picture").attributes("aria-hidden")).toBeUndefined();
+  });
+
+  it("treats decorative prop as empty alt even if alt is set", () => {
+    const wrapper = mount(Picture, {
+      props: {
+        img: mockImageObj,
+        alt: "Should be ignored",
+        decorative: true,
+      },
+    });
+    expect(wrapper.find("img").attributes("alt")).toBe("");
+    expect(wrapper.find("picture").attributes("aria-hidden")).toBe("true");
   });
 
   it("sets loading attribute to eager when priority is true", () => {

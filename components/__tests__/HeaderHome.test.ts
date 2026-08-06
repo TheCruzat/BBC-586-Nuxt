@@ -59,8 +59,9 @@ describe("HeaderHome Component", () => {
   it("renders Picture component with correct props", () => {
     const picture = wrapper.findComponent(Picture);
     expect(picture.exists()).toBe(true);
-    expect(picture.props("priority")).toBe("true");
+    expect(picture.props("priority")).toBe(true);
     expect(picture.props("noLazy")).toBe(true);
+    expect(picture.props("alt")).toContain("Dan Cruzat");
   });
 
   it('displays user name "Dan Cruzat"', () => {

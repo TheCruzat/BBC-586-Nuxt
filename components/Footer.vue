@@ -20,6 +20,7 @@
     </div>
     <Picture
       :img="img"
+      decorative
       :img-style="{ objectPosition: 'bottom', opacity: '0.75' }"
     />
   </footer>

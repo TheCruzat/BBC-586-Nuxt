@@ -30,7 +30,8 @@
       <Picture
         :img="img[0]"
         :no-lazy="true"
-        priority="true"
+        :priority="true"
+        alt="Dan Cruzat, senior front end engineer based in Portland, Oregon"
         :img-style="{
           objectPosition: 'var(--headerBGPos)',
           transform: 'translateY(' + parallaxOffset + 'px)',

@@ -73,7 +73,7 @@ h1 {
     text-align: right;
     display: inline-block;
     width: 100%;
-    color: #fffa;
+    color: #fff;
     position: relative;
     z-index: 1;
     font-family: var(--title);

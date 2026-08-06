@@ -1,8 +1,8 @@
 <template>
-  <div class="spacer tablet-up">
-    <Picture :img="image" />
+  <div class="spacer tablet-up" aria-hidden="true">
+    <Picture :img="image" decorative />
   </div>
-  <nav>
+  <nav aria-label="Primary">
     <div class="wrap">
       <LogoNav />
       <!-- builtby the cruzat -->

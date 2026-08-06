@@ -8,7 +8,6 @@
     <ContentBlock
       header="dialects, systems + skills"
       container-class="skills"
-      content-tag="p"
     >
       <p
         v-for="skill in skillsToPayTheBills"
