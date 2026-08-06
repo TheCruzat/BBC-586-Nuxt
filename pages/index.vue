@@ -62,17 +62,4 @@ const img = ref(ImageSets);
 .relative {
   position: relative;
 }
-
-.main-content {
-  animation: fadeIn 0.3s ease-in forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 </style>

@@ -7,7 +7,15 @@
         <a href="/terms">Terms of Use</a>
       </div>
       <div class="blur">
-        <img class="cic" width="32" height="32" :src="cic" alt="" />
+        <img
+          class="cic"
+          width="32"
+          height="32"
+          :src="cic"
+          alt=""
+          loading="lazy"
+          decoding="async"
+        />
         <LogoTC :type="LogoTypes.footer" />
         <h3>built by the cruzat v{{ pv }}</h3>
         <p class="">
@@ -32,7 +40,7 @@ import Picture from "@/components/Picture";
 import { types as GoodieTypes } from "@/components/Goodies";
 import bg from "@/assets/bg-board.webp";
 import bgM from "@/assets/bg-board-mobile.webp";
-import cic from "@/assets/chicago-in-cascadia.png";
+import cic from "@/assets/chicago-in-cascadia.webp";
 import { portVersion } from "@/content/meta";
 
 // Setup Static Data

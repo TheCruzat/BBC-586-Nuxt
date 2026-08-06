@@ -58,14 +58,17 @@ export default {
           type: "image/webp",
           media: "(max-width: 39.9375rem)",
           fetchpriority: "high",
+          tagPriority: "critical",
         },
         {
           key: "preload-hero-desktop",
           rel: "preload",
           as: "image",
           href: hero.full.webp,
+          type: "image/webp",
           media: "(min-width: 40rem)",
           fetchpriority: "high",
+          tagPriority: "critical",
         },
       ],
     });

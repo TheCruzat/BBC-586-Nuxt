@@ -30,7 +30,7 @@
         :alt="resolvedAlt"
         :loading="priority ? 'eager' : 'lazy'"
         :fetchpriority="priority ? 'high' : 'auto'"
-        :decoding="priority ? 'sync' : 'async'"
+        decoding="async"
         :style="imgStyle"
       />
     </template>

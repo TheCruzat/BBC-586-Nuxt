@@ -23,6 +23,8 @@
               <img
                 width="150"
                 height="150"
+                loading="lazy"
+                decoding="async"
                 :src="
                   post._embedded['wp:featuredmedia'][0].media_details.sizes
                     .medium.source_url
@@ -77,6 +79,8 @@ export default {
   data() {
     return {
       posts: [],
+      postsLoaded: false,
+      blogObserver: null,
       blogURL,
       rootie: "https://coffeewith.thecruzat.com/wp-json/wp/v2/posts",
       externalLinkAttrs,
@@ -88,16 +92,39 @@ export default {
     },
   },
   mounted() {
-    this.getAllData();
+    this.observeAndFetch();
+  },
+  beforeUnmount() {
+    this.blogObserver?.disconnect();
   },
   methods: {
+    observeAndFetch() {
+      if (typeof IntersectionObserver === "undefined") {
+        this.getAllData();
+        return;
+      }
+      this.blogObserver = new IntersectionObserver(
+        (entries) => {
+          if (entries.some((entry) => entry.isIntersecting)) {
+            this.getAllData();
+            this.blogObserver?.disconnect();
+            this.blogObserver = null;
+          }
+        },
+        { rootMargin: "200px 0px", threshold: 0.01 },
+      );
+      if (this.$el) this.blogObserver.observe(this.$el);
+    },
     async getAllData() {
+      if (this.postsLoaded) return;
+      this.postsLoaded = true;
       try {
         // Nuxt 3 $fetch is global
         const data = await $fetch(this.rootie + "?_embed&per_page=4");
         this.posts = data;
       } catch (err) {
         console.error("Blog fetch error:", err.message);
+        this.postsLoaded = false;
       }
     },
     truncateExcerpt(html) {

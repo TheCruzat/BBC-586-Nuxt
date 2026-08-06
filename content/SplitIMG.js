@@ -1,4 +1,4 @@
-import bg0 from "@/assets/fopo.jpg";
+import bg0 from "@/assets/fopo.webp";
 import bg1 from "@/assets/bg-mural.webp";
 import bg2 from "@/assets/bg-sandcastles.webp";
 import bg3 from "@/assets/bg-coffeez.webp";
