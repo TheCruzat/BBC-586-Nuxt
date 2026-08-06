@@ -104,32 +104,7 @@ export default defineNuxtConfig({
           content: metA.image,
         },
       ],
-      script: [
-        {
-          innerHTML: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-
-            // 1. Set Default Consent Immediately
-            var savedChoice = (typeof localStorage !== 'undefined'
-            ? localStorage.getItem('consent_choice')
-            : null) || 'denied';
-            gtag('consent', 'default', {
-              'analytics_storage': savedChoice,
-              'ad_storage': savedChoice,
-              'wait_for_update': 500
-            });
-
-            // 2. Load GTM Only After Consent is Initialized
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-NBNWMM86');
-          `,
-          type: "text/javascript",
-        },
-      ],
+      // GTM is loaded only after analytics consent (see CookieConsent + utils/loadGtm.js)
     },
   },
 

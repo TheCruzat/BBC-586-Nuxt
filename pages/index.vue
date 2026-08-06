@@ -11,12 +11,7 @@
             <Navigation />
             <MissionPurp />
             <AI />
-            <Split
-              id="experience"
-              msg="experience"
-              :img="img[1]"
-              :priority="true"
-            />
+            <Split id="experience" msg="experience" :img="img[1]" />
             <SkillsExp />
             <Split id="work" msg="notable projects" :img="img[2]" />
             <Builds />

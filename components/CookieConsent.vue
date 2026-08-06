@@ -36,6 +36,7 @@
 
 <script setup>
 import { nextTick, onBeforeUnmount, onMounted, ref, watch } from "vue";
+import { loadGtm, scheduleGtmLoad } from "@/utils/loadGtm";
 
 const showBanner = ref(false);
 const banner = ref(null);
@@ -57,6 +58,7 @@ const dismiss = () => {
 
 const accept = () => {
   localStorage.setItem("consent_choice", "granted");
+  loadGtm();
   window.dataLayer?.push({ event: "consent_granted" });
   dismiss();
 };
@@ -89,12 +91,19 @@ const onKeydown = (event) => {
 };
 
 onMounted(() => {
-  if (!localStorage.getItem("consent_choice")) {
+  const choice = localStorage.getItem("consent_choice");
+  if (choice === "granted") {
+    // Returning visitors: load analytics after idle so it does not compete with LCP
+    scheduleGtmLoad();
+    return;
+  }
+  if (!choice) {
     previouslyFocused = document.activeElement;
     showBanner.value = true;
     document.documentElement.style.setProperty("--consent-offset", "12rem");
     focusAccept();
   }
+  // "denied" — never load GTM
 });
 
 watch(showBanner, (open) => {

@@ -1,38 +1,44 @@
 <template>
-  <picture v-if="img" :aria-hidden="isDecorative ? 'true' : undefined">
-    <source
-      v-if="img.full?.webp"
-      media="(min-width: 40rem)"
-      :srcset="img.full.webp"
-      type="image/webp"
-    />
-    <source
-      v-if="img.full?.jpg"
-      media="(min-width: 40rem)"
-      :srcset="img.full.jpg"
-    />
+  <picture
+    v-if="img"
+    ref="root"
+    :aria-hidden="isDecorative ? 'true' : undefined"
+  >
+    <template v-if="shouldLoad">
+      <source
+        v-if="img.full?.webp"
+        media="(min-width: 40rem)"
+        :srcset="img.full.webp"
+        type="image/webp"
+      />
+      <source
+        v-if="img.full?.jpg"
+        media="(min-width: 40rem)"
+        :srcset="img.full.jpg"
+      />
 
-    <source
-      v-if="img.mobile?.webp"
-      :srcset="img.mobile.webp"
-      type="image/webp"
-    />
-    <source v-if="img.mobile?.jpg" :srcset="img.mobile.jpg" />
+      <source
+        v-if="img.mobile?.webp"
+        :srcset="img.mobile.webp"
+        type="image/webp"
+      />
+      <source v-if="img.mobile?.jpg" :srcset="img.mobile.jpg" />
 
-    <img
-      v-if="img.full?.webp"
-      :src="img.full.webp"
-      :alt="resolvedAlt"
-      :loading="priority ? 'eager' : 'lazy'"
-      :fetchpriority="priority ? 'high' : 'auto'"
-      :decoding="priority ? 'sync' : 'async'"
-      :style="imgStyle"
-    />
+      <img
+        v-if="fallbackSrc"
+        :src="fallbackSrc"
+        :alt="resolvedAlt"
+        :loading="priority ? 'eager' : 'lazy'"
+        :fetchpriority="priority ? 'high' : 'auto'"
+        :decoding="priority ? 'sync' : 'async'"
+        :style="imgStyle"
+      />
+    </template>
   </picture>
 </template>
 
 <script setup>
-import { computed } from "vue";
+import { computed, onBeforeUnmount, onMounted, ref } from "vue";
 
 const props = defineProps({
   img: {
@@ -58,10 +64,56 @@ const props = defineProps({
   },
 });
 
+const root = ref(null);
+/** Priority images load immediately; others wait until near the viewport. */
+const shouldLoad = ref(props.priority);
+let observer = null;
+
 const isDecorative = computed(
   () => props.decorative || props.alt.trim() === "",
 );
 const resolvedAlt = computed(() => (isDecorative.value ? "" : props.alt));
+
+/** Prefer mobile as <img> fallback so mobile never pulls the desktop asset. */
+const fallbackSrc = computed(
+  () =>
+    props.img?.mobile?.webp ||
+    props.img?.mobile?.jpg ||
+    props.img?.full?.webp ||
+    props.img?.full?.jpg ||
+    "",
+);
+
+onMounted(() => {
+  if (props.priority || shouldLoad.value) return;
+
+  if (typeof IntersectionObserver === "undefined") {
+    shouldLoad.value = true;
+    return;
+  }
+
+  observer = new IntersectionObserver(
+    (entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) {
+        shouldLoad.value = true;
+        observer?.disconnect();
+        observer = null;
+      }
+    },
+    {
+      // Start fetch slightly before the section enters view
+      rootMargin: "200px 0px",
+      threshold: 0.01,
+    },
+  );
+
+  if (root.value) observer.observe(root.value);
+});
+
+onBeforeUnmount(() => {
+  observer?.disconnect();
+  observer = null;
+});
 </script>
 
 <style lang="scss" scoped>

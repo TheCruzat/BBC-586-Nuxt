@@ -16,6 +16,8 @@ vi.mock("@/content/SplitIMG", () => ({
   ],
 }));
 
+vi.stubGlobal("useHead", vi.fn());
+
 describe("HeaderHome Component", () => {
   let wrapper;
 

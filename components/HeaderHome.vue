@@ -45,6 +45,31 @@ import { ImageSets } from "@/content/SplitIMG";
 
 export default {
   name: "HeaderHome",
+  setup() {
+    const hero = ImageSets[0];
+    // Preload only the LCP candidate for the current viewport (Nuxt auto-imports useHead)
+    useHead({
+      link: [
+        {
+          key: "preload-hero-mobile",
+          rel: "preload",
+          as: "image",
+          href: hero.mobile.webp,
+          type: "image/webp",
+          media: "(max-width: 39.9375rem)",
+          fetchpriority: "high",
+        },
+        {
+          key: "preload-hero-desktop",
+          rel: "preload",
+          as: "image",
+          href: hero.full.webp,
+          media: "(min-width: 40rem)",
+          fetchpriority: "high",
+        },
+      ],
+    });
+  },
   data: function () {
     return {
       img: ImageSets,
