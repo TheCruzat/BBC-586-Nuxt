@@ -1,5 +1,5 @@
 <template>
-  <div :type="type" class="goodies-set">
+  <div :data-type="type" class="goodies-set">
     <a
       v-for="(link, ndx) in links"
       :key="link.title"
@@ -7,7 +7,8 @@
       :title="link.title"
       :aria-label="link.ariaLabel"
       :data-mega="link.mega"
-      target="_blank"
+      :target="isExternal(link.url) ? '_blank' : undefined"
+      :rel="isExternal(link.url) ? 'noopener noreferrer' : undefined"
       :class="{ sub: ndx > topRow }"
     >
       <ClientOnly
@@ -41,6 +42,12 @@ export default {
       topRow: setRow(goodies),
     };
   },
+  methods: {
+    isExternal(url) {
+      if (!url) return false;
+      return /^(https?:)?\/\//i.test(url);
+    },
+  },
 };
 </script>
 
@@ -68,7 +75,7 @@ export default {
     max-width: 840px;
   }
 
-  &[type="footer"] {
+  &[data-type="footer"] {
     margin: 9vh auto 9vh;
     @include v.mFlip() {
       padding-bottom: 0;

@@ -1,7 +1,15 @@
 <template>
   <transition name="slide-up">
-    <div v-if="showBanner" class="consent-banner">
-      <p>
+    <div
+      v-if="showBanner"
+      ref="banner"
+      class="consent-banner"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="consent-title"
+      @keydown="onKeydown"
+    >
+      <p id="consent-title">
         <span>I'm into slinging code, not selling data. </span>
         <span
           >I use basic analytics to see where you're coming from and what you're
@@ -10,33 +18,102 @@
         <span>Is that okay with you?</span>
       </p>
       <div class="actions">
-        <button aria-label="Yes I consent to analytics tracking" class="btn" @click="accept">Yes that's okay</button>
-        <button aria-label="No I do not consent to analytics tracking" class="btn minimal" @click="decline">No thank you</button>
+        <button
+          ref="acceptBtn"
+          type="button"
+          aria-label="Yes I consent to analytics tracking"
+          class="btn"
+          @click="accept"
+        >
+          Yes that's okay
+        </button>
+        <button
+          ref="declineBtn"
+          type="button"
+          aria-label="No I do not consent to analytics tracking"
+          class="btn minimal"
+          @click="decline"
+        >
+          No thank you
+        </button>
       </div>
     </div>
   </transition>
 </template>
 
 <script setup>
-const showBanner = ref(false);
+import { nextTick, onBeforeUnmount, onMounted, ref, watch } from "vue";
 
-onMounted(() => {
-  if (!localStorage.getItem("consent_choice")) {
-    showBanner.value = true;
-  }
-});
+const showBanner = ref(false);
+const banner = ref(null);
+const acceptBtn = ref(null);
+const declineBtn = ref(null);
+let previouslyFocused = null;
+
+const focusAccept = async () => {
+  await nextTick();
+  acceptBtn.value?.focus();
+};
+
+const dismiss = () => {
+  showBanner.value = false;
+  document.documentElement.style.removeProperty("--consent-offset");
+  previouslyFocused?.focus?.();
+  previouslyFocused = null;
+};
 
 const accept = () => {
   localStorage.setItem("consent_choice", "granted");
-  showBanner.value = false;
-  // Trigger GTM event if needed
   window.dataLayer?.push({ event: "consent_granted" });
+  dismiss();
 };
 
 const decline = () => {
   localStorage.setItem("consent_choice", "denied");
-  showBanner.value = false;
+  dismiss();
 };
+
+const onKeydown = (event) => {
+  if (event.key === "Escape") {
+    decline();
+    return;
+  }
+  if (event.key !== "Tab" || !banner.value) return;
+
+  const focusable = [acceptBtn.value, declineBtn.value].filter(Boolean);
+  if (focusable.length === 0) return;
+
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault();
+    last.focus();
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault();
+    first.focus();
+  }
+};
+
+onMounted(() => {
+  if (!localStorage.getItem("consent_choice")) {
+    previouslyFocused = document.activeElement;
+    showBanner.value = true;
+    document.documentElement.style.setProperty("--consent-offset", "12rem");
+    focusAccept();
+  }
+});
+
+watch(showBanner, (open) => {
+  if (open) {
+    document.documentElement.style.setProperty("--consent-offset", "12rem");
+    focusAccept();
+  }
+});
+
+onBeforeUnmount(() => {
+  document.documentElement.style.removeProperty("--consent-offset");
+});
 </script>
 
 <style lang="scss" scoped>
@@ -50,24 +127,18 @@ const decline = () => {
   border: 2px solid var(--con);
   padding: 1.5rem;
   box-shadow: 0 8px 20px var(--bod);
-  width: 400px;
-  // height: 160px;
-  // font-size: 0.85rem;
+  width: min(400px, calc(100vw - 2rem));
   border-radius: calc(var(--radius) / 2.5);
   display: flex;
   align-items: center;
   flex-direction: column;
   text-align: left;
 
-  // Mobile: Bottom Center
-  bottom: 4rem;
+  // Sit above the sticky resume bar
+  bottom: calc(4rem + env(safe-area-inset-bottom, 0px));
   left: 50%;
   right: auto;
   translate: -50% 0;
-
-  @include v.mFlip() {
-    // font-size: 1rem;
-  }
 
   .actions {
     padding-top: 0.5rem;
@@ -88,22 +159,20 @@ const decline = () => {
     }
   }
 
-  // Tablet+: Bottom Left
   @include v.mFlip() {
-    bottom: 2rem;
+    bottom: calc(2rem + env(safe-area-inset-bottom, 0px));
     top: unset;
     left: auto;
     right: 2rem;
     width: 400px;
-    translate: unset; // translateX(-50%);
-    // border-radius: 0.5rem;
+    translate: unset;
   }
 
   button {
-    background: transparent; // var(--hot);
+    background: transparent;
     color: var(--hot);
-    // border: none;
     padding: 0.5rem 1rem;
+    min-height: 44px;
     cursor: pointer;
     margin-right: 0.5rem;
     border-radius: 2rem;

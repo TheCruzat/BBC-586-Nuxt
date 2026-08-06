@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section aria-label="Experience and skills">
     <ContentBlock>
       <p>{{ skillsIntro }}</p>
       <p>{{ skillsSub }}</p>

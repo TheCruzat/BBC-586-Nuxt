@@ -1,7 +1,7 @@
 <template>
-  <section class="title-split">
+  <section class="title-split" :aria-labelledby="msg ? headingId : undefined">
     <div :id="id" class="title-spacer">
-      <h2 v-if="msg" v-html="msg" />
+      <h2 v-if="msg" :id="headingId" v-html="msg" />
     </div>
 
     <!-- Parallax wrapper with scale and movement effect -->
@@ -28,6 +28,11 @@ export default {
     priority: {
       type: Boolean,
       default: false,
+    },
+  },
+  computed: {
+    headingId() {
+      return this.id ? `${this.id}-heading` : "split-heading";
     },
   },
 };

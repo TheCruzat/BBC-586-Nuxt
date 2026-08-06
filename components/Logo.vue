@@ -1,5 +1,12 @@
 <template>
-  <svg :type="type" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 157">
+  <svg
+    :type="type"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 900 157"
+    role="presentation"
+    aria-hidden="true"
+    focusable="false"
+  >
     <path
       fill="black"
       stroke="none"

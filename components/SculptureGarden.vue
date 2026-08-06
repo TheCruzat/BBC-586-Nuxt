@@ -1,5 +1,5 @@
 <template>
-  <div class="sculpture-garden">
+  <div class="sculpture-garden" aria-hidden="true">
     <span>
       <span></span>
       <span></span>

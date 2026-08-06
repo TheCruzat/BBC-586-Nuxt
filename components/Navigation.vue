@@ -5,11 +5,15 @@
   <nav aria-label="Primary">
     <div class="wrap">
       <LogoNav />
-      <!-- builtby the cruzat -->
       <div class="links-wrap">
-        <a v-for="link in linkS" :key="link[0]" :href="link[1]">{{
-          link[0]
-        }}</a>
+        <a
+          v-for="link in linkS"
+          :key="link[0]"
+          :href="link[1]"
+          :aria-current="currentHash === link[1] ? 'true' : undefined"
+          :class="{ curr: currentHash === link[1] }"
+          >{{ link[0] }}</a
+        >
       </div>
     </div>
   </nav>
@@ -17,7 +21,6 @@
 
 <script>
 import bg from "@/assets/paperbg.webp";
-// import mbg from '@/assets/paperbg.webp';
 
 const image = {
   mobile: {
@@ -38,10 +41,45 @@ export default {
         ["work", "#work"],
         ["blog", "#scribblings"],
         ["etc", "#sidenotes"],
-        // ['', '#'],
       ],
       image,
+      currentHash: "",
+      observer: null,
     };
+  },
+  mounted: function () {
+    this.setupScrollSpy();
+  },
+  beforeUnmount: function () {
+    this.observer?.disconnect();
+  },
+  methods: {
+    setupScrollSpy: function () {
+      if (typeof IntersectionObserver === "undefined") return;
+
+      const ids = this.linkS.map((link) => link[1].slice(1));
+      this.observer = new IntersectionObserver(
+        (entries) => {
+          const visible = entries
+            .filter((entry) => entry.isIntersecting)
+            .sort(
+              (a, b) => a.boundingClientRect.top - b.boundingClientRect.top,
+            );
+          if (visible[0]?.target?.id) {
+            this.currentHash = "#" + visible[0].target.id;
+          }
+        },
+        {
+          rootMargin: "-30% 0px -55% 0px",
+          threshold: [0, 0.25, 0.5],
+        },
+      );
+
+      ids.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) this.observer.observe(el);
+      });
+    },
   },
 };
 </script>
@@ -98,12 +136,13 @@ nav {
     padding-left: var(--gutter);
     padding-right: var(--gutter);
     display: flex;
-    gap: 0.5rem;
+    gap: 0.25rem;
     font-size: 1rem;
 
     @include v.mFlip() {
       padding-left: 32px;
       padding-right: 32px;
+      gap: 0.5rem;
     }
 
     @include v.mFlip(80rem) {
@@ -112,16 +151,24 @@ nav {
   }
 
   a {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     flex-basis: 1;
     color: var(--con);
-    padding: 6px 8px;
+    padding: 0.75rem 0.75rem;
+    min-height: 44px;
+    min-width: 44px;
     line-height: 1.25;
     font-weight: bold;
+    border-radius: 0.35rem;
 
-    &.curr {
-      background: #fff;
+    &.curr,
+    &[aria-current="true"] {
+      background: var(--conlyte);
       color: var(--con);
+      text-decoration: underline;
+      text-underline-offset: 0.2em;
     }
   }
 }

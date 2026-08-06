@@ -1,14 +1,16 @@
 <template>
-  <section>
+  <section aria-labelledby="blog-heading">
     <div class="flat">
-      <h3>Occasionally, I write</h3>
+      <h3 id="blog-heading">Occasionally, I write</h3>
       <div class="cards">
         <a
           v-for="post in limitedPosts"
           :key="post.id"
           :href="post.link"
           target="_blank"
+          rel="noopener noreferrer"
           class="blogcard"
+          :aria-label="postCardLabel(post)"
         >
           <div class="card-header">
             <p class="card-title" v-html="post.title.rendered"></p>
@@ -26,7 +28,7 @@
                   post._embedded['wp:featuredmedia'][0].media_details.sizes
                     .medium.source_url
                 "
-                :alt="post.title.rendered"
+                alt=""
               />
             </div>
             <div
@@ -51,7 +53,13 @@
       </div>
       <div class="blog-link">
         <p>
-          <a class="btn" :href="blogURL" target="_blank" title="read more at my blog" aria-label="visit Dan Cruzat's Blog (opens in new window)"
+          <a
+            class="btn"
+            :href="blogURL"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="read more at my blog"
+            aria-label="visit Dan Cruzat's Blog (opens in new window)"
             >Visit My Blog</a
           >
         </p>
@@ -96,6 +104,13 @@ export default {
       const plainText = html.replace(/<[^>]*>/g, "");
       const shortened = plainText.split(" ").slice(0, 32).join(" ");
       return "<p>" + shortened + "...</p>";
+    },
+    postCardLabel(post) {
+      const title = (post?.title?.rendered || "Blog post").replace(
+        /<[^>]*>/g,
+        "",
+      );
+      return `${title} (opens in new window)`;
     },
   },
 };

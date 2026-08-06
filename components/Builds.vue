@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section aria-label="Notable projects">
     <div v-for="(set, i) in builds" :key="set.header">
       <div class="flat">
         <h3>{{ set.header }}</h3>

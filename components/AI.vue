@@ -1,7 +1,7 @@
 <template>
-  <section>
+  <section aria-labelledby="ai-heading">
     <div class="flat">
-      <h3>The (AI)lephant In the Room</h3>
+      <h3 id="ai-heading">The (AI)lephant In the Room</h3>
 
       <template v-for="(block, index) in ai" :key="index">
         <p v-if="block.p" v-html="block.p" />

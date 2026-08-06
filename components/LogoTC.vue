@@ -1,9 +1,11 @@
 <template>
   <svg
     :type="type"
-    alt="the Cruzat"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 2266 546"
+    role="presentation"
+    aria-hidden="true"
+    focusable="false"
   >
     <g stroke="none" stroke-width="0" fill="current" fill-rule="evenodd">
       <g id="the-cruzat-logo_02" fill="current">

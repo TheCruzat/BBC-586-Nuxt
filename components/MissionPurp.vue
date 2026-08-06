@@ -1,7 +1,7 @@
 <template>
-  <section class="mission-purpose">
+  <section class="mission-purpose" aria-labelledby="hello-heading">
     <div id="hello" class="title-spacer shorty">
-      <h2>I like to build</h2>
+      <h2 id="hello-heading">I like to build</h2>
     </div>
 
     <div class="flat">

@@ -1,9 +1,14 @@
 <template>
-  <section class="resume-bug">
+  <section class="resume-bug" aria-label="Resume links">
     <div class="floater">
       <ul>
         <li v-for="link in resumeLinks" :key="link.label">
-          <a :href="link.href" :aria-label="link.ariaLabel" :target="link.new ? '_blank' : null">
+          <a
+            :href="link.href"
+            :aria-label="link.ariaLabel"
+            :target="link.new ? '_blank' : undefined"
+            :rel="link.new ? 'noopener noreferrer' : undefined"
+          >
             <span v-html="link.label"></span>
           </a>
         </li>
@@ -101,13 +106,15 @@ section.resume-bug {
       flex-direction: row;
       width: 100%;
       justify-content: center;
+      align-items: center;
       background: transparent;
       border: 0px solid transparent;
       color: var(--bod);
 
       font-size: 0.8rem;
       font-weight: 900;
-      padding: 0.5rem 0.75rem;
+      padding: 0.75rem 0.75rem;
+      min-height: 44px;
 
       .cloak {
         display: inline-block;
