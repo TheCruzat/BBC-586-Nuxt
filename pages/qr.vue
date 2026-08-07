@@ -57,7 +57,7 @@ useHead({
 
     a {
       display: block;
-      max-width: 12rem;
+      max-width: 16rem;
       width: 100%;
 
       &:hover :deep(svg) {
